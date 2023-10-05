@@ -520,10 +520,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 3
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0.01
+  m_AngularDrag: 0
+  m_GravityScale: 0.3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -534,7 +534,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &566700202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,13 +607,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 566700199}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.95, y: 5.15, z: 0}
-  m_LocalScale: {x: 0.8285993, y: 0.77681184, z: 1.0357491}
+  m_LocalRotation: {x: 0.1363614, y: 0.0066018496, z: -0.0012403936, w: -0.9906364}
+  m_LocalPosition: {x: -4.05, y: 5.15, z: 0}
+  m_LocalScale: {x: 0.83589506, y: 0.8248965, z: 1.099862}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -164.327, y: 179.201, z: 180.253}
 --- !u!1001 &673973616
 PrefabInstance:
   m_ObjectHideFlags: 0

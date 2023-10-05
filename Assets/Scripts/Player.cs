@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = 0f;
     }
 
     // Update is called once per frame
@@ -61,7 +60,6 @@ public class Player : MonoBehaviour
     void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        rb.gravityScale = 1f;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
