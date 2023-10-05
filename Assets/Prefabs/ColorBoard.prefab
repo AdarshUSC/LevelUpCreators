@@ -764,6 +764,7 @@ GameObject:
   - component: {fileID: 3642034295645010729}
   - component: {fileID: 7247247427011778098}
   - component: {fileID: 5499172400741231161}
+  - component: {fileID: 3237735871208750145}
   m_Layer: 5
   m_Name: ColorBoard
   m_TagString: Untagged
@@ -854,6 +855,26 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3237735871208750145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3255743028963180597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc0ddcb79fac40ea9ade1aee188969c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button0: {fileID: 1485381579055938980}
+  button1: {fileID: 5421664852194409297}
+  button2: {fileID: 6210679982048155797}
+  button3: {fileID: 6641566349649908704}
+  reset: {fileID: 4141808002681445592}
+  mixingArea: {fileID: 1809905487893707315}
+  player: {fileID: 0}
+  resultColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4146972161978485221
 GameObject:
   m_ObjectHideFlags: 0
