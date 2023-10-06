@@ -18,12 +18,13 @@ public class Quicksand : MonoBehaviour
             Rigidbody2D playerRigidbody = collision.GetComponent<Rigidbody2D>();
             if (playerRigidbody != null)
             {
-                playerRigidbody.gravityScale = 0.5f; 
-                playerRigidbody.drag = 5f;
+                Debug.Log("PLAYER1");
+                playerRigidbody.gravityScale = 0.001f; 
+                playerRigidbody.drag = 10f;
             }
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    /*private void OnTriggerExit2D(Collider2D collision)
     {
         Debug.Log("EXIT");
         if (collision.CompareTag("Player1"))
@@ -36,7 +37,7 @@ public class Quicksand : MonoBehaviour
                 playerRigidbody.drag = 0f;
             }
         }
-    }
+    }*/
     void Start()
     {
         GameObject player = GameObject.FindWithTag("Player1");
@@ -53,7 +54,7 @@ public class Quicksand : MonoBehaviour
         if (isSinking && playerTransform != null)
         {
             Vector3 playerPosition = playerTransform.position;
-            playerPosition.y -= sinkSpeed * Time.deltaTime;
+            // playerPosition.y -= sinkSpeed * Time.deltaTime;
             //playerPosition.y = Mathf.Max(playerPosition.y, initialPosition.y - sinkDepth);
             playerTransform.position = playerPosition;
         }
