@@ -88,5 +88,10 @@ public class Player : MonoBehaviour
         {
             transform.position = respawnPoint;
         }
+        if (collision.gameObject.tag == "CheckPoint")
+        {
+            respawnPoint = transform.position;
+            Debug.Log("Checkpoint encountered at" + transform.position.x + " " + transform.position.y);
+        }
     }
 }

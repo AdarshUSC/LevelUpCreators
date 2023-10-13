@@ -8,6 +8,7 @@ TagManager:
   - mixArea
   - Player1
   - FallDetection
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
