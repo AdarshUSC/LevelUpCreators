@@ -10,6 +10,8 @@ public class ReflectionPower : MonoBehaviour
     private Vector3 direction;
     private Vector3 curPos;
     private bool isAbletoPut;
+    private bool isAbletoGetBack;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +32,13 @@ public class ReflectionPower : MonoBehaviour
         {
             if (myMirror)
             {
-                Debug.Log("Put Mirror Back.");
-                gameObject.transform.position = myShadow.transform.position;
-                Destroy(myMirror);
-                Destroy(myShadow);
+                if (isAbletoGetBack)
+                {
+                    Debug.Log("Get Mirror Back.");
+                    gameObject.transform.position = myShadow.transform.position;
+                    Destroy(myMirror);
+                    Destroy(myShadow);
+                }
             } else
             {
                 Debug.Log("Mirror Put!");
@@ -42,7 +47,25 @@ public class ReflectionPower : MonoBehaviour
             }
          
         }
-        Debug.Log(direction);
+
+        // if any objects block on the way between player and mirror
+        if (myMirror)
+        {
+            RaycastHit2D hitleft = Physics2D.Raycast(myMirror.transform.position, Vector2.left, Mathf.Abs(myMirror.transform.position.x - transform.position.x), LayerMask.GetMask("Player"));
+            RaycastHit2D hitright = Physics2D.Raycast(myMirror.transform.position, Vector2.right, Mathf.Abs(myMirror.transform.position.x - transform.position.x), LayerMask.GetMask("Player"));
+            //Debug.Log(hitright.transform.name);
+            if ((hitleft.collider != null && hitleft.collider.gameObject.transform.tag == "Player") || (hitright.collider != null && hitright.collider.gameObject.transform.tag == "Player"))
+            {
+                myShadow.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+                isAbletoGetBack = true;
+            }
+            else
+            {
+                myShadow.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+                isAbletoGetBack = false;
+            }
+        }
+
         if (myShadow)
         {
             // need to add when collide with the wall.
@@ -58,7 +81,7 @@ public class ReflectionPower : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         isAbletoPut = false;
-        // enable this after adding tag to bricks
+        // enable this after add tag to bricks
         //Destroy(myMirror);
         //Destroy(myShadow);
     }

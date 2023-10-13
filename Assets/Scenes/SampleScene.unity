@@ -559,9 +559,9 @@ GameObject:
   - component: {fileID: 566700201}
   - component: {fileID: 566700200}
   - component: {fileID: 566700205}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -650,6 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56f66f34065c420ca76ea003aa4b220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallDetector: {fileID: 0}
 --- !u!212 &566700203
 SpriteRenderer:
   m_ObjectHideFlags: 0
