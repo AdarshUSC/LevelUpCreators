@@ -25,12 +25,11 @@ public class EnemyBulletBehaviour : MonoBehaviour
     {
         
     }
-     void OnTriggerEnter2D(Collider2D other){
+    void OnTriggerEnter2D(Collider2D other){
 
         if(other.gameObject.CompareTag("Player")){
             Destroy(gameObject);
-            // SceneManager.LoadScene("EndScene");
-            // PlayerPrefs.SetString("finalScore",ScoreScript.scoreValue);
         }
+        // Destroy(gameObject);
     }
 }
