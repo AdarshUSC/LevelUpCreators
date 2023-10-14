@@ -17,7 +17,8 @@ public class Player : MonoBehaviour
     private float time_running = 0.0f;
     private float[] checks;
     private int count = 0;
-
+    private Boomerang boomerang;
+    public GameObject boomerangObject;
 
 
 
@@ -36,6 +37,7 @@ public class Player : MonoBehaviour
         time_running = 0.0f;
         count = 0;
         checks = new float[3];
+        boomerang = boomerangObject.GetComponent<Boomerang>();
     }
 
     // Update is called once per frame
@@ -44,7 +46,6 @@ public class Player : MonoBehaviour
         time_running += Time.deltaTime;
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            Debug.Log("Left Arrow");
             transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
         }
         if(Input.GetKey(KeyCode.RightArrow))
@@ -61,6 +62,12 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            //Need to change the direction of the boomerang
+            boomerang.Throw(Vector2.up);
         }
     }
 
@@ -143,4 +150,6 @@ public class Player : MonoBehaviour
         yield return WWW.SendWebRequest();
 
     }
+
+
 }
