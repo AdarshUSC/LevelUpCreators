@@ -25,7 +25,8 @@ public class Player : MonoBehaviour
 
     Rigidbody2D rb;
     bool isGrounded = false;
-    private Vector3 respawnPoint;
+    //private Vector3 respawnPoint;
+    public Vector3 respawnPoint;
     public GameObject fallDetector;
 
     // Start is called before the first frame update
