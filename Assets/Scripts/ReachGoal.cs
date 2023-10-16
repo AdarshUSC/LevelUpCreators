@@ -5,11 +5,20 @@ using UnityEngine;
 public class ReachGoal : MonoBehaviour
 {
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
+            Debug.Log("Reaching the end");
+            EndGame();
         }
+    }
+    private void EndGame()
+    {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false; // ÔÚ±à¼­Æ÷ÖÐÍ£Ö¹²¥·Å
+        #else
+            Application.Quit();
+        #endif
     }
 }
