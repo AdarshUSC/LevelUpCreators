@@ -51,9 +51,9 @@ public class ReflectionPower : MonoBehaviour
         // if any objects block on the way between player and mirror
         if (myMirror)
         {
-            RaycastHit2D hitleft = Physics2D.Raycast(myMirror.transform.position, Vector2.left, Mathf.Abs(myMirror.transform.position.x - transform.position.x), LayerMask.GetMask("Player"));
-            RaycastHit2D hitright = Physics2D.Raycast(myMirror.transform.position, Vector2.right, Mathf.Abs(myMirror.transform.position.x - transform.position.x), LayerMask.GetMask("Player"));
-            //Debug.Log(hitright.transform.name);
+            RaycastHit2D hitleft = Physics2D.Raycast(myMirror.transform.position, Vector2.left);
+            RaycastHit2D hitright = Physics2D.Raycast(myMirror.transform.position, Vector2.right);
+            Debug.Log(hitright.transform.name);
             if ((hitleft.collider != null && hitleft.collider.gameObject.transform.tag == "Player") || (hitright.collider != null && hitright.collider.gameObject.transform.tag == "Player"))
             {
                 myShadow.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
