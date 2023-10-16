@@ -17,7 +17,8 @@ public class Player : MonoBehaviour
     private float time_running = 0.0f;
     private float[] checks;
     private int count = 0;
-
+    private Boomerang boomerang;
+    public GameObject boomerangObject;
 
 
     private string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdHKBSGlrH4LG-W3gfj3Dc--PUgpnOvAnQwZ1SXpbi_AFyVKQ/formResponse";
