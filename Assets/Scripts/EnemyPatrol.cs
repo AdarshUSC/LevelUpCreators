@@ -6,8 +6,8 @@ public class EnemyPatrol : MonoBehaviour
 {
     // Start is called before the first frame update
     public float walkSpeed = 2.0f;      // Walkspeed
-    public float wallLeft = 0.0f;       // Define wallLeft
-    public float wallRight = 5.0f;      // Define wallRight
+    public float wallLeft;       // Define wallLeft
+    public float wallRight ;      // Define wallRight
     float walkingDirection = 1.0f;
     Vector2 walkAmount;
     float originalX; // Original float value
@@ -15,8 +15,8 @@ public class EnemyPatrol : MonoBehaviour
 
     void Start () {
         this.originalX = this.transform.position.x;
-        wallLeft = transform.position.x - 2.5f;
-        wallRight = transform.position.x + 2.5f;
+        wallLeft = transform.position.x - 1f;
+        wallRight = transform.position.x + 1f;
     }
 
     // Update is called once per frame

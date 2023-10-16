@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
 
 
 
-
     private string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdHKBSGlrH4LG-W3gfj3Dc--PUgpnOvAnQwZ1SXpbi_AFyVKQ/formResponse";
 
     Rigidbody2D rb;
@@ -36,6 +35,7 @@ public class Player : MonoBehaviour
         time_running = 0.0f;
         count = 0;
         checks = new float[3];
+        boomerang = boomerangObject.GetComponent<Boomerang>();
     }
 
     // Update is called once per frame
@@ -44,7 +44,6 @@ public class Player : MonoBehaviour
         time_running += Time.deltaTime;
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            Debug.Log("Left Arrow");
             transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
         }
         if(Input.GetKey(KeyCode.RightArrow))
@@ -61,6 +60,12 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            //Need to change the direction of the boomerang
+            boomerang.Throw(Vector2.up);
         }
     }
 
@@ -143,4 +148,6 @@ public class Player : MonoBehaviour
         yield return WWW.SendWebRequest();
 
     }
+
+
 }
