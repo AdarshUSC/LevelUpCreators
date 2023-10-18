@@ -11,7 +11,7 @@ public class GameControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text.text = "Press Tab - Reflection, 'B' - Boomerang<br>Hint!! -- Change the color to save yourself from the bullets.";
+        text.text = "Press <b>Tab<b> <b>B<b> - Boomerang<br>Hint!! -- Change the color to save yourself from the bullets.";
     }
 
 }

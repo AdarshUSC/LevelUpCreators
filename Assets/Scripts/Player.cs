@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
     bool isGrounded = false;
     //private Vector3 respawnPoint;
     public Vector3 respawnPoint;
-    public Vector3 initialPoint;
     public GameObject fallDetector;
 
     // Start is called before the first frame update
@@ -35,7 +34,6 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         respawnPoint = transform.position;
-        initialPoint = transform.position;
         time_running = 0.0f;
         count = 0;
         checks = new float[3];
@@ -68,7 +66,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            //Need to change the direction of the boomerang
+            // Need to change the direction of the boomerang
             boomerang.Throw(Vector2.up);
         }
     }
@@ -118,7 +116,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "FallDetection")
         {
-            transform.position = initialPoint;
+            transform.position = respawnPoint;
             Timetaken = time_running;
             Send();
         }
