@@ -128,8 +128,12 @@ public class Player : MonoBehaviour
             count++;
            
         }
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Destroy(collision.gameObject); 
+            this.transform.position = this.respawnPoint;  
+        }
     }
-
     public void Send()
     {
         Debug.Log("Send called");
