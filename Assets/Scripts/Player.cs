@@ -153,7 +153,6 @@ public class Player : MonoBehaviour
         form.AddField("entry.2104200455", string.Format("{0:N2}", checks[2]-checks[1]));
         UnityWebRequest WWW = UnityWebRequest.Post(URL, form);
         yield return WWW.SendWebRequest();
-
     }
 
 

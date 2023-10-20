@@ -15,6 +15,7 @@ public class Quicksand : MonoBehaviour
     float sinkingProgress = 1f;
     private Vector3 originalPlayerScale;
     private Vector3 originalGroundPosition;
+    private bool needsRespawn = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -94,14 +95,22 @@ public class Quicksand : MonoBehaviour
             newGroundPosition.y = Mathf.Lerp(originalGroundPosition.y, originalGroundPosition.y, sinkingProgress); // You want to keep the ground position the same
             transform.position = newGroundPosition;
         }
-        if (sinkingProgress > 1.0f)
+        else if (sinkingProgress > 1.0f)
         {
             //Destroy(player);
             sinkingProgress = 1f;
-            gameObject.transform.position = p.respawnPoint;
-            playerTransform.localScale = originalPlayerScale;
-            transform.position = originalGroundPosition;
+            needsRespawn = true;
+            //transform.position = originalGroundPosition;
             Debug.Log("Player SUNK");
         }
-    }
+        else
+        {
+            if (needsRespawn)
+            {
+                playerTransform.position = p.respawnPoint;
+                playerTransform.localScale = originalPlayerScale;
+                needsRespawn = false;
+            }
+        }            
+     }
 }
