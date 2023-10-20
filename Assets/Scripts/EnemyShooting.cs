@@ -18,7 +18,7 @@ public class EnemyShooting : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
 
-        if(distance<4 && !compareColors(GetComponent<SpriteRenderer>().color, player.GetComponent<SpriteRenderer>().color)){
+        if(distance<3 && !compareColors(GetComponent<SpriteRenderer>().color, player.GetComponent<SpriteRenderer>().color)){
             timer+= Time.deltaTime;
             if(timer > 1){
                 timer = 0;  
