@@ -617,10 +617,10 @@ PrefabInstance:
     - target: {fileID: 2355397161692096540, guid: 8cfc8c13674c30348a47dd1cbb6ecbe5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e6b9b44320f4448d9d5e0ee634259966, type: 2}
+      objectReference: {fileID: 2100000, guid: 51ac1230262a947159540f8cde213017, type: 2}
     - target: {fileID: 4269485897052106550, guid: 8cfc8c13674c30348a47dd1cbb6ecbe5, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6060054682449304129, guid: 8cfc8c13674c30348a47dd1cbb6ecbe5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -662,16 +662,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7950201508633892397, guid: 8cfc8c13674c30348a47dd1cbb6ecbe5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e6b9b44320f4448d9d5e0ee634259966, type: 2}
+    - target: {fileID: 8477047553361154311, guid: 8cfc8c13674c30348a47dd1cbb6ecbe5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4402923597903605887, guid: 8cfc8c13674c30348a47dd1cbb6ecbe5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 328133029}
     - targetCorrespondingSourceObject: {fileID: 4934306511968049164, guid: 8cfc8c13674c30348a47dd1cbb6ecbe5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6174277}
-    - targetCorrespondingSourceObject: {fileID: 8358281459718524494, guid: 8cfc8c13674c30348a47dd1cbb6ecbe5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 933248559}
   m_SourcePrefab: {fileID: 100100000, guid: 8cfc8c13674c30348a47dd1cbb6ecbe5, type: 3}
 --- !u!1001 &313245874
 PrefabInstance:
@@ -730,6 +738,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d612cc51618ac2418785be4c427b423, type: 3}
+--- !u!1 &328133025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4402923597903605887, guid: 8cfc8c13674c30348a47dd1cbb6ecbe5, type: 3}
+  m_PrefabInstance: {fileID: 261052974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &328133029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328133025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ca2aba1293b9564a851e8e985b6446b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &380779487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,23 +1567,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43693e8a66a21ac4ca9723f58b991c17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &933248555 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8358281459718524494, guid: 8cfc8c13674c30348a47dd1cbb6ecbe5, type: 3}
-  m_PrefabInstance: {fileID: 261052974}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &933248559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 933248555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ca2aba1293b9564a851e8e985b6446b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &952279204
@@ -2476,9 +2484,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7159355278007556206, guid: 07f02561218d1af4ea26eabd79d60abd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8705182653721014114, guid: 07f02561218d1af4ea26eabd79d60abd, type: 3}
       propertyPath: m_Name
       value: 4_brick_floor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9028389450445331577, guid: 07f02561218d1af4ea26eabd79d60abd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
