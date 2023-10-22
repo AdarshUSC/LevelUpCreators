@@ -32,14 +32,15 @@ public class ReflectionPower : MonoBehaviour
         {
             if (myMirror)
             {
-                if (isAbletoGetBack)
-                {
+                //if (isAbletoGetBack)
+                //{
                     Debug.Log("Get Mirror Back.");
-                    gameObject.transform.position = myShadow.transform.position;
+                    if (isAbletoGetBack)
+                        gameObject.transform.position = myShadow.transform.position;
                     Destroy(myMirror);
                     Destroy(myShadow);
-                }
-            } else
+            //}
+        } else
             {
                 Debug.Log("Mirror Put!");
                 myMirror = Instantiate(mirror, transform.position + direction/5, Quaternion.identity);
