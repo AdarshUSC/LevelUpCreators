@@ -36,39 +36,11 @@ public class Boomerang : MonoBehaviour
     }
     void Update()
     {
-
-        float distanceTravelled = Vector2.Distance(transform.position, transform.parent.position);
-        float maxTravelDistance = 6.0f;
-        if (distanceTravelled >= maxTravelDistance)
+        if (isThrown)
         {
-            rb.velocity = -throwDirection * throwForce;
-        }
-        if (distanceTravelled < 0.6f)
-        {
-            Renderer renderer = GetComponent<Renderer>();
-            renderer.enabled = false;
-        }
-        else
-        {
-            Renderer renderer = GetComponent<Renderer>();
-            renderer.enabled = true;
-        }
-    }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            if (transform.parent != null)
-            { 
-                transform.position = transform.parent.position;
-            }
-
-        }
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Default"))
-        {
-            Debug.Log("Mans000 Default");
             float distanceTravelled = Vector2.Distance(transform.position, transform.parent.position);
             float maxTravelDistance = 6.0f;
+
             if (distanceTravelled >= maxTravelDistance)
             {
                 rb.velocity = -throwDirection * throwForce;
@@ -83,6 +55,14 @@ public class Boomerang : MonoBehaviour
                 Renderer renderer = GetComponent<Renderer>();
                 renderer.enabled = true;
             }
+        }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Default"))
+        {
+            transform.position = transform.parent.position;
+            gameObject.SetActive(false);
         }
     }
 }
