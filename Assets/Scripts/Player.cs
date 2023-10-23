@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    float moveSpeed = 3.0f;
-    float jumpForce = 3.0f;
+    float moveSpeed = 5.0f;
+    float jumpForce = 5.0f;
     private float Timetaken = 7.0f;
     private int mech1 = 3;
     private int mech2 = 6;
