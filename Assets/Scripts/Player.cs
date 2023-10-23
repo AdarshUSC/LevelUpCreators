@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     bool isGrounded = false;
     //private Vector3 respawnPoint;
     public Vector3 respawnPoint;
+    public Vector3 initialPosition;
     public GameObject fallDetector;
 
     // Start is called before the first frame update
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         respawnPoint = transform.position;
+        initialPosition = transform.position;
         time_running = 0.0f;
         count = 0;
         checks = new float[3];
@@ -116,7 +118,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "FallDetection")
         {
-            transform.position = respawnPoint;
+            transform.position = initialPosition;
             Timetaken = time_running;
             Send();
         }
