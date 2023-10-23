@@ -134,6 +134,8 @@ public class Player : MonoBehaviour
         {
             Destroy(collision.gameObject); 
             this.transform.position = this.respawnPoint;  
+            Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
+            rb.gravityScale=1;
         }
     }
     public void Send()
