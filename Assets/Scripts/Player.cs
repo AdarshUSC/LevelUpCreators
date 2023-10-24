@@ -11,10 +11,12 @@ public class Player : MonoBehaviour
     private int mech1 = 3;
     private int mech2 = 6;
     private int mech3 = 6;
-    private float checkpoint1 = 3.0f;
-    private float checkpoint2 = 5.0f;
-    private float checkpoint3 = 7.0f;
+    private float checkpoint1 = 0.0f;
+    private float checkpoint2 = 0.0f;
+    private float checkpoint3 = 0.0f;
+    private float checkpoint4 = 0.0f;
     private float time_running = 0.0f;
+    private float time_checkpoint = 0.0f;
     private float[] checks;
     private int count = 0;
     private Boomerang boomerang;
@@ -37,6 +39,7 @@ public class Player : MonoBehaviour
         respawnPoint = transform.position;
         initialPosition = transform.position;
         time_running = 0.0f;
+        time_checkpoint = 0.0f;
         count = 0;
         checks = new float[3];
         boomerang = boomerangObject.GetComponent<Boomerang>();
@@ -46,11 +49,12 @@ public class Player : MonoBehaviour
     void Update()
     {
         time_running += Time.deltaTime;
+        time_checkpoint += Time.deltaTime;
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
         }
-        if(Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
         }
@@ -90,14 +94,14 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag=="Maze")
+        if (collision.gameObject.tag == "Maze")
         {
             Debug.Log("Hit the wall");
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
             }
-            if(Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow))
             {
                 transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
             }
@@ -107,7 +111,7 @@ public class Player : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                transform.Translate(0, moveSpeed*Time.deltaTime, 0);
+                transform.Translate(0, moveSpeed * Time.deltaTime, 0);
             }
 
         }
@@ -122,39 +126,63 @@ public class Player : MonoBehaviour
             Timetaken = time_running;
             Send();
         }
-        if (collision.gameObject.tag == "CheckPoint")
+        if (collision.gameObject.tag == "Checkpoint1")
+        {
+            respawnPoint = transform.position;
+            Debug.Log("Time taken" + time_checkpoint);
+            checkpoint1 = time_checkpoint;
+            time_checkpoint = 0.0f;
+        }
+        if (collision.gameObject.tag == "Checkpoint2")
+        {
+            respawnPoint = transform.position;
+            Debug.Log("Checkpoint encountered at" + transform.position.x + " " + transform.position.y + " ");
+            Debug.Log("Time taken" + time_checkpoint);
+            checkpoint2 = time_checkpoint;
+            time_checkpoint = 0.0f;
+        }
+        if (collision.gameObject.tag == "Checkpoint3")
         {
             respawnPoint = transform.position;
             Debug.Log("Checkpoint encountered at" + transform.position.x + " " + transform.position.y);
-            checks[count] = time_running;
-            count++;
-           
+            Debug.Log("Time taken" + time_checkpoint);
+            checkpoint3 = time_checkpoint;
+            time_checkpoint = 0.0f;
+        }
+        if (collision.gameObject.tag == "Checkpoint4")
+        {
+            respawnPoint = transform.position;
+            Debug.Log("Checkpoint encountered at" + transform.position.x + " " + transform.position.y);
+            Debug.Log("Time taken" + time_checkpoint);
+            checkpoint4 = time_checkpoint;
+            time_checkpoint = 0.0f;
         }
         if (collision.gameObject.tag == "Bullet")
         {
-            Destroy(collision.gameObject); 
-            this.transform.position = this.respawnPoint;  
+            Destroy(collision.gameObject);
+            this.transform.position = this.respawnPoint;
             Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
-            rb.gravityScale=1;
+            rb.gravityScale = 1;
         }
     }
     public void Send()
     {
         Debug.Log("Send called");
-        StartCoroutine(Post(Timetaken, mech1, mech2, mech3, checkpoint1, checkpoint2, checkpoint3));
+        StartCoroutine(Post(Timetaken, mech1, mech2, mech3, checkpoint1, checkpoint2, checkpoint3, checkpoint4));
     }
 
-    IEnumerator Post(float timetaken, int mech1, int mech2, int mech3, float cp1, float cp2, float cp3)
+    IEnumerator Post(float timetaken, int mech1, int mech2, int mech3, float cp1, float cp2, float cp3, float cp4)
     {
-        Debug.Log("Post called"+ (string.Format("{0:N2}", Timetaken))+" "+(string.Format("{0}", mech1)));
+        Debug.Log("Post called" + (string.Format("{0:N2}", Timetaken)) + " " + (string.Format("{0}", mech1)));
         WWWForm form = new WWWForm();
         form.AddField("entry.1747016377", string.Format("{0:N2}", Timetaken));
         form.AddField("entry.305553560", string.Format("{0}", mech1));
         form.AddField("entry.1168732002", string.Format("{0}", mech2));
         form.AddField("entry.1274496277", string.Format("{0}", mech3));
-        form.AddField("entry.1477920271", string.Format("{0:N2}", checks[0]));
-        form.AddField("entry.2118230736", string.Format("{0:N2}", checks[1]-checks[0]));
-        form.AddField("entry.2104200455", string.Format("{0:N2}", checks[2]-checks[1]));
+        form.AddField("entry.1477920271", string.Format("{0:N2}", cp1));
+        form.AddField("entry.2118230736", string.Format("{0:N2}", cp2));
+        form.AddField("entry.2104200455", string.Format("{0:N2}", cp3));
+        form.AddField("entry.1640424427", string.Format("{0:N2}", cp4));
         UnityWebRequest WWW = UnityWebRequest.Post(URL, form);
         yield return WWW.SendWebRequest();
     }
