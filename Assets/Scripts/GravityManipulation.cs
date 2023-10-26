@@ -31,7 +31,6 @@ public class GravityManipulation : MonoBehaviour
         }
     }
     public void ButtonClicked(){
-        
         gravityTimer=Time.deltaTime;
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
         rb.gravityScale=-1;
