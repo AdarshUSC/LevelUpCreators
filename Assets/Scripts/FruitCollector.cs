@@ -16,7 +16,7 @@ public class FruitCollector : MonoBehaviour
         {
             Destroy(collision.gameObject);
             collectibles++;
-            CollectiblesText.text = "Collectibles: " + collectibles;
+            CollectiblesText.text = "Fruits: " + collectibles;
         }
     }
 }
