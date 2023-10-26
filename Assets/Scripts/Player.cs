@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     public float inputVertical;
     private Transform playerTransform;
     private Vector3 originalScale;
+    private bool ogscale;
 
 
     private string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdHKBSGlrH4LG-W3gfj3Dc--PUgpnOvAnQwZ1SXpbi_AFyVKQ/formResponse";
@@ -57,6 +58,8 @@ public class Player : MonoBehaviour
         boomerang = boomerangObject.GetComponent<Boomerang>();
         playerTransform = GetComponent<Transform>();
         originalScale = playerTransform.localScale;
+        ogscale = true;
+        isFacingRight = true;
     }
 
     // Update is called once per frame
@@ -90,27 +93,29 @@ public class Player : MonoBehaviour
             boomerang.Throw(Vector2.up);
         }
 
-        if (Input.GetKeyDown(KeyCode.S)) 
-        {
-            Vector3 newScale = new Vector3(5.0f, 5.0f, 5.0f);
-
-            playerTransform.localScale = newScale;
-        }
-
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Debug.Log(originalScale);
-            playerTransform.localScale = originalScale;
+            if (ogscale)
+            {
+                Vector3 newScale = new Vector3(5.0f, 5.0f, 5.0f);
+                playerTransform.localScale = newScale;
+                ogscale = false;
+            }
+            else
+            {
+                playerTransform.localScale = originalScale;
+                ogscale = true;
+            }
         }
     }
     private void FixedUpdate()
     {
         inputHorizontal = Input.GetAxisRaw("Horizontal");
-        if (inputHorizontal<0 & !isFacingRight)
+        if (inputHorizontal<0 & isFacingRight)
         {
             Flip();
         }
-        if (inputHorizontal > 0 & isFacingRight)
+        if (inputHorizontal > 0 & !isFacingRight)
         {
             Flip();
         }
