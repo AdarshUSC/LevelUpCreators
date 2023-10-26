@@ -21,6 +21,10 @@ public class Player : MonoBehaviour
     private int count = 0;
     private Boomerang boomerang;
     public GameObject boomerangObject;
+    [HideInInspector]
+    public bool isFacingRight;
+    public float inputHorizontal;
+    public float inputVertical;
 
 
     private string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdHKBSGlrH4LG-W3gfj3Dc--PUgpnOvAnQwZ1SXpbi_AFyVKQ/formResponse";
@@ -78,6 +82,18 @@ public class Player : MonoBehaviour
         {
             // Need to change the direction of the boomerang
             boomerang.Throw(Vector2.up);
+        }
+    }
+    private void FixedUpdate()
+    {
+        inputHorizontal = Input.GetAxisRaw("Horizontal");
+        if (inputHorizontal<0 & !isFacingRight)
+        {
+            Flip();
+        }
+        if (inputHorizontal > 0 & isFacingRight)
+        {
+            Flip();
         }
     }
 
@@ -153,6 +169,14 @@ public class Player : MonoBehaviour
             Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
             rb.gravityScale = 1;
         }
+    }
+    public void Flip()
+    {
+        Vector2 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+
+        isFacingRight = !isFacingRight;
     }
     public void Send()
     {
