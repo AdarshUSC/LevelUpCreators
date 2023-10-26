@@ -1672,7 +1672,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1716686023}
         m_TargetAssemblyTypeName: PauseMenuScript, Assembly-CSharp
-        m_MethodName: Resume
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16997,7 +16997,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1716686023}
         m_TargetAssemblyTypeName: PauseMenuScript, Assembly-CSharp
-        m_MethodName: Resume
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19799,9 +19799,6 @@ PrefabInstance:
     - {fileID: 6746605733643759260, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
     - {fileID: 7033270855989451955, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5077212188704324059, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 595287943}
     - targetCorrespondingSourceObject: {fileID: 5077212188704324059, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       insertIndex: -1
       addedObject: {fileID: 435669664}
