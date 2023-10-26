@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     public bool isFacingRight;
     public float inputHorizontal;
     public float inputVertical;
+    private Transform playerTransform;
+    private Vector3 originalScale;
 
 
     private string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdHKBSGlrH4LG-W3gfj3Dc--PUgpnOvAnQwZ1SXpbi_AFyVKQ/formResponse";
@@ -53,12 +55,13 @@ public class Player : MonoBehaviour
         count = 0;
         checks = new float[3];
         boomerang = boomerangObject.GetComponent<Boomerang>();
+        playerTransform = GetComponent<Transform>();
+        originalScale = playerTransform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isPowerUpOn);
         time_running += Time.deltaTime;
         time_checkpoint += Time.deltaTime;
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
@@ -85,6 +88,19 @@ public class Player : MonoBehaviour
         {
             // Need to change the direction of the boomerang
             boomerang.Throw(Vector2.up);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S)) 
+        {
+            Vector3 newScale = new Vector3(5.0f, 5.0f, 5.0f);
+
+            playerTransform.localScale = newScale;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log(originalScale);
+            playerTransform.localScale = originalScale;
         }
     }
     private void FixedUpdate()
