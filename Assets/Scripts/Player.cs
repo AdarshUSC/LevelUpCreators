@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public static float moveSpeed = 5.0f;
+    public static float playerMoveSpeed = 5.0f;
 
     public static bool isPowerUpOn = false;
     float jumpForce = 8.0f;
@@ -62,15 +62,15 @@ public class Player : MonoBehaviour
         time_checkpoint += Time.deltaTime;
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
+            transform.Translate(-playerMoveSpeed * Time.deltaTime, 0, 0);
         }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+            transform.Translate(playerMoveSpeed * Time.deltaTime, 0, 0);
         }
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            transform.Translate(0, -moveSpeed * Time.deltaTime, 0);
+            transform.Translate(0, -playerMoveSpeed * Time.deltaTime, 0);
         }
 
         onGround = Physics2D.Raycast(transform.position, Vector2.down, groundLine, groundLayer);
@@ -106,19 +106,19 @@ public class Player : MonoBehaviour
             Debug.Log("Hit the wall");
             if (Input.GetKey(KeyCode.LeftArrow) )
             {
-                transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+                transform.Translate(playerMoveSpeed * Time.deltaTime, 0, 0);
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
+                transform.Translate(-playerMoveSpeed * Time.deltaTime, 0, 0);
             }
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                transform.Translate(0, -moveSpeed * Time.deltaTime, 0);
+                transform.Translate(0, -playerMoveSpeed * Time.deltaTime, 0);
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                transform.Translate(0, moveSpeed * Time.deltaTime, 0);
+                transform.Translate(0, playerMoveSpeed * Time.deltaTime, 0);
             }
 
         }
