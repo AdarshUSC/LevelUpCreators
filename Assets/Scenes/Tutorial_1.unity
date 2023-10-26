@@ -1684,7 +1684,7 @@ GameObject:
   - component: {fileID: 790241082}
   - component: {fileID: 790241081}
   - component: {fileID: 790241083}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Tilemap
   m_TagString: Maze
   m_Icon: {fileID: 0}
