@@ -79,7 +79,7 @@ public class ReflectionPower : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         isAbletoPut = false;
-        if (collision.transform.tag=="Ground")
+        if (collision.transform.tag=="Maze")
         {
             Destroy(myMirror);
             Destroy(myShadow);
