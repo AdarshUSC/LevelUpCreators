@@ -54,7 +54,7 @@ public class ReflectionPower : MonoBehaviour
             Debug.Log(hitright.transform.name);
             if ((hitleft.collider != null && hitleft.collider.gameObject.transform.tag == "Player") || (hitright.collider != null && hitright.collider.gameObject.transform.tag == "Player"))
             {
-                myShadow.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+                myShadow.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.7f);
                 isAbletoGetBack = true;
             }
             else
