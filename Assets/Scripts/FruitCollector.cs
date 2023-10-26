@@ -1,25 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class FruitCollector : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int collectibles = 0;
+    [SerializeField] private TMP_Text CollectiblesText;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Collectible"))
         {
             Destroy(collision.gameObject);
+            collectibles++;
+            CollectiblesText.text = "Collectibles: " + collectibles;
         }
     }
 }
