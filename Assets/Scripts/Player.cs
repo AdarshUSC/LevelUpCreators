@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     float moveSpeed = 5.0f;
-    float jumpForce = 5.0f;
+    float jumpForce = 8.0f;
     private float Timetaken = 7.0f;
     private int mech1 = 3;
     private int mech2 = 6;
@@ -26,11 +26,15 @@ public class Player : MonoBehaviour
     private string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdHKBSGlrH4LG-W3gfj3Dc--PUgpnOvAnQwZ1SXpbi_AFyVKQ/formResponse";
 
     Rigidbody2D rb;
-    bool isGrounded = false;
     //private Vector3 respawnPoint;
     public Vector3 respawnPoint;
     public Vector3 initialPosition;
     public GameObject fallDetector;
+    public LayerMask groundLayer;
+
+    [Header("Collision")]
+    bool onGround = false;
+    public float groundLine = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -50,22 +54,22 @@ public class Player : MonoBehaviour
     {
         time_running += Time.deltaTime;
         time_checkpoint += Time.deltaTime;
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             transform.Translate(0, -moveSpeed * Time.deltaTime, 0);
         }
 
-        CheckGrounded();
+        onGround = Physics2D.Raycast(transform.position, Vector2.down, groundLine, groundLayer);
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
@@ -77,27 +81,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    void CheckGrounded()
-    {
-        //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, transform.localScale.y / 2 + 0.1f);
-
-        if (hit.collider != null)
-        {
-            isGrounded = true;
-        }
-        else
-        {
-            isGrounded = false;
-        }
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Maze")
         {
             Debug.Log("Hit the wall");
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.LeftArrow) )
             {
                 transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
             }
