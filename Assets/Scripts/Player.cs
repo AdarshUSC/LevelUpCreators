@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    float moveSpeed = 5.0f;
+    public static float moveSpeed = 5.0f;
+
+    public static bool isPowerUpOn = false;
     float jumpForce = 8.0f;
     private float Timetaken = 7.0f;
     private int mech1 = 3;
@@ -162,7 +164,7 @@ public class Player : MonoBehaviour
             checkpoint4 = time_checkpoint;
             time_checkpoint = 0.0f;
         }
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet" && !isPowerUpOn)
         {
             Destroy(collision.gameObject);
             this.transform.position = this.respawnPoint;
