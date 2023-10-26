@@ -5,7 +5,7 @@ using UnityEngine;
 public class GravityManipulation : MonoBehaviour
 {
     GameObject player ;
-    float timer;
+    float gravityTimer;
     
     // Start is called before the first frame update
     void Start()
@@ -22,17 +22,17 @@ public class GravityManipulation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer+= Time.deltaTime;
-        if(timer > 5){
+        gravityTimer+= Time.deltaTime;
+        if(gravityTimer > 5){
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
             rb.gravityScale=1;
-            timer = 0;  
+            gravityTimer = 0;  
             return; 
         }
     }
     public void ButtonClicked(){
         
-        timer=Time.deltaTime;
+        gravityTimer=Time.deltaTime;
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
         rb.gravityScale=-1;
     }

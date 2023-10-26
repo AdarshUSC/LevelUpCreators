@@ -5,24 +5,25 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
     // Start is called before the first frame update
-        GameObject player ;
-    float timer;
+    GameObject player ;
+    float powerUpTimer;
     
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         player = GameObject.FindGameObjectWithTag("Player");
+        powerUpTimer = 0;  
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        Debug.Log("the power up timer is "+ powerUpTimer);
         if(Player.isPowerUpOn){
-            timer+= Time.deltaTime;
-            if(timer > 5){
+            powerUpTimer+= Time.deltaTime;
+            if(powerUpTimer > 5){
                 Player.isPowerUpOn=false;
                 Player.playerMoveSpeed-=4.0f;
-                timer = 0;  
+                powerUpTimer = 0;  
                 return; 
             }
         }
@@ -30,7 +31,7 @@ public class PowerUp : MonoBehaviour
     }
     public void ButtonClicked(){
         
-        timer=Time.deltaTime;
+        powerUpTimer=Time.deltaTime;
         Player.isPowerUpOn=true;
         Player.playerMoveSpeed+=4.0f;
     }

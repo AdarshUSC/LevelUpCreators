@@ -58,6 +58,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(isPowerUpOn);
         time_running += Time.deltaTime;
         time_checkpoint += Time.deltaTime;
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
