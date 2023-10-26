@@ -17,7 +17,6 @@ public class PowerUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        Debug.Log("the power up timer is "+ powerUpTimer);
         if(Player.isPowerUpOn){
             powerUpTimer+= Time.deltaTime;
             if(powerUpTimer > 5){
