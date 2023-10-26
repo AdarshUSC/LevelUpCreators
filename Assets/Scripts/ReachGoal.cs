@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class ReachGoal : MonoBehaviour
 {
+    [SerializeReference] GameObject winCanvas;
+
+    private void Start()
+    {
+        winCanvas.SetActive(false);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             Debug.Log("Reaching the end");
-            EndGame();
+            winCanvas.SetActive(true);
+            Time.timeScale = 0f;
         }
-    }
-    private void EndGame()
-    {
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false; // ÔÚ±à¼­Æ÷ÖÐÍ£Ö¹²¥·Å
-        #else
-            Application.Quit();
-        #endif
     }
 }
