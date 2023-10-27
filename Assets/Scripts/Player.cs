@@ -159,7 +159,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "FallDetection")
         {
-            transform.position = initialPosition;
+           // transform.position = initialPosition;
             Timetaken = time_running;
             Send();
         }
