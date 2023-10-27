@@ -9388,6 +9388,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8483074159041893072, guid: 78a363f87f3a149eb8ab374b4806c670, type: 3}
+      propertyPath: m_Url
+      value: https://drive.google.com/file/d/1Qsr5ZoXaCre794crB-YKTzjug66AX75f/view?usp=drive_link
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483074159041893072, guid: 78a363f87f3a149eb8ab374b4806c670, type: 3}
+      propertyPath: m_DataSource
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483074159041893072, guid: 78a363f87f3a149eb8ab374b4806c670, type: 3}
       propertyPath: m_TargetCamera
       value: 
       objectReference: {fileID: 698908594}
