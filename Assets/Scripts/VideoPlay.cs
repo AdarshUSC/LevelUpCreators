@@ -10,6 +10,7 @@ public class VideoPlay : MonoBehaviour
     void Start()
     {
         videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, "tutorial4reflection.mov");
+        videoPlayer.Play();
     }
 
     // Update is called once per frame
