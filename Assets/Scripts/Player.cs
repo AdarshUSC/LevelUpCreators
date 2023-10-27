@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public static int antigravity = 0;
     public static int reflection = 0;
     public static int camouflage = 0;
+    public static int resize = 0;
     private float checkpoint1 = 0.0f;
     private float checkpoint2 = 0.0f;
     private float checkpoint3 = 0.0f;
@@ -108,6 +109,7 @@ public class Player : MonoBehaviour
                 Vector3 newScale = new Vector3(5.0f, 5.0f, 5.0f);
                 playerTransform.localScale = newScale;
                 ogscale = false;
+                resize++;
             }
             else
             {
@@ -214,10 +216,10 @@ public class Player : MonoBehaviour
     public void Send()
     {
         Debug.Log("Send called");
-        StartCoroutine(Post(Timetaken, antigravity, reflection, camouflage, checkpoint1, checkpoint2, checkpoint3, checkpoint4));
+        StartCoroutine(Post(Timetaken, antigravity, reflection, camouflage,resize, checkpoint1, checkpoint2, checkpoint3, checkpoint4));
     }
 
-    IEnumerator Post(float timetaken, int mech1, int mech2, int mech3, float cp1, float cp2, float cp3, float cp4)
+    IEnumerator Post(float timetaken, int mech1, int mech2, int mech3,int mech4, float cp1, float cp2, float cp3, float cp4)
     {
         Debug.Log("Post called" + (string.Format("{0:N2}", Timetaken)) + " " + (string.Format("{0}", mech1)));
         WWWForm form = new WWWForm();
@@ -231,6 +233,7 @@ public class Player : MonoBehaviour
         form.AddField("entry.1640424427", string.Format("{0:N2}", cp4));
         form.AddField("entry.73026754", ConvertVectorListToString(deathPoints));
         form.AddField("entry.1506435532", SceneManager.GetActiveScene().name);
+        form.AddField("entry.1784470240", string.Format("{0}", mech4));
 
 
         UnityWebRequest WWW = UnityWebRequest.Post(URL, form);
