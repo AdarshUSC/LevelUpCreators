@@ -79,6 +79,7 @@ public class ColorMixer : MonoBehaviour
         if(selectedColors.Length>0){
             resultColor = CombineColors(selectedColors);
         }
+        Player.camouflage++;
             
         mixingArea.color = resultColor;
         player.color = resultColor;
