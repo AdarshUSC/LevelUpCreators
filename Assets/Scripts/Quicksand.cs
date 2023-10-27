@@ -107,6 +107,7 @@ public class Quicksand : MonoBehaviour
         {
             if (needsRespawn)
             {
+                Player.deathPoints.Add(playerTransform.position);
                 playerTransform.position = p.respawnPoint;
                 playerTransform.localScale = originalPlayerScale;
                 needsRespawn = false;
