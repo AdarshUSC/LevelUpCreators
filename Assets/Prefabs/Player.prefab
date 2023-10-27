@@ -127,7 +127,7 @@ Rigidbody2D:
   m_Mass: 0.6
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0.3
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -211,3 +211,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollectiblesText: {fileID: 0}
+  fruitsRequiredForPowerUp: 5
+  powerUpButton: {fileID: 0}
