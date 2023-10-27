@@ -45,6 +45,7 @@ public class ReflectionPower : MonoBehaviour
                 Debug.Log("Mirror Put!");
                 myMirror = Instantiate(mirror, transform.position + direction/5, Quaternion.identity);
                 myShadow = Instantiate(shadow, transform.position + direction/5, Quaternion.identity);
+                Player.reflection++;
             }
          
         }
