@@ -30,6 +30,7 @@ public class HintInvoke : MonoBehaviour
     {
         if(collision.transform.tag=="Player")
         {
+            Debug.Log("Hint Hit!");
             HintPannel.SetActive(true);
             Time.timeScale = 0f;
             hintDisabled = false;

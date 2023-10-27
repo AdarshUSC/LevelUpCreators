@@ -6,10 +6,16 @@ using UnityEngine.SceneManagement;
 public class PauseMenuScript : MonoBehaviour
 {
     [SerializeField] GameObject PauseMenu;
+    private Dictionary<string, string> levelDict = new Dictionary<string, string>();
+
     // Start is called before the first frame update
     private void Start()
     {
         PauseMenu.SetActive(false);
+        levelDict.Add("Tutorial_1", "Tutorial_2");
+        levelDict.Add("Tutorial_2", "Tutorial_3");
+        levelDict.Add("Tutorial_3", "MazeScene 3");
+
     }
 
     public void Pause()
@@ -35,6 +41,12 @@ public class PauseMenuScript : MonoBehaviour
     {
         //go back to main scene
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
+    }
+
+    public void GoNextLevel()
+    {
+        SceneManager.LoadScene(levelDict[SceneManager.GetActiveScene().name]);
         Time.timeScale = 1f;
     }
 }
