@@ -27,6 +27,7 @@ public class FruitCollector : MonoBehaviour
             Destroy(collision.gameObject);
             collectibles++;
             CollectiblesText.text = "Fruits: " + collectibles;
+            //
             if (collectibles >= fruitsRequiredForPowerUp)
             {
                 // 
