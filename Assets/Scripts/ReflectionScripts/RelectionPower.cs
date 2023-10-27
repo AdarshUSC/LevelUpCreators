@@ -8,7 +8,6 @@ public class ReflectionPower : MonoBehaviour
     private GameObject myMirror;
     private GameObject myShadow;
     private Vector3 direction;
-    private Vector3 curPos;
     private bool isAbletoPut;
     private bool isAbletoGetBack;
     
@@ -16,18 +15,17 @@ public class ReflectionPower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        direction = gameObject.transform.position.normalized;
-        curPos = gameObject.transform.position;
+        direction = new Vector2(1, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.transform.position != curPos)
-        {
-            direction = (gameObject.transform.position - curPos).x > 0? Vector2.right : Vector2.left;
-        }
-        curPos = gameObject.transform.position;
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+            direction = Vector2.right;
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+            direction = Vector2.left;
+
         if (Input.GetKeyDown(KeyCode.Tab) && isAbletoPut)
         {
             if (myMirror)
