@@ -32,11 +32,14 @@ public class ReflectionPower : MonoBehaviour
         {
             if (myMirror)
             {
-                Debug.Log("Get Mirror Back.");
-                if (isAbletoGetBack)
-                    gameObject.transform.position = myShadow.transform.position;
-                Destroy(myMirror);
-                Destroy(myShadow);
+                //if (isAbletoGetBack)
+                //{
+                    Debug.Log("Get Mirror Back.");
+                    if (isAbletoGetBack)
+                        gameObject.transform.position = myShadow.transform.position;
+                    Destroy(myMirror);
+                    Destroy(myShadow);
+            //}
         } else
             {
                 Debug.Log("Mirror Put!");
@@ -79,10 +82,10 @@ public class ReflectionPower : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         isAbletoPut = false;
-        if (collision.transform.tag=="Maze")
-        {
-            Destroy(myMirror);
-            Destroy(myShadow);
-        }
+        //if (collision.transform.tag=="Ground")
+        //{
+        //    Destroy(myMirror);
+        //    Destroy(myShadow);
+        //}
     }
 }
