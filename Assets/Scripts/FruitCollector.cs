@@ -16,7 +16,7 @@ public class FruitCollector : MonoBehaviour
     private void Start()
     {
         // 
-        powerUpButton.gameObject.SetActive(false);
+        powerUpButton.interactable=false;
         powerUpButton.onClick.AddListener(ActivatePowerUp); // 
     }
 
@@ -31,7 +31,7 @@ public class FruitCollector : MonoBehaviour
             if (collectibles >= fruitsRequiredForPowerUp)
             {
                 // 
-                powerUpButton.gameObject.SetActive(true);
+                powerUpButton.interactable=true;
             }
         }
     }
@@ -41,7 +41,7 @@ public class FruitCollector : MonoBehaviour
         Debug.Log("Power-Up Activated!");
 
         // 
-        powerUpButton.gameObject.SetActive(false);
+        powerUpButton.interactable=false;
         collectibles = collectibles- fruitsRequiredForPowerUp;
         CollectiblesText.text = "Fruits: " + collectibles;
     }

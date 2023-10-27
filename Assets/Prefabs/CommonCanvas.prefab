@@ -1166,6 +1166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a69f95213af459fb084981f5c9d8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  antiGravityButton: {fileID: 261659667933065406}
 --- !u!114 &7583204746316676762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,6 +1179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff14cf7a41f643938ade5ff98cbc751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpButton: {fileID: 6699840298380159240}
 --- !u!1 &2250180273850531267
 GameObject:
   m_ObjectHideFlags: 0
