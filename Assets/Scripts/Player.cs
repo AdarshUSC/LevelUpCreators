@@ -10,9 +10,9 @@ public class Player : MonoBehaviour
     public static bool isPowerUpOn = false;
     float jumpForce = 8.0f;
     private float Timetaken = 7.0f;
-    private int mech1 = 3;
-    private int mech2 = 6;
-    private int mech3 = 6;
+    public static int antigravity = 0;
+    public static int reflection = 0;
+    public static int camouflage = 0;
     private float checkpoint1 = 0.0f;
     private float checkpoint2 = 0.0f;
     private float checkpoint3 = 0.0f;
@@ -85,6 +85,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            
         }
 
         if (Input.GetKeyDown(KeyCode.B))
@@ -205,7 +206,7 @@ public class Player : MonoBehaviour
     public void Send()
     {
         Debug.Log("Send called");
-        StartCoroutine(Post(Timetaken, mech1, mech2, mech3, checkpoint1, checkpoint2, checkpoint3, checkpoint4));
+        StartCoroutine(Post(Timetaken, antigravity, reflection, camouflage, checkpoint1, checkpoint2, checkpoint3, checkpoint4));
     }
 
     IEnumerator Post(float timetaken, int mech1, int mech2, int mech3, float cp1, float cp2, float cp3, float cp4)
