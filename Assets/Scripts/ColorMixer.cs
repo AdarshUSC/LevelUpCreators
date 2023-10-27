@@ -17,6 +17,7 @@ public class ColorMixer : MonoBehaviour
     //private Color selectedColor1 = GetComponent<Button> ().colors; // Initial color
     private List<Color> colorList = new List<Color>();
     private Color enemyColor;
+    public bool reset_flag;
     public static Color CombineColors(params Color[] aColors)
     {
         Color result = new Color(0,0,0,0);
@@ -36,6 +37,7 @@ public class ColorMixer : MonoBehaviour
         button2.onClick.AddListener(() => OnButtonClick(button2));
         button3.onClick.AddListener(() => OnButtonClick(button3));
         reset.onClick.AddListener(OnResetClick);
+        reset_flag = true;
     }
 
     //private void Update()
@@ -69,6 +71,7 @@ public class ColorMixer : MonoBehaviour
         mixingArea.color = new Color(0,0,0,0);
         colorList.Clear();
         UpdateOutputColor();
+        reset_flag = true;
         
     }
 
@@ -79,7 +82,12 @@ public class ColorMixer : MonoBehaviour
         if(selectedColors.Length>0){
             resultColor = CombineColors(selectedColors);
         }
-        Player.camouflage++;
+        if (reset_flag)
+        {
+            Player.camouflage++;
+            reset_flag = false;
+        }
+        Debug.Log("Camouflage count" + Player.camouflage);
             
         mixingArea.color = resultColor;
         player.color = resultColor;

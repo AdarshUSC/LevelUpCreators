@@ -16,7 +16,7 @@ public class Spike : MonoBehaviour
         {
            
             Vector3 respawnPos = player.respawnPoint;
-
+            Player.deathPoints.Add(other.transform.position);
             other.transform.position = respawnPos;
 
         }

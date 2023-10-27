@@ -2,6 +2,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using System.Linq;
+ 
+
 
 public class Player : MonoBehaviour
 {
@@ -30,6 +35,7 @@ public class Player : MonoBehaviour
     private Transform playerTransform;
     private Vector3 originalScale;
     private bool ogscale;
+    public static List<Vector2> deathPoints;
 
 
     private string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdHKBSGlrH4LG-W3gfj3Dc--PUgpnOvAnQwZ1SXpbi_AFyVKQ/formResponse";
@@ -60,6 +66,7 @@ public class Player : MonoBehaviour
         originalScale = playerTransform.localScale;
         ogscale = true;
         isFacingRight = true;
+        deathPoints = new List<Vector2>();
     }
 
     // Update is called once per frame
@@ -190,6 +197,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Bullet" && !isPowerUpOn)
         {
             Destroy(collision.gameObject);
+            deathPoints.Add(this.transform.position);
             this.transform.position = this.respawnPoint;
             Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
             rb.gravityScale = 1;
@@ -221,8 +229,17 @@ public class Player : MonoBehaviour
         form.AddField("entry.2118230736", string.Format("{0:N2}", cp2));
         form.AddField("entry.2104200455", string.Format("{0:N2}", cp3));
         form.AddField("entry.1640424427", string.Format("{0:N2}", cp4));
+        form.AddField("entry.73026754", ConvertVectorListToString(deathPoints));
+        form.AddField("entry.1506435532", SceneManager.GetActiveScene().name);
+
+
         UnityWebRequest WWW = UnityWebRequest.Post(URL, form);
         yield return WWW.SendWebRequest();
+    }
+    string ConvertVectorListToString(List<Vector2> vectors)
+    {
+        string result = string.Join("*", vectors.Select(v => $"({v.x}, {v.y})"));
+        return result;
     }
 
 
