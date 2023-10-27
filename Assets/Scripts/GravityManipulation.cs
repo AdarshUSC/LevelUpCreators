@@ -13,8 +13,12 @@ public class GravityManipulation : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        antiGravityButton.interactable=true;
-        gravityTimer= Time.deltaTime;
+        
+        if(antiGravityButton!=null){
+            antiGravityButton.interactable=true;
+            gravityTimer= Time.deltaTime;
+        }
+        
         // Rigidbody rb = player.GetComponent<Rigidbody>();
         // Vector3 direction = player.transform.position - transform.position;
         // rb.velocity  = new Vector2(direction.x, direction.y).normalized * force;
@@ -25,21 +29,28 @@ public class GravityManipulation : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        gravityTimer+= Time.deltaTime;
-        if(gravityTimer > 5){
-            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-            rb.gravityScale=1;
-            gravityTimer = 0;  
-            antiGravityButton.interactable=true;
-            return; 
+    {   
+        if(antiGravityButton!=null){
+            gravityTimer+= Time.deltaTime;
+            if(gravityTimer > 5){
+                Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+                rb.gravityScale=1;
+                gravityTimer = 0;  
+                antiGravityButton.interactable=true;
+                return; 
         }
+        }
+        
     }
     public void ButtonClicked(){
-        gravityTimer=Time.deltaTime;
-        Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-        rb.gravityScale=-1;
-        Player.antigravity++;
-        antiGravityButton.interactable=false;
+
+        if(antiGravityButton!=null){
+            gravityTimer=Time.deltaTime;
+            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            rb.gravityScale=-1;
+            Player.antigravity++;
+            antiGravityButton.interactable=false;
+        }
+        
     }
 }

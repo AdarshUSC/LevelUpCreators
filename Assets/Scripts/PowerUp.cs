@@ -12,14 +12,18 @@ public class PowerUp : MonoBehaviour
     
     // Start is called before the first frame update
     void Start(){
-        player = GameObject.FindGameObjectWithTag("Player");
-        powerUpTimer = 0;  
-        powerUpButton.interactable=false;
+        if(powerUpButton!=null){
+            player = GameObject.FindGameObjectWithTag("Player");
+            powerUpTimer = 0;  
+            powerUpButton.interactable=false;
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {   
+        
         if(Player.isPowerUpOn){
             powerUpTimer+= Time.deltaTime;
             if(powerUpTimer > 5){
@@ -33,11 +37,15 @@ public class PowerUp : MonoBehaviour
         
     }
     public void ButtonClicked(){
+
+        if(powerUpButton!=null){
+            powerUpTimer=Time.deltaTime;
+            Player.isPowerUpOn=true;
+            Player.playerMoveSpeed+=4.0f;
+            powerUpButton.interactable=false;
+        }
         
-        powerUpTimer=Time.deltaTime;
-        Player.isPowerUpOn=true;
-        Player.playerMoveSpeed+=4.0f;
-        powerUpButton.interactable=false;
+        
 
     }
 }
