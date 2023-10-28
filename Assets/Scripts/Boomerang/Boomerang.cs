@@ -39,23 +39,24 @@ public class Boomerang : MonoBehaviour
     {
         if (isThrown)
         {
-            float distanceTravelled = Vector2.Distance(transform.position, transform.parent.position);
-            float maxTravelDistance = 6.0f;
+            //float distanceTravelled = Vector2.Distance(transform.position, transform.parent.position);
+            //float maxTravelDistance = 6.0f;
 
-            if (distanceTravelled >= maxTravelDistance)
-            {
-                rb.velocity = -throwDirection * throwForce;
-            }
-            if (distanceTravelled < 0.6f)
-            {
-                Renderer renderer = GetComponent<Renderer>();
-                renderer.enabled = false;
-            }
-            else
-            {
+            //if (distanceTravelled >= maxTravelDistance)
+            //{
+            //    Renderer renderer = GetComponent<Renderer>();
+            //    renderer.enabled = false;
+            //}
+            //if (distanceTravelled < 0.6f)
+            //{
+            //    Renderer renderer = GetComponent<Renderer>();
+            //    renderer.enabled = false;
+            //}
+            //else
+            //{
                 Renderer renderer = GetComponent<Renderer>();
                 renderer.enabled = true;
-            }
+           // }
         }
     }
 
@@ -63,11 +64,12 @@ public class Boomerang : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Tree"))
         {
+            transform.position = transform.parent.position;
+            gameObject.SetActive(false);
+
             Debug.Log("I am hit the tree");
-            // Detect collision with a tree
             hitTree = collision.gameObject;
 
-            // Call the DropFruits method on the hit tree
             hitTree.GetComponent<Tree>().DropFruits();
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Default"))

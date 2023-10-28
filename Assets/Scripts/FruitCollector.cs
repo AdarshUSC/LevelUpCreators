@@ -22,7 +22,6 @@ public class FruitCollector : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("OnCollisionEnter2D Fruit collector" + collision.gameObject.tag);
         if (collision.gameObject.CompareTag("Collectible"))
         {
             Debug.Log("I am on trigger enetr 2D");
@@ -40,8 +39,6 @@ public class FruitCollector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        Debug.Log("OnTriggerEnter2D before OnTriggerEnter2Ds" + collision.gameObject.tag);
         if (collision.gameObject.CompareTag("Collectible"))
         {
             Debug.Log("I am on trigger enetr 2D");

@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
     public Vector3 initialPosition;
     public GameObject fallDetector;
     public LayerMask groundLayer;
+    private Vector3 direction;
 
     [Header("Collision")]
     bool onGround = false;
@@ -67,6 +68,7 @@ public class Player : MonoBehaviour
         ogscale = true;
         isFacingRight = true;
         deathPoints = new List<Vector2>();
+        direction = new Vector2(1, 0);
     }
 
     // Update is called once per frame
@@ -77,10 +79,12 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             transform.Translate(-playerMoveSpeed * Time.deltaTime, 0, 0);
+            direction = Vector2.left;
         }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             transform.Translate(playerMoveSpeed * Time.deltaTime, 0, 0);
+            direction = Vector2.right;
         }
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
@@ -97,8 +101,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            // Need to change the direction of the boomerang
-            boomerang.Throw(Vector2.right);
+            boomerang.Throw(direction);
         }
 
         if (Input.GetKeyDown(KeyCode.R))
