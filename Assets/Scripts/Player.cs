@@ -61,7 +61,6 @@ public class Player : MonoBehaviour
         time_running = 0.0f;
         time_checkpoint = 0.0f;
         count = 0;
-        checks = new float[3];
         boomerang = boomerangObject.GetComponent<Boomerang>();
         playerTransform = GetComponent<Transform>();
         originalScale = playerTransform.localScale;
@@ -99,7 +98,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             // Need to change the direction of the boomerang
-            boomerang.Throw(Vector2.up);
+            boomerang.Throw(Vector2.right);
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -159,6 +158,7 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("I am on trigger player");
         if (collision.gameObject.tag == "FallDetection")
         {
            // transform.position = initialPosition;

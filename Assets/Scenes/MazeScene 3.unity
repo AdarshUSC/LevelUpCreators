@@ -18475,7 +18475,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -18611,9 +18611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d72abcffdf14483cae8f877a4690455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windDirection: {x: 0, y: 0}
-  spinSpeed: 10
-  liftCoefficient: 0.2
 --- !u!1001 &1530897357
 PrefabInstance:
   m_ObjectHideFlags: 0

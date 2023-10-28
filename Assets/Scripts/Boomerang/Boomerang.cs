@@ -7,9 +7,8 @@ public class Boomerang : MonoBehaviour
     private Vector2 throwDirection;
     private bool isThrown = false;
     private float throwForce = 10.0f;
-    public Vector2 windDirection = Vector2.zero;
-    public float spinSpeed = 10f;
-    public float liftCoefficient = 0.2f;
+    private GameObject hitTree;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,6 +25,7 @@ public class Boomerang : MonoBehaviour
         rb.angularVelocity = 0f;
         gameObject.SetActive(false);
     }
+
     public void Throw(Vector2 direction)
     {
         gameObject.SetActive(true);
@@ -34,6 +34,7 @@ public class Boomerang : MonoBehaviour
         rb.velocity = throwDirection * throwForce;
         isThrown = true;
     }
+
     void Update()
     {
         if (isThrown)
@@ -57,9 +58,19 @@ public class Boomerang : MonoBehaviour
             }
         }
     }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Default"))
+        if (collision.gameObject.CompareTag("Tree"))
+        {
+            Debug.Log("I am hit the tree");
+            // Detect collision with a tree
+            hitTree = collision.gameObject;
+
+            // Call the DropFruits method on the hit tree
+            hitTree.GetComponent<Tree>().DropFruits();
+        }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Default"))
         {
             transform.position = transform.parent.position;
             gameObject.SetActive(false);

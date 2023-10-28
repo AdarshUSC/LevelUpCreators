@@ -53,7 +53,6 @@ public class ReflectionPower : MonoBehaviour
         {
             RaycastHit2D hitleft = Physics2D.Raycast(myMirror.transform.position, Vector2.left);
             RaycastHit2D hitright = Physics2D.Raycast(myMirror.transform.position, Vector2.right);
-            Debug.Log(hitright.transform.name);
             if ((hitleft.collider != null && hitleft.collider.gameObject.transform.tag == "Player") || (hitright.collider != null && hitright.collider.gameObject.transform.tag == "Player"))
             {
                 myShadow.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.7f);
