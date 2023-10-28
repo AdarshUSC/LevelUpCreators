@@ -17,7 +17,6 @@ public class EnemyShooting : MonoBehaviour
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
-        Debug.Log("distance is "+ distance);
         if(distance<5 && !compareColors(GetComponent<SpriteRenderer>().color, player.GetComponent<SpriteRenderer>().color)){
             timer+= Time.deltaTime;
             if(timer > 1){
