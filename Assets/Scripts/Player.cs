@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     public static List<Vector2> deathPoints;
     [SerializeReference] GameObject lostCanvas;
     public Image[] lives;
+    public int win = 0;
 
 
     private string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdHKBSGlrH4LG-W3gfj3Dc--PUgpnOvAnQwZ1SXpbi_AFyVKQ/formResponse";
@@ -63,10 +64,9 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         respawnPoint = transform.position;
         initialPosition = transform.position;
-        time_running = 0.0f;
-        time_checkpoint = 0.0f;
         number_of_lives = 2;
         count = 0;
+        win = 0;
         boomerang = boomerangObject.GetComponent<Boomerang>();
         playerTransform = GetComponent<Transform>();
         originalScale = playerTransform.localScale;
@@ -173,7 +173,8 @@ public class Player : MonoBehaviour
         {
            // transform.position = initialPosition;
             Timetaken = time_running;
-           // Send();
+            win = 1;
+            Send();
         }
         if (collision.gameObject.tag == "Checkpoint1")
         {
@@ -268,6 +269,7 @@ public class Player : MonoBehaviour
         lostCanvas.SetActive(true);
         timelimit = 0;
         Time.timeScale = 0f;
+        Timetaken = time_running;
         Send();
     }
     public void LoseLife()
