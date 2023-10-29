@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public static int reflection = 0;
     public static int camouflage = 0;
     public static int resize = 0;
+    public  int number_of_lives = 3;
     private float checkpoint1 = 0.0f;
     private float checkpoint2 = 0.0f;
     private float checkpoint3 = 0.0f;
@@ -37,6 +38,8 @@ public class Player : MonoBehaviour
     private Vector3 originalScale;
     private bool ogscale;
     public static List<Vector2> deathPoints;
+    [SerializeReference] GameObject lostCanvas;
+    public Image[] lives;
 
 
     private string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdHKBSGlrH4LG-W3gfj3Dc--PUgpnOvAnQwZ1SXpbi_AFyVKQ/formResponse";
@@ -61,6 +64,7 @@ public class Player : MonoBehaviour
         initialPosition = transform.position;
         time_running = 0.0f;
         time_checkpoint = 0.0f;
+        number_of_lives = 3;
         count = 0;
         boomerang = boomerangObject.GetComponent<Boomerang>();
         playerTransform = GetComponent<Transform>();
@@ -69,6 +73,7 @@ public class Player : MonoBehaviour
         isFacingRight = true;
         deathPoints = new List<Vector2>();
         direction = new Vector2(1, 0);
+        lostCanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -166,7 +171,7 @@ public class Player : MonoBehaviour
         {
            // transform.position = initialPosition;
             Timetaken = time_running;
-            Send();
+           // Send();
         }
         if (collision.gameObject.tag == "Checkpoint1")
         {
@@ -203,7 +208,16 @@ public class Player : MonoBehaviour
         {
             Destroy(collision.gameObject);
             deathPoints.Add(this.transform.position);
-            this.transform.position = this.respawnPoint;
+            if (number_of_lives >= 1)
+            {
+                this.transform.position = this.respawnPoint;
+                number_of_lives--;
+                LoseLife();
+            }
+            else
+            {
+                Lost();
+            }
             Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
             rb.gravityScale = 1;
         }
@@ -247,6 +261,17 @@ public class Player : MonoBehaviour
         string result = string.Join("*", vectors.Select(v => $"({v.x}, {v.y})"));
         return result;
     }
+    public void Lost()
+    {
 
+        Debug.Log("Did not reach end");
+        lostCanvas.SetActive(true);
+        Time.timeScale = 0f;
+        Send();
+    }
+    public void LoseLife()
+    {
+        lives[number_of_lives].enabled = false;
+    }
 
 }
