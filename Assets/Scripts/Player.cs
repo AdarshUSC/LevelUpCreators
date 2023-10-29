@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
         initialPosition = transform.position;
         time_running = 0.0f;
         time_checkpoint = 0.0f;
-        number_of_lives = 3;
+        number_of_lives = 2;
         count = 0;
         boomerang = boomerangObject.GetComponent<Boomerang>();
         playerTransform = GetComponent<Transform>();
@@ -211,7 +211,7 @@ public class Player : MonoBehaviour
             if (number_of_lives >= 1)
             {
                 this.transform.position = this.respawnPoint;
-                number_of_lives--;
+                
                 LoseLife();
             }
             else
@@ -272,6 +272,7 @@ public class Player : MonoBehaviour
     public void LoseLife()
     {
         lives[number_of_lives].enabled = false;
+        number_of_lives--;
     }
 
 }
