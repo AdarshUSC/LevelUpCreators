@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     private float checkpoint4 = 0.0f;
     private float time_running = 0.0f;
     private float time_checkpoint = 0.0f;
+    public float timelimit = 90.0f;
     private float[] checks;
     private int count = 0;
     private Boomerang boomerang;
@@ -71,6 +72,7 @@ public class Player : MonoBehaviour
         originalScale = playerTransform.localScale;
         ogscale = true;
         isFacingRight = true;
+        timelimit = 90.0f;
         deathPoints = new List<Vector2>();
         direction = new Vector2(1, 0);
         lostCanvas.SetActive(false);
@@ -179,6 +181,7 @@ public class Player : MonoBehaviour
             Debug.Log("Time taken" + time_checkpoint);
             checkpoint1 = time_checkpoint;
             time_checkpoint = 0.0f;
+            timelimit = 60.0f;
         }
         if (collision.gameObject.tag == "Checkpoint2")
         {
@@ -187,6 +190,7 @@ public class Player : MonoBehaviour
             Debug.Log("Time taken" + time_checkpoint);
             checkpoint2 = time_checkpoint;
             time_checkpoint = 0.0f;
+            timelimit = 45.0f;
         }
         if (collision.gameObject.tag == "Checkpoint3")
         {
@@ -195,6 +199,7 @@ public class Player : MonoBehaviour
             Debug.Log("Time taken" + time_checkpoint);
             checkpoint3 = time_checkpoint;
             time_checkpoint = 0.0f;
+            timelimit = 30.0f;
         }
         if (collision.gameObject.tag == "Checkpoint4")
         {
@@ -203,21 +208,16 @@ public class Player : MonoBehaviour
             Debug.Log("Time taken" + time_checkpoint);
             checkpoint4 = time_checkpoint;
             time_checkpoint = 0.0f;
+            timelimit = 15.0f;
         }
         if (collision.gameObject.tag == "Bullet" && !isPowerUpOn)
         {
             Destroy(collision.gameObject);
             deathPoints.Add(this.transform.position);
-            if (number_of_lives >= 1)
-            {
+
                 this.transform.position = this.respawnPoint;
-                
-                LoseLife();
-            }
-            else
-            {
-                Lost();
-            }
+                 LoseLife();
+
             Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
             rb.gravityScale = 1;
         }
@@ -266,13 +266,18 @@ public class Player : MonoBehaviour
 
         Debug.Log("Did not reach end");
         lostCanvas.SetActive(true);
+        timelimit = 0;
         Time.timeScale = 0f;
         Send();
     }
     public void LoseLife()
-    {
-        lives[number_of_lives].enabled = false;
-        number_of_lives--;
+    {   
+       
+            lives[number_of_lives].enabled = false;
+            number_of_lives--;
+        if (number_of_lives < 0)
+            Lost();
+
     }
 
 }

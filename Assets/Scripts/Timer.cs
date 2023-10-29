@@ -7,11 +7,14 @@ public class Timer : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] public TextMeshProUGUI timerText;
-    [SerializeField] public float timelimit;
-    float time;
+    [SerializeField] public float timelimit = 90.0f;
+    public Player player;
+    float limit = 0;
+    bool once = false;
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        once = true;
     }
 
     // Update is called once per frame
@@ -31,16 +34,21 @@ public class Timer : MonoBehaviour
         {
             timelimit = 0;
             GameOver();
+            
         }
         int minutes = Mathf.FloorToInt(timelimit / 60);
         int seconds = Mathf.FloorToInt(timelimit % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-        timerText.text = string.Format("{0:00}", seconds);
+      //  timerText.text = string.Format("{0:00}", seconds);
     }
     void GameOver()
-    {
-        timerText.text = "Game Over";
-        //need to implement
+    {   if (player.number_of_lives < 0)
+            timelimit = 0;
+        player.LoseLife();
+        //once = false;
+        player.transform.position = player.respawnPoint;
+        timerText.color = Color.white;
+        timelimit = player.timelimit;
     }
 }
 
