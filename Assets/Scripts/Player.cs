@@ -19,6 +19,10 @@ public class Player : MonoBehaviour
     public static int reflection = 0;
     public static int camouflage = 0;
     public static int resize = 0;
+    public static int boomerang_used = 0;
+    public static int powerup = 0;
+    public static int collectables = 0;
+
     public  int number_of_lives = 3;
     private float checkpoint1 = 0.0f;
     private float checkpoint2 = 0.0f;
@@ -39,6 +43,7 @@ public class Player : MonoBehaviour
     private Vector3 originalScale;
     private bool ogscale;
     public static List<Vector2> deathPoints;
+    public static List<Vector2> CollectablePoints;
     [SerializeReference] GameObject lostCanvas;
     public Image[] lives;
     public int win = 0;
@@ -74,6 +79,7 @@ public class Player : MonoBehaviour
         isFacingRight = true;
         timelimit = 90.0f;
         deathPoints = new List<Vector2>();
+        CollectablePoints = new List<Vector2>();
         direction = new Vector2(1, 0);
         lostCanvas.SetActive(false);
     }
@@ -109,6 +115,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             boomerang.Throw(direction);
+            boomerang_used++;
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -234,10 +241,11 @@ public class Player : MonoBehaviour
     public void Send()
     {
         Debug.Log("Send called");
-        StartCoroutine(Post(Timetaken, antigravity, reflection, camouflage,resize, checkpoint1, checkpoint2, checkpoint3, checkpoint4));
+        Debug.Log("Collectable locations" + ConvertVectorListToString(CollectablePoints));
+        StartCoroutine(Post(Timetaken, antigravity, reflection, camouflage,resize,powerup, boomerang_used, checkpoint1, checkpoint2, checkpoint3, checkpoint4, FruitCollector.collectibles, win,number_of_lives));
     }
 
-    IEnumerator Post(float timetaken, int mech1, int mech2, int mech3,int mech4, float cp1, float cp2, float cp3, float cp4)
+    IEnumerator Post(float timetaken, int mech1, int mech2, int mech3,int mech4,int mech5,int mech6, float cp1, float cp2, float cp3, float cp4, int score, int win, int lives)
     {
         Debug.Log("Post called" + (string.Format("{0:N2}", Timetaken)) + " " + (string.Format("{0}", mech1)));
         WWWForm form = new WWWForm();
@@ -252,6 +260,13 @@ public class Player : MonoBehaviour
         form.AddField("entry.73026754", ConvertVectorListToString(deathPoints));
         form.AddField("entry.1506435532", SceneManager.GetActiveScene().name);
         form.AddField("entry.1784470240", string.Format("{0}", mech4));
+        form.AddField("entry.767592848", string.Format("{0}", mech5));
+        form.AddField("entry.161259885", string.Format("{0}", mech6));
+        form.AddField("entry.1830111561", string.Format("{0}", win));
+        form.AddField("entry.103162259", string.Format("{0}", lives));
+        form.AddField("entry.1934928186", string.Format("{0}", score));
+        form.AddField("entry.883242844", ConvertVectorListToString(CollectablePoints));
+        
 
 
         UnityWebRequest WWW = UnityWebRequest.Post(URL, form);
@@ -266,6 +281,7 @@ public class Player : MonoBehaviour
     {
 
         Debug.Log("Did not reach end");
+        Debug.Log("Collectable locations" + ConvertVectorListToString(CollectablePoints));
         lostCanvas.SetActive(true);
         timelimit = 0;
         Time.timeScale = 0f;

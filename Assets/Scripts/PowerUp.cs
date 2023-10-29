@@ -43,6 +43,7 @@ public class PowerUp : MonoBehaviour
             Player.isPowerUpOn=true;
             Player.playerMoveSpeed+=4.0f;
             powerUpButton.interactable=false;
+            Player.powerup++;
         }
         
         
