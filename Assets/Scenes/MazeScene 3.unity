@@ -20396,10 +20396,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3700451485975702924, guid: 5202d2e0d018743aeafa93457e6aee93, type: 3}
+      propertyPath: m_Name
+      value: Banana
+      objectReference: {fileID: 0}
     - target: {fileID: 3763318864306252075, guid: 5202d2e0d018743aeafa93457e6aee93, type: 3}
       propertyPath: m_Name
       value: TreeCollectibles
       objectReference: {fileID: 0}
+    - target: {fileID: 6204886139824031120, guid: 5202d2e0d018743aeafa93457e6aee93, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5728686177044832811, guid: b1f24b3bc2e2f1d4b858657ad5c115a0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
