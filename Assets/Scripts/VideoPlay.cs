@@ -1,21 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using TMPro;
 
 public class VideoPlay : MonoBehaviour
 {
-    [SerializeReference] VideoPlayer videoPlayer;
+    public VideoPlayer videoPlayer;
+    public TextMeshProUGUI tm;
     // Start is called before the first frame update
     void Start()
     {
-        videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, "tutorial4reflection.mov");
-        videoPlayer.Play();
+        string filePath = System.IO.Path.Combine(Application.streamingAssetsPath, "tutorial4reflection.mov");
+        videoPlayer.url = filePath;
+        Debug.Log(filePath);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Play()
     {
-        
+        if (videoPlayer.isPlaying)
+        {
+            videoPlayer.Stop();
+            tm.text = "Play Instruction";
+        } else
+        {
+            videoPlayer.Play();
+            tm.text = "Stop Instruction";
+        }
     }
 }
