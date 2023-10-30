@@ -20,22 +20,23 @@ public class FruitCollector : MonoBehaviour
         powerUpButton.onClick.AddListener(ActivatePowerUp); // 
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Collectible"))
-    //    {
-    //        Debug.Log("I am on trigger enetr 2D");
-    //        Destroy(collision.gameObject);
-    //        collectibles++;
-    //        CollectiblesText.text = "Fruits: " + collectibles;
-    //        //
-    //        if (collectibles >= fruitsRequiredForPowerUp)
-    //        {
-    //            // 
-    //            powerUpButton.interactable = true;
-    //        }
-    //    }
-    //}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Collectible"))
+        {
+            Debug.Log("I am on trigger enter 2D" + collision.gameObject.transform.position.y);
+            Player.CollectablePoints.Add(collision.gameObject.transform.position);
+            Destroy(collision.gameObject);
+            collectibles++;
+            CollectiblesText.text = collectibles.ToString();
+            //
+            if (collectibles >= fruitsRequiredForPowerUp)
+            {
+                // 
+                powerUpButton.interactable = true;
+            }
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -54,6 +55,7 @@ public class FruitCollector : MonoBehaviour
             }
         }
     }
+
     private void ActivatePowerUp()
     {
         // 

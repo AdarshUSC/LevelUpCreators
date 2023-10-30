@@ -27,7 +27,7 @@ TagManager:
   - Player
   - Ground
   - TreeLayer
-  - 
+  - Tree Collectible
   - 
   - 
   - 
@@ -56,4 +56,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 
+    uniqueID: 3472689323
     locked: 0

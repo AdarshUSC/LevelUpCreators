@@ -10,7 +10,7 @@ using System.Linq;
 
 public class Player : MonoBehaviour
 {
-    public static float playerMoveSpeed = 5.0f;
+    public static float playerMoveSpeed = 8.0f;
 
     public static bool isPowerUpOn = false;
     float jumpForce = 8.0f;
