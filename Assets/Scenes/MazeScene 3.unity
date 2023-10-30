@@ -19320,24 +19320,24 @@ PrefabInstance:
       objectReference: {fileID: 2069147920}
     - target: {fileID: 4199771183519521383, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_text
-      value: 'Fruits: 0'
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4199771183519521383, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 4199771183519521383, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+      objectReference: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
     - target: {fileID: 4199771183519521383, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 4199771183519521383, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+      objectReference: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
     - target: {fileID: 4199771183519521383, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -19496,11 +19496,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8013150100688227190, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -219.2
+      value: -168
       objectReference: {fileID: 0}
     - target: {fileID: 8013150100688227190, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 179
+      value: 184
       objectReference: {fileID: 0}
     - target: {fileID: 8046184974747425521, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_AnchoredPosition.x
