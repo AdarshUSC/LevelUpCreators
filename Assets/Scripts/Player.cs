@@ -122,7 +122,7 @@ public class Player : MonoBehaviour
         {
             if (ogscale)
             {
-                Vector3 newScale = new Vector3(5.0f, 5.0f, 5.0f);
+                Vector3 newScale = new Vector3(3.0f, 3.0f, 3.0f);
                 playerTransform.localScale = newScale;
                 ogscale = false;
                 resize++;
