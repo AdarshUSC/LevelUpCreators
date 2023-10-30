@@ -17234,6 +17234,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 320f4eb52e227b446830a1f6fd691fca, type: 3}
+    - target: {fileID: 8675695108297999048, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17843,7 +17847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -38.860977}
+  m_AnchoredPosition: {x: 0, y: -38.860962}
   m_SizeDelta: {x: 0, y: -77.721}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1311153282
@@ -20498,6 +20502,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2378724618860504894, guid: 5202d2e0d018743aeafa93457e6aee93, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3700451485975702924, guid: 5202d2e0d018743aeafa93457e6aee93, type: 3}
       propertyPath: m_Name
       value: Banana
@@ -20510,6 +20518,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -5728686177044832811, guid: b1f24b3bc2e2f1d4b858657ad5c115a0, type: 3}
+    - target: {fileID: 6204886139824031120, guid: 5202d2e0d018743aeafa93457e6aee93, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
