@@ -17851,7 +17851,7 @@ PrefabInstance:
       objectReference: {fileID: 1830536194}
     - target: {fileID: 3047833252927601768, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -38.860977
+      value: -38.860962
       objectReference: {fileID: 0}
     - target: {fileID: 5077212188704324059, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_Pivot.x
@@ -17935,11 +17935,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8805674523928914106, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -38.860977
+      value: -38.860962
       objectReference: {fileID: 0}
     - target: {fileID: 8911033796317288578, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -38.860977
+      value: -38.860962
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18405,11 +18405,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6608363767567705628, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.65
+      value: 12.65
       objectReference: {fileID: 0}
     - target: {fileID: 6608363767567705628, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.86
+      value: -16.94
       objectReference: {fileID: 0}
     - target: {fileID: 6608363767567705628, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18622,25 +18622,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2378724618860504894, guid: 5202d2e0d018743aeafa93457e6aee93, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3700451485975702924, guid: 5202d2e0d018743aeafa93457e6aee93, type: 3}
-      propertyPath: m_Name
-      value: Banana
-      objectReference: {fileID: 0}
     - target: {fileID: 3763318864306252075, guid: 5202d2e0d018743aeafa93457e6aee93, type: 3}
       propertyPath: m_Name
       value: TreeCollectibles
-      objectReference: {fileID: 0}
-    - target: {fileID: 6204886139824031120, guid: 5202d2e0d018743aeafa93457e6aee93, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -5728686177044832811, guid: b1f24b3bc2e2f1d4b858657ad5c115a0, type: 3}
-    - target: {fileID: 6204886139824031120, guid: 5202d2e0d018743aeafa93457e6aee93, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
