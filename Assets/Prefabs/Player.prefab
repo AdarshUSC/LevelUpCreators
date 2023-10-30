@@ -101,10 +101,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56f66f34065c420ca76ea003aa4b220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number_of_lives: 3
+  timelimit: 90
   boomerangObject: {fileID: 0}
   isFacingRight: 0
   inputHorizontal: 0
   inputVertical: 0
+  lostCanvas: {fileID: 0}
+  lives: []
+  win: 0
   respawnPoint: {x: 0, y: 0, z: 0}
   initialPosition: {x: 0, y: 0, z: 0}
   fallDetector: {fileID: 0}
