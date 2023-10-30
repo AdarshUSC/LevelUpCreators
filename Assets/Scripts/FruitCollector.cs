@@ -45,7 +45,7 @@ public class FruitCollector : MonoBehaviour
             Player.CollectablePoints.Add(collision.gameObject.transform.position);
             Destroy(collision.gameObject);
             collectibles++;
-            CollectiblesText.text = "Fruits: " + collectibles;
+            CollectiblesText.text = collectibles.ToString();
             //
             if (collectibles >= fruitsRequiredForPowerUp)
             {
@@ -62,6 +62,6 @@ public class FruitCollector : MonoBehaviour
         // 
         powerUpButton.interactable=false;
         collectibles = collectibles- fruitsRequiredForPowerUp;
-        CollectiblesText.text = "Fruits: " + collectibles;
+        CollectiblesText.text = collectibles.ToString();
     }
 }
