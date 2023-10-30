@@ -871,7 +871,7 @@ GameObject:
   - component: {fileID: 284413826}
   - component: {fileID: 284413825}
   m_Layer: 0
-  m_Name: Asset4u_HD_77 (1)
+  m_Name: tree leaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -938,7 +938,7 @@ Transform:
   m_GameObject: {fileID: 284413824}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.76, y: 22.59, z: 0}
+  m_LocalPosition: {x: 5.76, y: 21.85, z: 0}
   m_LocalScale: {x: 1.1824, y: 1.1745, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15569,7 +15569,7 @@ GameObject:
   - component: {fileID: 619178062}
   - component: {fileID: 619178061}
   m_Layer: 0
-  m_Name: Asset4u_HD_82
+  m_Name: branch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
