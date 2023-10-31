@@ -103,6 +103,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(gameObject.GetComponent<Collider2D>().bounds.size);
+        groundLine = (float)(gameObject.GetComponent<Collider2D>().bounds.size.y * 1.4 / 2.4);
         time_running += Time.deltaTime;
         time_checkpoint += Time.deltaTime;
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
@@ -157,13 +159,15 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         inputHorizontal = Input.GetAxisRaw("Horizontal");
-        if (inputHorizontal<0 & isFacingRight)
+        if (inputHorizontal<0)
         {
-            Flip();
+            isFacingRight = false;
+            Flip(isFacingRight);
         }
-        if (inputHorizontal > 0 & !isFacingRight)
+        if (inputHorizontal > 0)
         {
-            Flip();
+            isFacingRight = true;
+            Flip(isFacingRight);
         }
     }
 
@@ -276,13 +280,13 @@ public class Player : MonoBehaviour
             rb.gravityScale = 1;
         }
     }
-    public void Flip()
+    public void Flip(bool isFacingRight)
     {
         Vector2 currentScale = gameObject.transform.localScale;
-        currentScale.x *= -1;
+        if (isFacingRight)
+            currentScale.x = Mathf.Abs(currentScale.x);
+        else currentScale.x = -Mathf.Abs(currentScale.x);
         gameObject.transform.localScale = currentScale;
-
-        isFacingRight = !isFacingRight;
     }
     public void Send()
     {
