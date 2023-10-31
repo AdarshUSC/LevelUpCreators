@@ -62,7 +62,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7311164200927487533, guid: ee37a4974ea514b7a83519c190e8a0e9, type: 3}
       propertyPath: m_Name
-      value: Asset4u_HD_63 Variant
+      value: RedColorCollectible
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311164200927487533, guid: ee37a4974ea514b7a83519c190e8a0e9, type: 3}
+      propertyPath: m_TagString
+      value: ColorCollectible
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

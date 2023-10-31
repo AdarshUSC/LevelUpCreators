@@ -63,6 +63,10 @@ public class Player : MonoBehaviour
     bool onGround = false;
     public float groundLine = 2;
 
+    public static int redCollected = 0;
+    public static int blueCollected = 0;
+    public static int greenCollected = 0;
+
     // Start is called before the first frame update
     void Start()
     {

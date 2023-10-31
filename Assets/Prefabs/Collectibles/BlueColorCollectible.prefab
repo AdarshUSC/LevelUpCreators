@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2260456648750821402, guid: d18bc6b970ed148998823c857d56f2c3, type: 3}
       propertyPath: m_Name
-      value: Asset4u_HD_63 Variant
+      value: BlueColorCollectible
+      objectReference: {fileID: 0}
+    - target: {fileID: 2260456648750821402, guid: d18bc6b970ed148998823c857d56f2c3, type: 3}
+      propertyPath: m_TagString
+      value: ColorCollectible
       objectReference: {fileID: 0}
     - target: {fileID: 5647627404556899523, guid: d18bc6b970ed148998823c857d56f2c3, type: 3}
       propertyPath: m_LocalPosition.x

@@ -17,6 +17,7 @@ TagManager:
   - Collectible
   - Tree
   - PauseButton
+  - ColorCollectible
   layers:
   - Default
   - TransparentFX

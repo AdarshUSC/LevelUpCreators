@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class ColorMixer : MonoBehaviour
 {
-    public Button button0;
-    public Button button1;
-    public Button button2;
-    public Button button3;
+    public Button buttonRed;
+    public Button buttonGreen;
+    public Button mixArea;
+
+    public Button buttonBlue;
     public Button reset;
 
-    public SpriteRenderer mixingArea;
+    // public SpriteRenderer mixingArea;
     public SpriteRenderer player;
     public Color resultColor;
     //private Color selectedColor1 = GetComponent<Button> ().colors; // Initial color
@@ -32,10 +33,10 @@ public class ColorMixer : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        button0.onClick.AddListener(() => OnButtonClick(button0));
-        button1.onClick.AddListener(() => OnButtonClick(button1));
-        button2.onClick.AddListener(() => OnButtonClick(button2));
-        button3.onClick.AddListener(() => OnButtonClick(button3));
+        buttonRed.onClick.AddListener(() => OnButtonClick(buttonRed));
+        buttonGreen.onClick.AddListener(() => OnButtonClick(buttonGreen));
+        mixArea.onClick.AddListener(() => OnButtonClick(mixArea));
+        buttonBlue.onClick.AddListener(() => OnButtonClick(buttonBlue));
         reset.onClick.AddListener(OnResetClick);
         reset_flag = true;
     }
@@ -56,7 +57,25 @@ public class ColorMixer : MonoBehaviour
     {   
         //buttonSelected = !buttonSelected;
         clicked.interactable = false; //disable the button so player cannot click twice
+        Debug.Log("clicked button is "+ clicked);
         Color buttonColor = clicked.GetComponent<Image>().color;
+        if(clicked.name=="mixArea"){
+            GameObject[] colorButtons = GameObject.FindGameObjectsWithTag("ColorButton");
+            foreach(GameObject colorButton in colorButtons){
+                Button button = colorButton.GetComponent<Button>();
+                if(button.interactable==false){
+                    Color curr = button.GetComponent<Image>().color;
+                    if(curr==Color.red){
+                        Player.redCollected--;
+                    } else if(curr==Color.blue){
+                        Player.blueCollected--;
+                    } else if(curr==Color.green){
+                        Player.greenCollected--;
+                    }
+                }
+            }
+            player.color = mixArea.GetComponent<Image>().color;
+        }
         colorList.Add(buttonColor);
         UpdateOutputColor();
         //clicked.GetComponent<Image>().color *= new Color((float)0.78,(float)0.78,(float)0.78,(float)0.5);            
@@ -64,11 +83,14 @@ public class ColorMixer : MonoBehaviour
     }
     public void OnResetClick()
     {
-        button0.interactable = true;
-        button1.interactable = true;
-        button2.interactable = true;
-        button3.interactable = true;
-        mixingArea.color = new Color(0,0,0,0);
+        if(Player.redCollected>0){
+            buttonRed.interactable = true;
+        } if(Player.blueCollected>0){
+            buttonBlue.interactable = true;
+        } if(Player.greenCollected>0){
+            buttonGreen.interactable = true;
+        } 
+        mixArea.GetComponent<Image>().color = new Color(0,0,0,0);
         colorList.Clear();
         UpdateOutputColor();
         reset_flag = true;
@@ -89,8 +111,8 @@ public class ColorMixer : MonoBehaviour
         }
         Debug.Log("Camouflage count" + Player.camouflage);
             
-        mixingArea.color = resultColor;
-        player.color = resultColor;
+        mixArea.GetComponent<Image>().color = resultColor;
+        // player.color = resultColor;
     }
     private void Win(){
         if(player.color.Equals(enemyColor)){

@@ -12,7 +12,6 @@ public class FruitCollector : MonoBehaviour
     [SerializeField] private int fruitsRequiredForPowerUp = 5; // 
     [SerializeField] private Button powerUpButton; // 
 
-
     private void Start()
     {
         // 
@@ -35,6 +34,21 @@ public class FruitCollector : MonoBehaviour
                 // 
                 powerUpButton.interactable = true;
             }
+        } else if (collision.gameObject.CompareTag("ColorCollectible")){
+            
+            Debug.Log("I am on trigger enter 2D" + collision.gameObject.transform.position.y);
+            SpriteRenderer sr = collision.gameObject.GetComponent<SpriteRenderer>();
+            if(sr.color==Color.red){
+                Player.redCollected++;
+            } else if(sr.color==Color.green){
+                Player.greenCollected++;
+            }else if(sr.color==Color.blue){
+                Player.blueCollected++;
+            }
+            Player.CollectablePoints.Add(collision.gameObject.transform.position);
+            Destroy(collision.gameObject);
+            CollectiblesText.text = collectibles.ToString();
+
         }
     }
 
