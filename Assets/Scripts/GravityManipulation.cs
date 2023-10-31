@@ -49,6 +49,7 @@ public class GravityManipulation : MonoBehaviour
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
             rb.gravityScale=-1;
             Player.antigravity++;
+            Player.current_mechs.Add("Antigravity");
             antiGravityButton.interactable=false;
         }
         

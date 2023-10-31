@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Linq;
- 
+using System;
 
 
 public class Player : MonoBehaviour
@@ -44,6 +44,14 @@ public class Player : MonoBehaviour
     private bool ogscale;
     public static List<Vector2> deathPoints;
     public static List<Vector2> CollectablePoints;
+    public static List<string> mechanics_cp1;
+    public static List<string> mechanics_cp2;
+    public static List<string> mechanics_cp3;
+    public static List<string> mechanics_cp4;
+    public static List<string> mechanics_exit;
+    public static List<string> current_mechs;
+    System.String current_sublevel = "";
+
     [SerializeReference] GameObject lostCanvas;
     public Image[] lives;
     public int win = 0;
@@ -76,12 +84,14 @@ public class Player : MonoBehaviour
         number_of_lives = 2;
         count = 0;
         win = 0;
+        current_sublevel = "entry";
         boomerang = boomerangObject.GetComponent<Boomerang>();
         playerTransform = GetComponent<Transform>();
         originalScale = playerTransform.localScale;
         ogscale = true;
         isFacingRight = true;
         timelimit = 90.0f;
+        current_mechs = new List<string>();
         deathPoints = new List<Vector2>();
         CollectablePoints = new List<Vector2>();
         direction = new Vector2(1, 0);
@@ -113,6 +123,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+ 
             
         }
 
@@ -120,6 +131,7 @@ public class Player : MonoBehaviour
         {
             boomerang.Throw(direction);
             boomerang_used++;
+            current_mechs.Add("Boomerang");
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -130,6 +142,8 @@ public class Player : MonoBehaviour
                 playerTransform.localScale = newScale;
                 ogscale = false;
                 resize++;
+                Debug.Log("Adding resize" + current_mechs.Count);
+                current_mechs.Add("Resize");
             }
             else
             {
@@ -179,48 +193,72 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("I am on trigger player");
+        //Debug.Log("I am on trigger player");
         if (collision.gameObject.tag == "FallDetection")
         {
            // transform.position = initialPosition;
             Timetaken = time_running;
+            Debug.Log("mc" + current_mechs.Count);
+            mechanics_exit = current_mechs;
+            current_mechs = new List<string>();
             win = 1;
             Send();
         }
         if (collision.gameObject.tag == "Checkpoint1")
         {
-            respawnPoint = transform.position;
+            respawnPoint.x = transform.position.x +4;
+            respawnPoint.y = transform.position.y;
+
             Debug.Log("Time taken" + time_checkpoint);
             checkpoint1 = time_checkpoint;
             time_checkpoint = 0.0f;
-            timelimit = 60.0f;
+            timelimit =10.0f;
+            Debug.Log("mc" + current_mechs.Count);
+            mechanics_cp1 = current_mechs;
+            current_mechs = new List<string>();
+            current_sublevel = "cp1";
         }
         if (collision.gameObject.tag == "Checkpoint2")
         {
-            respawnPoint = transform.position;
+            respawnPoint.x = transform.position.x + 4;
+            respawnPoint.y = transform.position.y;
             Debug.Log("Checkpoint encountered at" + transform.position.x + " " + transform.position.y + " ");
             Debug.Log("Time taken" + time_checkpoint);
             checkpoint2 = time_checkpoint;
+            Debug.Log("mc" + current_mechs.Count);
+            mechanics_cp2 = current_mechs;
+            current_mechs = new List<string>();
             time_checkpoint = 0.0f;
             timelimit = 45.0f;
+            current_sublevel = "cp2";
         }
         if (collision.gameObject.tag == "Checkpoint3")
         {
-            respawnPoint = transform.position;
+            respawnPoint.x = transform.position.x + 4;
+            respawnPoint.y = transform.position.y;
             Debug.Log("Checkpoint encountered at" + transform.position.x + " " + transform.position.y);
             Debug.Log("Time taken" + time_checkpoint);
             checkpoint3 = time_checkpoint;
             time_checkpoint = 0.0f;
             timelimit = 30.0f;
+            Debug.Log("mc" + current_mechs.Count);
+            mechanics_cp3 = current_mechs;
+            current_mechs = new List<string>();
+            current_sublevel = "cp3";
         }
         if (collision.gameObject.tag == "Checkpoint4")
         {
-            respawnPoint = transform.position;
+            respawnPoint.x = transform.position.x + 4;
+            respawnPoint.y = transform.position.y;
             Debug.Log("Checkpoint encountered at" + transform.position.x + " " + transform.position.y);
             Debug.Log("Time taken" + time_checkpoint);
             checkpoint4 = time_checkpoint;
             time_checkpoint = 0.0f;
+            Debug.Log("mc" + current_mechs.Count);
+            mechanics_cp4 = current_mechs;
+            current_mechs = new List<string>();
             timelimit = 15.0f;
+            current_sublevel = "cp4";
         }
         if (collision.gameObject.tag == "Bullet" && !isPowerUpOn)
         {
@@ -246,6 +284,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Send called");
         Debug.Log("Collectable locations" + ConvertVectorListToString(CollectablePoints));
+        Debug.Log("cp1");
         StartCoroutine(Post(Timetaken, antigravity, reflection, camouflage,resize,powerup, boomerang_used, checkpoint1, checkpoint2, checkpoint3, checkpoint4, CollectablePoints.Count, win,number_of_lives));
     }
 
@@ -257,10 +296,10 @@ public class Player : MonoBehaviour
         form.AddField("entry.305553560", string.Format("{0}", mech1));
         form.AddField("entry.1168732002", string.Format("{0}", mech2));
         form.AddField("entry.1274496277", string.Format("{0}", mech3));
-        form.AddField("entry.1477920271", string.Format("{0:N2}", cp1));
-        form.AddField("entry.2118230736", string.Format("{0:N2}", cp2));
-        form.AddField("entry.2104200455", string.Format("{0:N2}", cp3));
-        form.AddField("entry.1640424427", string.Format("{0:N2}", cp4));
+        form.AddField("entry.1477920271", string.Format("{0:N2}", cp1)+"*"+ ConvertListToString(mechanics_cp1));
+        form.AddField("entry.2118230736", string.Format("{0:N2}", cp2) + "*" + ConvertListToString(mechanics_cp2));
+        form.AddField("entry.2104200455", string.Format("{0:N2}", cp3) + "*" + ConvertListToString(mechanics_cp3));
+        form.AddField("entry.1640424427", string.Format("{0:N2}", cp4) + "*" + ConvertListToString(mechanics_cp4));
         form.AddField("entry.73026754", ConvertVectorListToString(deathPoints));
         form.AddField("entry.1506435532", SceneManager.GetActiveScene().name);
         form.AddField("entry.1784470240", string.Format("{0}", mech4));
@@ -295,11 +334,24 @@ public class Player : MonoBehaviour
     public void LoseLife()
     {   
        
-            lives[number_of_lives].enabled = false;
+        lives[number_of_lives].enabled = false;
             number_of_lives--;
         if (number_of_lives < 0)
             Lost();
 
+    }
+    private string ConvertListToString(List<string> list)
+    {
+        if (list == null || list.Count == 0)
+        {
+            return "()";
+        }
+
+        // Join the elements with a comma and space
+        string joinedString = string.Join(", ", list);
+
+        // Add parentheses to the beginning and end
+        return "(" + joinedString + ")";
     }
 
 }

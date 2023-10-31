@@ -44,12 +44,15 @@ public class Timer : MonoBehaviour
     void GameOver()
     {   if (player.number_of_lives < 0)
             timelimit = 0;
-        Player.deathPoints.Add(player.transform.position);
-        player.LoseLife();
-        //once = false;
-        player.transform.position = player.respawnPoint;
-        timerText.color = Color.white;
-        timelimit = player.timelimit;
+        else
+        {
+            Player.deathPoints.Add(player.transform.position);
+            player.LoseLife();
+            //once = false;
+            player.transform.position = player.respawnPoint;
+            timerText.color = Color.white;
+            timelimit = player.timelimit;
+        }
     }
 }
 

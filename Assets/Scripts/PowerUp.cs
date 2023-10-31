@@ -44,6 +44,7 @@ public class PowerUp : MonoBehaviour
             Player.playerMoveSpeed+=4.0f;
             powerUpButton.interactable=false;
             Player.powerup++;
+            Player.current_mechs.Add("Powerup");
         }
         
         
