@@ -26,7 +26,7 @@ public class ColorMixer : MonoBehaviour
         {
             result += c;
         }
-        result /= aColors.Length;
+        // result /= aColors.Length;
         return result;
     }
 
@@ -39,6 +39,7 @@ public class ColorMixer : MonoBehaviour
         buttonBlue.onClick.AddListener(() => OnButtonClick(buttonBlue));
         reset.onClick.AddListener(OnResetClick);
         reset_flag = true;
+        mixArea.interactable=false;
     }
 
     //private void Update()
@@ -55,7 +56,6 @@ public class ColorMixer : MonoBehaviour
 
     private void OnButtonClick(Button clicked)
     {   
-        //buttonSelected = !buttonSelected;
         clicked.interactable = false; //disable the button so player cannot click twice
         Debug.Log("clicked button is "+ clicked);
         Color buttonColor = clicked.GetComponent<Image>().color;
@@ -67,19 +67,21 @@ public class ColorMixer : MonoBehaviour
                     Color curr = button.GetComponent<Image>().color;
                     if(curr==Color.red){
                         Player.redCollected--;
-                    } else if(curr==Color.blue){
+                    } if(curr==Color.blue){
                         Player.blueCollected--;
-                    } else if(curr==Color.green){
+                    } if(curr==Color.green){
                         Player.greenCollected--;
                     }
                 }
             }
+            mixArea.interactable=false;
             player.color = mixArea.GetComponent<Image>().color;
+        } else{
+            mixArea.interactable=true;
         }
         colorList.Add(buttonColor);
         UpdateOutputColor();
-        //clicked.GetComponent<Image>().color *= new Color((float)0.78,(float)0.78,(float)0.78,(float)0.5);            
-        
+        //clicked.GetComponent<Image>().color *= new Color((float)0.78,(float)0.78,(float)0.78,(float)0.5);             
     }
     public void OnResetClick()
     {
@@ -91,6 +93,7 @@ public class ColorMixer : MonoBehaviour
             buttonGreen.interactable = true;
         } 
         mixArea.GetComponent<Image>().color = new Color(0,0,0,0);
+        mixArea.interactable=false;
         colorList.Clear();
         UpdateOutputColor();
         reset_flag = true;
@@ -111,7 +114,6 @@ public class ColorMixer : MonoBehaviour
             reset_flag = false;
         }
         Debug.Log("Camouflage count" + Player.camouflage);
-            
         mixArea.GetComponent<Image>().color = resultColor;
         // player.color = resultColor;
     }

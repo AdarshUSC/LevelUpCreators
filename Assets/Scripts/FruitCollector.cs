@@ -39,12 +39,44 @@ public class FruitCollector : MonoBehaviour
             Debug.Log("I am on trigger enter 2D" + collision.gameObject.transform.position.y);
             SpriteRenderer sr = collision.gameObject.GetComponent<SpriteRenderer>();
             if(sr.color==Color.red){
-                Player.redCollected++;
+                if(Player.redCollected++==0){
+                    GameObject[] colorButtons = GameObject.FindGameObjectsWithTag("ColorButton");
+                    foreach(GameObject colorButton in colorButtons){
+                        Button button = colorButton.GetComponent<Button>();
+                        Color curr = button.GetComponent<Image>().color;
+                        if(curr==Color.red){
+                            button.interactable=true;
+                            break;
+                        }
+                    }
+                }
             } else if(sr.color==Color.green){
-                Player.greenCollected++;
+                if(Player.greenCollected++==0){
+                    GameObject[] colorButtons = GameObject.FindGameObjectsWithTag("ColorButton");
+                    foreach(GameObject colorButton in colorButtons){
+                        Button button = colorButton.GetComponent<Button>();
+                        Color curr = button.GetComponent<Image>().color;
+                        if(curr==Color.green){
+                            button.interactable=true;
+                            break;
+                        }
+                    }
+                }
             }else if(sr.color==Color.blue){
-                Player.blueCollected++;
+                if(Player.blueCollected++==0){
+                    GameObject[] colorButtons = GameObject.FindGameObjectsWithTag("ColorButton");
+                    foreach(GameObject colorButton in colorButtons){
+                        Button button = colorButton.GetComponent<Button>();
+                        Color curr = button.GetComponent<Image>().color;
+                        if(curr==Color.blue){
+                            button.interactable=true;
+                            break;
+                        }
+                    }
+                }
             }
+
+
             Player.CollectablePoints.Add(collision.gameObject.transform.position);
             Destroy(collision.gameObject);
             CollectiblesText.text = collectibles.ToString();
