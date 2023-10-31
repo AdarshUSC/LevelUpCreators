@@ -242,7 +242,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Send called");
         Debug.Log("Collectable locations" + ConvertVectorListToString(CollectablePoints));
-        StartCoroutine(Post(Timetaken, antigravity, reflection, camouflage,resize,powerup, boomerang_used, checkpoint1, checkpoint2, checkpoint3, checkpoint4, FruitCollector.collectibles, win,number_of_lives));
+        StartCoroutine(Post(Timetaken, antigravity, reflection, camouflage,resize,powerup, boomerang_used, checkpoint1, checkpoint2, checkpoint3, checkpoint4, CollectablePoints.Count, win,number_of_lives));
     }
 
     IEnumerator Post(float timetaken, int mech1, int mech2, int mech3,int mech4,int mech5,int mech6, float cp1, float cp2, float cp3, float cp4, int score, int win, int lives)

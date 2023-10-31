@@ -6,7 +6,7 @@ using TMPro;
 
 public class FruitCollector : MonoBehaviour
 {
-    public static int collectibles = 0;
+    public  int collectibles = 0;
     [SerializeField] private TMP_Text CollectiblesText;
 
     [SerializeField] private int fruitsRequiredForPowerUp = 5; // 

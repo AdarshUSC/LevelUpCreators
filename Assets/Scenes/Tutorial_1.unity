@@ -6544,6 +6544,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -24.946796
       objectReference: {fileID: 0}
+    - target: {fileID: 1128199073034039631, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1416021991169189763, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: antiGravityButton
       value: 
