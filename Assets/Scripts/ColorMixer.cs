@@ -40,6 +40,9 @@ public class ColorMixer : MonoBehaviour
         reset.onClick.AddListener(OnResetClick);
         reset_flag = true;
         mixArea.interactable=false;
+        buttonRed.interactable=false;
+        buttonGreen.interactable=false;
+        buttonBlue.interactable=false;
     }
 
     //private void Update()

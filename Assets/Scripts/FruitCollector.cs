@@ -36,8 +36,9 @@ public class FruitCollector : MonoBehaviour
             }
         } else if (collision.gameObject.CompareTag("ColorCollectible")){
             
-            Debug.Log("I am on trigger enter 2D" + collision.gameObject.transform.position.y);
+            Debug.Log("I am on color enter 2D" + collision.gameObject.transform.position.y);
             SpriteRenderer sr = collision.gameObject.GetComponent<SpriteRenderer>();
+            Destroy(collision.gameObject);
             if(sr.color==Color.red){
                 if(Player.redCollected++==0){
                     GameObject[] colorButtons = GameObject.FindGameObjectsWithTag("ColorButton");
@@ -62,7 +63,7 @@ public class FruitCollector : MonoBehaviour
                         }
                     }
                 }
-            }else if(sr.color==Color.blue){
+            } else if(sr.color==Color.blue){
                 if(Player.blueCollected++==0){
                     GameObject[] colorButtons = GameObject.FindGameObjectsWithTag("ColorButton");
                     foreach(GameObject colorButton in colorButtons){
@@ -76,11 +77,10 @@ public class FruitCollector : MonoBehaviour
                 }
             }
 
-
-            Player.CollectablePoints.Add(collision.gameObject.transform.position);
-            Destroy(collision.gameObject);
-            CollectiblesText.text = collectibles.ToString();
-
+            // Player.CollectablePoints.Add(collision.gameObject.transform.position);
+            // Destroy(collision.gameObject);
+            // CollectiblesText.text = collectibles.ToString();
+            Debug.Log("Colors Collected :"+ Player.redCollected+","+Player.greenCollected+","+Player.blueCollected);
         }
     }
 
