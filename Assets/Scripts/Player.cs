@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     private bool ogscale;
     public static List<Vector2> deathPoints;
     public static List<Vector2> CollectablePoints;
+    public static List<string> death_reasons;
     public static List<string> mechanics_cp1;
     public static List<string> mechanics_cp2;
     public static List<string> mechanics_cp3;
@@ -92,6 +93,7 @@ public class Player : MonoBehaviour
         isFacingRight = true;
         timelimit = 90.0f;
         current_mechs = new List<string>();
+        death_reasons = new List<string>();
         deathPoints = new List<Vector2>();
         CollectablePoints = new List<Vector2>();
         direction = new Vector2(1, 0);
@@ -203,6 +205,7 @@ public class Player : MonoBehaviour
             current_mechs = new List<string>();
             win = 1;
             Send();
+            Time.timeScale = 0f;
         }
         if (collision.gameObject.tag == "Checkpoint1")
         {
@@ -264,6 +267,7 @@ public class Player : MonoBehaviour
         {
             Destroy(collision.gameObject);
             deathPoints.Add(this.transform.position);
+            death_reasons.Add("Color");
 
                 this.transform.position = this.respawnPoint;
                  LoseLife();
@@ -308,11 +312,11 @@ public class Player : MonoBehaviour
         form.AddField("entry.1830111561", string.Format("{0}", win));
         form.AddField("entry.103162259", string.Format("{0}", lives));
         form.AddField("entry.1934928186", string.Format("{0}", score));
-        form.AddField("entry.883242844", ConvertVectorListToString(CollectablePoints));
-        
+        // form.AddField("entry.883242844", ConvertVectorListToString(CollectablePoints));
+        form.AddField("entry.883242844", ConvertListToString(death_reasons));
 
 
-        UnityWebRequest WWW = UnityWebRequest.Post(URL, form);
+       UnityWebRequest WWW = UnityWebRequest.Post(URL, form);
         yield return WWW.SendWebRequest();
     }
     string ConvertVectorListToString(List<Vector2> vectors)
@@ -330,14 +334,19 @@ public class Player : MonoBehaviour
         Time.timeScale = 0f;
         Timetaken = time_running;
         Send();
+        Time.timeScale = 0f;
     }
     public void LoseLife()
     {   
-       
         lives[number_of_lives].enabled = false;
-            number_of_lives--;
+        number_of_lives--;
         if (number_of_lives < 0)
             Lost();
+       
+       
+
+        
+
 
     }
     private string ConvertListToString(List<string> list)

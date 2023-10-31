@@ -47,6 +47,7 @@ public class Timer : MonoBehaviour
         else
         {
             Player.deathPoints.Add(player.transform.position);
+            Player.death_reasons.Add("Timeout");
             player.LoseLife();
             //once = false;
             player.transform.position = player.respawnPoint;
