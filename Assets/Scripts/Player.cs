@@ -40,8 +40,8 @@ public class Player : MonoBehaviour
     public float inputHorizontal;
     public float inputVertical;
     private Transform playerTransform;
-    private Vector3 originalScale;
-    private bool ogscale;
+    //private Vector3 originalScale;
+    //private bool ogscale;
     public static List<Vector2> deathPoints;
     public static List<Vector2> CollectablePoints;
     public static List<string> death_reasons;
@@ -88,8 +88,8 @@ public class Player : MonoBehaviour
         current_sublevel = "entry";
         boomerang = boomerangObject.GetComponent<Boomerang>();
         playerTransform = GetComponent<Transform>();
-        originalScale = playerTransform.localScale;
-        ogscale = true;
+        //originalScale = playerTransform.localScale;
+        //ogscale = true;
         isFacingRight = true;
         timelimit = 90.0f;
         current_mechs = new List<string>();
@@ -138,7 +138,7 @@ public class Player : MonoBehaviour
             current_mechs.Add("Boomerang");
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        /*if (Input.GetKeyDown(KeyCode.R))
         {
             if (ogscale)
             {
@@ -154,7 +154,7 @@ public class Player : MonoBehaviour
                 playerTransform.localScale = originalScale;
                 ogscale = true;
             }
-        }
+        }*/
     }
     private void FixedUpdate()
     {
