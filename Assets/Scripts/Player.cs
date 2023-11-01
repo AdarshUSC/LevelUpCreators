@@ -214,7 +214,7 @@ public class Player : MonoBehaviour
             current_mechs = new List<string>();
             win = 1;
             Send();
-            Time.timeScale = 0f;
+       
         }
         if (collision.gameObject.tag == "Checkpoint1")
         {
@@ -343,7 +343,7 @@ public class Player : MonoBehaviour
         Time.timeScale = 0f;
         Timetaken = time_running;
         Send();
-        Time.timeScale = 0f;
+       
     }
     public void LoseLife()
     {   
