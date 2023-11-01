@@ -12,7 +12,7 @@ public class EnemyBulletBehaviour : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        force = 10.0f;
+        force = 15.0f;
         player = GameObject.FindGameObjectWithTag("Player");
         p = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         Vector3 direction = player.transform.position - transform.position;

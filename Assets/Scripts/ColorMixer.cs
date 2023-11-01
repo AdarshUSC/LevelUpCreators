@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ColorMixer : MonoBehaviour
 {
     public Button buttonRed;
+
+    [SerializeField] private TMP_Text redText;
+    [SerializeField] private TMP_Text greenText;
+    [SerializeField] private TMP_Text blueText;
     public Button buttonGreen;
     public Button mixArea;
 
@@ -19,6 +24,11 @@ public class ColorMixer : MonoBehaviour
     private List<Color> colorList = new List<Color>();
     private Color enemyColor;
     public bool reset_flag;
+
+    //TODO: deactivate color panel for 5 seconds if blue/green is on so that player can't use two powers at once.
+    public bool isRedOn; //no need to deactivate as it is not timed.
+    public bool isBlueOn;
+    public bool isGreenOn;
     public static Color CombineColors(params Color[] aColors)
     {
         Color result = new Color(0,0,0,0);
@@ -40,22 +50,14 @@ public class ColorMixer : MonoBehaviour
         reset.onClick.AddListener(OnResetClick);
         reset_flag = true;
         mixArea.interactable=false;
-        buttonRed.interactable=false;
-        buttonGreen.interactable=false;
-        buttonBlue.interactable=false;
+        // buttonRed.interactable=false;
+        // buttonGreen.interactable=false;
+        // buttonBlue.interactable=false;
+        buttonRed.GetComponentInChildren<TMP_Text>().text = Player.redCollected.ToString();
+        // Debug.Log("red count is "+buttonRed.GetComponentInChildren<TMP_Text>().text);
+        buttonGreen.GetComponentInChildren<TMP_Text>().text = Player.greenCollected.ToString();
+        buttonBlue.GetComponentInChildren<TMP_Text>().text = Player.blueCollected.ToString();
     }
-
-    //private void Update()
-    //{
-    //    if(FindObjectOfType<SelectEnemy>()==null)
-    //    {
-    //        Debug.Log("enemy not initialized yet");
-    //    }else
-    //    {
-    //        enemyColor = FindObjectOfType<SelectEnemy>().enemyColor;
-    //        Debug.Log("enemy color is:" + enemyColor);
-    //    }
-    //}
 
     private void OnButtonClick(Button clicked)
     {   
@@ -70,15 +72,24 @@ public class ColorMixer : MonoBehaviour
                     Color curr = button.GetComponent<Image>().color;
                     if(curr==Color.red){
                         Player.redCollected--;
+                        if(Player.redCollected==0){
+                            buttonRed.interactable=false;
+                        }
                     } if(curr==Color.blue){
                         Player.blueCollected--;
+                        if(Player.blueCollected==0){
+                            buttonBlue.interactable=false;
+                        }
                     } if(curr==Color.green){
                         Player.greenCollected--;
+                        if(Player.greenCollected==0){
+                            buttonGreen.interactable=false;
+                        }
                     }
                 }
             }
             mixArea.interactable=false;
-            player.color = mixArea.GetComponent<Image>().color;
+            // player.color = mixArea.GetComponent<Image>().color;
         } else{
             mixArea.interactable=true;
         }
@@ -102,7 +113,6 @@ public class ColorMixer : MonoBehaviour
         reset_flag = true;
         
     }
-
     private void UpdateOutputColor()
     {
         Color[] selectedColors = colorList.ToArray();
@@ -119,11 +129,5 @@ public class ColorMixer : MonoBehaviour
         Debug.Log("Camouflage count" + Player.camouflage);
         mixArea.GetComponent<Image>().color = resultColor;
         // player.color = resultColor;
-    }
-    private void Win(){
-        if(player.color.Equals(enemyColor)){
-            //this equals might not work as expected due to the color calculation? try use the same way to express color RGB value in this script and emenySpawner.
-            //enemy pass by without huring player ship.
-        }
     }
 }

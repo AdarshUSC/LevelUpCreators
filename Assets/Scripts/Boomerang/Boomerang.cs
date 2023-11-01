@@ -9,6 +9,10 @@ public class Boomerang : MonoBehaviour
     private float throwForce = 10.0f;
     private GameObject hitTree;
 
+    private int blueTimer;
+
+    private int greenTimer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,6 +28,8 @@ public class Boomerang : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
         gameObject.SetActive(false);
+        blueTimer = 0;  
+        greenTimer = 0;
     }
 
     public void Throw(Vector2 direction)
@@ -57,7 +63,18 @@ public class Boomerang : MonoBehaviour
                 Renderer renderer = GetComponent<Renderer>();
                 renderer.enabled = true;
            // }
-        }
+        } 
+        // if(iceOn){
+            // blueTimer+= Time.deltaTime;
+            // if(blueTimer > 5){
+            //     Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            //     rb.gravityScale=1;
+            //     gravityTimer = 0;  
+            //     antiGravityButton.interactable=true;
+            //     return; 
+            // }
+        // }
+        
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -71,9 +88,19 @@ public class Boomerang : MonoBehaviour
             hitTree = collision.gameObject;
 
             hitTree.GetComponent<Tree>().DropFruits();
-        }
-        else if (collision.gameObject.layer == LayerMask.NameToLayer("Default"))
-        {
+        } else if (collision.gameObject.CompareTag("Enemy")){
+
+            Destroy(gameObject);
+            GameObject icePrefab = collision.transform.Find("iceCave").gameObject;
+            icePrefab.GetComponent<SpriteRenderer>().enabled = true;
+            // transform.position = transform.parent.position;
+            gameObject.SetActive(false);
+
+            Debug.Log("I am hit the tree");
+            hitTree = collision.gameObject;
+
+            hitTree.GetComponent<Tree>().DropFruits();
+        } else if (collision.gameObject.layer == LayerMask.NameToLayer("Default")){
             transform.position = transform.parent.position;
             gameObject.SetActive(false);
         }
