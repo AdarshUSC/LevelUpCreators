@@ -51,7 +51,7 @@ public class PlayerResize : MonoBehaviour
         if (!ogscale)
         {
             resizeTimer += Time.deltaTime;
-            if (resizeTimer > 5)
+            if (resizeTimer > 10)
             {
                 playerTransform.localScale = originalScale;
                 ogscale = true;
