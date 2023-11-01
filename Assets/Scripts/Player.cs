@@ -72,9 +72,9 @@ public class Player : MonoBehaviour
     bool onGround = false;
     public float groundLine = 2;
 
-    public static int redCollected = 0;
-    public static int blueCollected = 0;
-    public static int greenCollected = 0;
+    public static int redCollected = 5;
+    public static int blueCollected = 5;
+    public static int greenCollected = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -98,12 +98,13 @@ public class Player : MonoBehaviour
         CollectablePoints = new List<Vector2>();
         direction = new Vector2(1, 0);
         lostCanvas.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(gameObject.GetComponent<Collider2D>().bounds.size);
+        // Debug.Log(gameObject.GetComponent<Collider2D>().bounds.size);
         groundLine = (float)(gameObject.GetComponent<Collider2D>().bounds.size.y * 1.4 / 2.4);
         time_running += Time.deltaTime;
         time_checkpoint += Time.deltaTime;

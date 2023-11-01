@@ -51,6 +51,7 @@ public class FruitCollector : MonoBehaviour
                         }
                     }
                 }
+                collision.gameObject.GetComponentInChildren<TMP_Text>().text = Player.redCollected.ToString();
             } else if(sr.color==Color.green){
                 if(Player.greenCollected++==0){
                     GameObject[] colorButtons = GameObject.FindGameObjectsWithTag("ColorButton");
@@ -63,6 +64,7 @@ public class FruitCollector : MonoBehaviour
                         }
                     }
                 }
+                collision.gameObject.GetComponentInChildren<TMP_Text>().text = Player.greenCollected.ToString();
             } else if(sr.color==Color.blue){
                 if(Player.blueCollected++==0){
                     GameObject[] colorButtons = GameObject.FindGameObjectsWithTag("ColorButton");
@@ -75,8 +77,9 @@ public class FruitCollector : MonoBehaviour
                         }
                     }
                 }
+                collision.gameObject.GetComponentInChildren<TMP_Text>().text = Player.blueCollected.ToString();
             }
-
+            
             // Player.CollectablePoints.Add(collision.gameObject.transform.position);
             // Destroy(collision.gameObject);
             // CollectiblesText.text = collectibles.ToString();
