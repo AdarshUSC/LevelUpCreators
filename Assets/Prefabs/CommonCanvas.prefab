@@ -1063,7 +1063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8053554187904444734}
   - component: {fileID: 3573015159367646385}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: tallShroom_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5218,7 +5218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1426733695895654554}
   - component: {fileID: 166658924109088238}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: FruitBasketCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
