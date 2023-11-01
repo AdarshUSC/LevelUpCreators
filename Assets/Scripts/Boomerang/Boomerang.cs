@@ -88,18 +88,14 @@ public class Boomerang : MonoBehaviour
             hitTree = collision.gameObject;
 
             hitTree.GetComponent<Tree>().DropFruits();
-        } else if (collision.gameObject.CompareTag("Enemy")){
 
-            Destroy(gameObject);
+        } else if (collision.gameObject.CompareTag("Enemy")){
+            
+            Debug.Log("enemy hit");
             GameObject icePrefab = collision.transform.Find("iceCave").gameObject;
             icePrefab.GetComponent<SpriteRenderer>().enabled = true;
-            // transform.position = transform.parent.position;
             gameObject.SetActive(false);
-
-            Debug.Log("I am hit the tree");
-            hitTree = collision.gameObject;
-
-            hitTree.GetComponent<Tree>().DropFruits();
+            Destroy(gameObject);
         } else if (collision.gameObject.layer == LayerMask.NameToLayer("Default")){
             transform.position = transform.parent.position;
             gameObject.SetActive(false);
