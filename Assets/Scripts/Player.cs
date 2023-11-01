@@ -193,13 +193,6 @@ public class Player : MonoBehaviour
                 transform.Translate(0, playerMoveSpeed * Time.deltaTime, 0);
             }
         }
-        if (collision.gameObject.tag == "Mushroom")
-        {
-            Destroy(collision.gameObject);
-            Vector3 newScale = new Vector3(3.0f, 3.0f, 3.0f);
-            playerTransform.localScale = newScale;
-            ogscale = false;
-        }
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
