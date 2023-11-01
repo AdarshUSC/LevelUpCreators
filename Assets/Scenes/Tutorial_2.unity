@@ -3433,6 +3433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 755407713}
   - component: {fileID: 755407714}
+  - component: {fileID: 755407715}
   m_Layer: 0
   m_Name: exit
   m_TagString: FallDetection
@@ -3500,6 +3501,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.990368, y: 3.990365}
   m_EdgeRadius: 0
+--- !u!114 &755407715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755407712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 829ee1b0f7055ca4aa4bcc1d791372d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winCanvas: {fileID: 1905038944}
 --- !u!1 &809166413
 GameObject:
   m_ObjectHideFlags: 0
