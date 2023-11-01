@@ -16556,7 +16556,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300098, guid: f6a737996a4a842e58ba28428e71d711, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c77a6575bf251a4baea72c24503aa5d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -16576,7 +16576,7 @@ Transform:
   m_GameObject: {fileID: 1199058017}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.582462, y: 19.07, z: 0}
+  m_LocalPosition: {x: 9.582462, y: 19.66, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16641,18 +16641,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.021003008, y: 0.2612605}
+  m_Offset: {x: -0.0084757805, y: -0.1400938}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.0961951}
-    oldSize: {x: 0.74, y: 0.66}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.7, y: 0.7}
     newSize: {x: 0.74, y: 0.66}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5929761, y: 0.61799335}
+  m_Size: {x: 0.4161005, y: 0.42495918}
   m_EdgeRadius: 0
 --- !u!1001 &1238594518
 PrefabInstance:
@@ -18080,6 +18080,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1830536194}
+    - target: {fileID: 3047833252927601768, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -38.860977
+      objectReference: {fileID: 0}
     - target: {fileID: 5077212188704324059, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -18159,6 +18163,14 @@ PrefabInstance:
     - target: {fileID: 5077212188704324059, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805674523928914106, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -38.860977
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911033796317288578, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -38.860977
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
