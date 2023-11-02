@@ -25,7 +25,7 @@ public class EnemyPatrol : MonoBehaviour
 
     // Update is called once per frame
     void Update () {
-        GameObject icePrefab = gameObject.transform.FindChild("iceCave").gameObject;
+        GameObject icePrefab = gameObject.transform.Find("iceCave").gameObject;
         if(blueOn){
             blueTimer+= Time.deltaTime;
             Debug.Log("blue timer is "+ blueTimer);
@@ -62,7 +62,7 @@ public class EnemyPatrol : MonoBehaviour
             Debug.Log("enemy hit");
             blueOn=true;
             blueTimer=Time.deltaTime;
-            GameObject icePrefab = gameObject.transform.FindChild("iceCave").gameObject;
+            GameObject icePrefab = gameObject.transform.Find("iceCave").gameObject;
             icePrefab.GetComponent<SpriteRenderer>().enabled = true;
             // gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
             collision.gameObject.transform.position = collision.gameObject.transform.parent.position;

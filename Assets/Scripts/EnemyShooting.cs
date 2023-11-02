@@ -16,7 +16,7 @@ public class EnemyShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject icePrefab = gameObject.transform.FindChild("iceCave").gameObject;
+        GameObject icePrefab = gameObject.transform.Find("iceCave").gameObject;
         SpriteRenderer sr = icePrefab.GetComponent<SpriteRenderer>();
         float distance = Vector2.Distance(transform.position, player.transform.position);
         if(distance<5 && !sr.enabled){

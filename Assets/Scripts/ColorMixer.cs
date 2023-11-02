@@ -65,7 +65,8 @@ public class ColorMixer : MonoBehaviour
     }
     private void OnButtonClick(Button clicked){
 
-        if(!PairDoors.byTheDoor){
+        if(!PairDoor1.byTheDoor || !PairDoor2.byTheDoor)
+        {
             //just show one color in mixer
             mixArea.GetComponent<Image>().color = clicked.GetComponent<Image>().color;
         } else{ 
