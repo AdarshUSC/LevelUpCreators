@@ -34,20 +34,21 @@ public class FruitCollector : MonoBehaviour
                 // 
                 powerUpButton.interactable = true;
             }
-        } else if (collision.gameObject.CompareTag("ColorCollectible")){
+        } 
+        // else if (collision.gameObject.CompareTag("ColorCollectible")){
             
-            // Debug.Log("I am on color enter 2D" + collision.gameObject.transform.position.y);
-            SpriteRenderer sr = collision.gameObject.GetComponent<SpriteRenderer>();
-            Destroy(collision.gameObject);
-            if(sr.color==Color.red){
-                Player.redCollected++;
-            } else if(sr.color==Color.green){
-                Player.greenCollected++;
-            } else if(sr.color==Color.blue){
-                Player.blueCollected++;
-            }
-            // Debug.Log("Colors Collected :"+ Player.redCollected+","+Player.greenCollected+","+Player.blueCollected);
-        }
+        //     // Debug.Log("I am on color enter 2D" + collision.gameObject.transform.position.y);
+        //     SpriteRenderer sr = collision.gameObject.GetComponent<SpriteRenderer>();
+        //     Destroy(collision.gameObject);
+        //     if(sr.color==Color.red){
+        //         Player.redCollected++;
+        //     } else if(sr.color==Color.green){
+        //         Player.greenCollected++;
+        //     } else if(sr.color==Color.blue){
+        //         Player.blueCollected++;
+        //     }
+        //     // Debug.Log("Colors Collected :"+ Player.redCollected+","+Player.greenCollected+","+Player.blueCollected);
+        // }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -65,6 +66,19 @@ public class FruitCollector : MonoBehaviour
                 // 
                 powerUpButton.interactable=true;
             }
+        } else if (collision.gameObject.CompareTag("ColorCollectible")){
+            
+            // Debug.Log("I am on color enter 2D" + collision.gameObject.transform.position.y);
+            SpriteRenderer sr = collision.gameObject.GetComponent<SpriteRenderer>();
+            Destroy(collision.gameObject);
+            if(sr.color==Color.red){
+                Player.redCollected++;
+            } else if(sr.color==Color.green){
+                Player.greenCollected++;
+            } else if(sr.color==Color.blue){
+                Player.blueCollected++;
+            }
+            // Debug.Log("Colors Collected :"+ Player.redCollected+","+Player.greenCollected+","+Player.blueCollected);
         }
     }
 
