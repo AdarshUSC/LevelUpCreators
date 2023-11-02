@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         checkBoundary();
-        Debug.Log(gameObject.GetComponent<Collider2D>().bounds.size);
+        //Debug.Log(gameObject.GetComponent<Collider2D>().bounds.size);
         groundLine = (float)(gameObject.GetComponent<Collider2D>().bounds.size.y * 1.4 / 2.4);
         time_running += Time.deltaTime;
         time_checkpoint += Time.deltaTime;
