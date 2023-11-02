@@ -322,7 +322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172252643992041532, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
       propertyPath: m_Time
-      value: 10
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4861984018030006223, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
       propertyPath: powerUpButton
