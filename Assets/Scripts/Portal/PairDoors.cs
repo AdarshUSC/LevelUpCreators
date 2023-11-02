@@ -15,6 +15,7 @@ public class PairDoors : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        byTheDoor = false;
     }
 
     // Update is called once per frame
