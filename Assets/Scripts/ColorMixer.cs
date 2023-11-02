@@ -13,9 +13,12 @@ public class ColorMixer : MonoBehaviour
     [SerializeField] private TMP_Text blueText;
     public Button buttonGreen;
     public Button mixArea;
+    SpriteRenderer spriteRenderer;
 
     public Button buttonBlue;
     public Button reset;
+    public SpriteRenderer boomerang;
+    private Color originalColor;
 
     // public SpriteRenderer mixingArea;
     public SpriteRenderer player;
@@ -57,6 +60,9 @@ public class ColorMixer : MonoBehaviour
         // Debug.Log("red count is "+buttonRed.GetComponentInChildren<TMP_Text>().text);
         buttonGreen.GetComponentInChildren<TMP_Text>().text = Player.greenCollected.ToString();
         buttonBlue.GetComponentInChildren<TMP_Text>().text = Player.blueCollected.ToString();
+        originalColor = boomerang.color;
+        Debug.Log("Original color" + originalColor);
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnButtonClick(Button clicked)
@@ -128,6 +134,7 @@ public class ColorMixer : MonoBehaviour
         }
         Debug.Log("Camouflage count" + Player.camouflage);
         mixArea.GetComponent<Image>().color = resultColor;
+        boomerang.color = resultColor;
         // player.color = resultColor;
     }
 }

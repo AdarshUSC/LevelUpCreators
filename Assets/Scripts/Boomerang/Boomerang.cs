@@ -12,6 +12,7 @@ public class Boomerang : MonoBehaviour
     private int blueTimer;
 
     private int greenTimer;
+    SpriteRenderer spriteRenderer;
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class Boomerang : MonoBehaviour
         gameObject.SetActive(false);
         blueTimer = 0;  
         greenTimer = 0;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void Throw(Vector2 direction)
@@ -79,6 +81,9 @@ public class Boomerang : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        Color currentColor = GetCurrentColor();
+        Debug.Log("Current color boomerang"+ currentColor);
+
         if (collision.gameObject.CompareTag("Tree"))
         {
             transform.position = transform.parent.position;
@@ -100,6 +105,13 @@ public class Boomerang : MonoBehaviour
             transform.position = transform.parent.position;
             gameObject.SetActive(false);
         }
+    }
+
+    Color GetCurrentColor()
+    {
+        Color currentColor = spriteRenderer.color;
+        Debug.Log("Current color:----- " + currentColor);
+        return currentColor;
     }
 }
 

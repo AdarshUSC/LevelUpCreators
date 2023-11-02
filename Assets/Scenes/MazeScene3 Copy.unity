@@ -17475,6 +17475,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 695155875406451478, guid: 2840e1cf746954a788e05fef53fc8351, type: 3}
   m_PrefabInstance: {fileID: 1757483484435738369}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1510883375 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7843191649295211502, guid: 2840e1cf746954a788e05fef53fc8351, type: 3}
+  m_PrefabInstance: {fileID: 1757483484435738369}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1530897357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18001,9 +18006,13 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1830536194}
+    - target: {fileID: 2261107593690465729, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: boomerang
+      value: 
+      objectReference: {fileID: 1510883375}
     - target: {fileID: 3047833252927601768, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -38.860977
+      value: -38.860962
       objectReference: {fileID: 0}
     - target: {fileID: 3573015159367646385, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_SortingOrder
@@ -18099,11 +18108,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8805674523928914106, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -38.860977
+      value: -38.860962
       objectReference: {fileID: 0}
     - target: {fileID: 8911033796317288578, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -38.860977
+      value: -38.860962
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
