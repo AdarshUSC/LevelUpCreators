@@ -52,8 +52,8 @@ public class Tree : MonoBehaviour
             greenOn=true;
             greenTimer=Time.deltaTime;
             Player.playerMoveSpeed=1.0f;
-            transform.position = transform.parent.position;
-            gameObject.SetActive(false);
+            collision.gameObject.transform.position = collision.gameObject.transform.parent.position;
+            collision.gameObject.SetActive(false);
         } 
     }
 

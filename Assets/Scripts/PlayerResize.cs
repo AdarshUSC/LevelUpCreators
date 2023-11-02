@@ -18,6 +18,7 @@ public class PlayerResize : MonoBehaviour
 
     private int mushrooms = 0;
     [SerializeField] private TMP_Text MushroomsText;
+    [SerializeField] private TMP_Text resizeTimerText; 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Mushroom")
@@ -38,6 +39,11 @@ public class PlayerResize : MonoBehaviour
         ogscale = true;
         resizeTimer = Time.deltaTime;
         mushrooms = 0;
+
+        if (resizeTimerText != null)
+        {
+            resizeTimerText.text = "";
+        }
     }
 
     // Update is called once per frame
@@ -60,6 +66,20 @@ public class PlayerResize : MonoBehaviour
         {
             resizeTimer += Time.deltaTime;
 
+            float timeLeft = 15f - resizeTimer;
+
+            if (resizeTimerText != null)
+            {
+                if (timeLeft > 0)
+                {
+                    resizeTimerText.text = $"Time for resizing: {timeLeft.ToString("F2")}";
+                }
+                else
+                {
+                    resizeTimerText.text = ""; // Hide the text when the countdown is over
+                }
+            }
+
             if (resizeTimer > 15 && mpd.playerInside == false)
             {
                 playerTransform.localScale = originalScale;
@@ -71,5 +91,6 @@ public class PlayerResize : MonoBehaviour
                 play.LoseLife();
             }
         }
+
     }
 }
