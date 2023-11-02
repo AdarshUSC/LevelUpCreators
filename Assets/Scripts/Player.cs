@@ -218,7 +218,7 @@ public class Player : MonoBehaviour
             Debug.Log("Time taken" + time_checkpoint);
             checkpoint1 = time_checkpoint;
             time_checkpoint = 0.0f;
-            timelimit =10.0f;
+            timelimit = 60.0f;
             Debug.Log("mc" + current_mechs.Count);
             mechanics_cp1 = current_mechs;
             current_mechs = new List<string>();
