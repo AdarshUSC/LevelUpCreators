@@ -7,10 +7,6 @@ using TMPro;
 public class ColorMixer : MonoBehaviour
 {
     public Button buttonRed;
-
-    [SerializeField] private TMP_Text redText;
-    [SerializeField] private TMP_Text greenText;
-    [SerializeField] private TMP_Text blueText;
     public Button buttonGreen;
     public Button mixArea;
     SpriteRenderer spriteRenderer;
@@ -57,7 +53,6 @@ public class ColorMixer : MonoBehaviour
         // buttonGreen.interactable=false;
         // buttonBlue.interactable=false;
         buttonRed.GetComponentInChildren<TMP_Text>().text = Player.redCollected.ToString();
-        // Debug.Log("red count is "+buttonRed.GetComponentInChildren<TMP_Text>().text);
         buttonGreen.GetComponentInChildren<TMP_Text>().text = Player.greenCollected.ToString();
         buttonBlue.GetComponentInChildren<TMP_Text>().text = Player.blueCollected.ToString();
         originalColor = boomerang.color;
@@ -70,6 +65,9 @@ public class ColorMixer : MonoBehaviour
             buttonRed.interactable=Player.redCollected==0?false:true;
             buttonGreen.interactable=Player.blueCollected==0?false:true;
             buttonBlue.interactable=Player.greenCollected==0?false:true;
+            buttonRed.GetComponentInChildren<TMP_Text>().text = Player.redCollected.ToString();
+            buttonGreen.GetComponentInChildren<TMP_Text>().text = Player.greenCollected.ToString();
+            buttonBlue.GetComponentInChildren<TMP_Text>().text = Player.blueCollected.ToString();
     }
 
     private void OnButtonClick(Button clicked)

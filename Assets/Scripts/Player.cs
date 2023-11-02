@@ -135,11 +135,11 @@ public class Player : MonoBehaviour
             boomerang.GetComponent<SpriteRenderer>().color = GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color;
             Color currColor = boomerang.GetComponent<SpriteRenderer>().color;
             if(currColor==Color.red){
-                redCollected--;
+                Player.redCollected--;
             } else if(currColor==Color.green){
-                greenCollected--;
+                Player.greenCollected--;
             } else if(currColor==Color.blue){
-                blueCollected--;
+                Player.blueCollected--;
             }
             boomerang.Throw(direction);
         }
