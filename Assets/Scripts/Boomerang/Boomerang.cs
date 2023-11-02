@@ -77,7 +77,8 @@ public class Boomerang : MonoBehaviour
 
             hitTree.GetComponent<Tree>().DropFruits();
 
-        } else if (collision.gameObject.layer == LayerMask.NameToLayer("Default")){
+        } else if (collision.gameObject.layer == LayerMask.NameToLayer("Default") || collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
             transform.position = transform.parent.position;
             gameObject.SetActive(false);
         }
