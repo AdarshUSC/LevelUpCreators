@@ -106,6 +106,7 @@ public class Boomerang : MonoBehaviour
             hitTree.GetComponent<Tree>().DropFruits();
 
         } else if (collision.gameObject.CompareTag("Enemy") ){
+            
             collidedEnemy = collision.gameObject;
             Debug.Log("enemy hit");
             Color currColor = colorPanel.transform.Find("mixArea").gameObject.GetComponent<Image>().color;
@@ -121,9 +122,13 @@ public class Boomerang : MonoBehaviour
                     }
                 }
             }
-            gameObject.SetActive(false);
-        }
-        else if (collision.gameObject.layer == LayerMask.NameToLayer("Default")){
+            Destroy(gameObject);
+        } else if (collision.gameObject.CompareTag("Bush")){
+            transform.position = transform.parent.position;
+            hitTree = collision.gameObject;
+            hitTree.GetComponent<Tree>().DropFruits();
+            player.GetComponent<SpriteRenderer>().color = Color.green;
+        } else if (collision.gameObject.layer == LayerMask.NameToLayer("Default")){
             transform.position = transform.parent.position;
             gameObject.SetActive(false);
         }

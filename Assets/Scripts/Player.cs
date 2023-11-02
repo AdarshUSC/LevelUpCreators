@@ -56,8 +56,6 @@ public class Player : MonoBehaviour
     [SerializeReference] GameObject lostCanvas;
     public Image[] lives;
     public int win = 0;
-
-
     private string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdHKBSGlrH4LG-W3gfj3Dc--PUgpnOvAnQwZ1SXpbi_AFyVKQ/formResponse";
 
     Rigidbody2D rb;
@@ -127,16 +125,23 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
- 
-            
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);            
         }
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            boomerang.Throw(direction);
             boomerang_used++;
             current_mechs.Add("Boomerang");
+            boomerang.GetComponent<SpriteRenderer>().color = GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color;
+            Color currColor = boomerang.GetComponent<SpriteRenderer>().color;
+            if(currColor==Color.red){
+                redCollected--;
+            } else if(currColor==Color.green){
+                greenCollected--;
+            } else if(currColor==Color.blue){
+                blueCollected--;
+            }
+            boomerang.Throw(direction);
         }
 
         /*if (Input.GetKeyDown(KeyCode.R))

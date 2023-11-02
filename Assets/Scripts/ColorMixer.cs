@@ -65,6 +65,13 @@ public class ColorMixer : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    private void Update(){
+
+            buttonRed.interactable=Player.redCollected==0?false:true;
+            buttonGreen.interactable=Player.blueCollected==0?false:true;
+            buttonBlue.interactable=Player.greenCollected==0?false:true;
+    }
+
     private void OnButtonClick(Button clicked)
     {   
         clicked.interactable = false; //disable the button so player cannot click twice
