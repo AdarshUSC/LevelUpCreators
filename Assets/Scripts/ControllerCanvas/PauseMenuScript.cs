@@ -46,6 +46,9 @@ public class PauseMenuScript : MonoBehaviour
 
     public void GoNextLevel()
     {
+        Player player = FindObjectOfType<Player>();
+
+        Player.isPowerUpOn = false;
         SceneManager.LoadScene(levelDict[SceneManager.GetActiveScene().name]);
         Time.timeScale = 1f;
     }
