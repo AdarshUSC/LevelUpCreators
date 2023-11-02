@@ -11656,7 +11656,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 771915398225650239, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_text
-      value: Press B
+      value: Press B to shoot the bullet
       objectReference: {fileID: 0}
     - target: {fileID: 771915398225650239, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_fontSize
@@ -12525,8 +12525,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.35, y: -2.41}
-  m_SizeDelta: {x: 225.169, y: 48.5248}
+  m_AnchoredPosition: {x: 1.22, y: -2.2}
+  m_SizeDelta: {x: 262.7613, y: 48.362}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2091015695
 MonoBehaviour:
@@ -12548,7 +12548,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <<< Do you want me?
+  m_text: <<Reverse the gravity to reach us
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
