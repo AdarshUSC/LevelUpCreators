@@ -18190,6 +18190,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3645920101684822, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+      propertyPath: timelimit
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645920101684822, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
       propertyPath: timerText
       value: 
       objectReference: {fileID: 235980514}
@@ -21003,6 +21007,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1733152422}
+    - target: {fileID: 299021755703293086, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -38.718994
+      objectReference: {fileID: 0}
     - target: {fileID: 969393874546727474, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_SizeDelta.x
       value: 70.754
