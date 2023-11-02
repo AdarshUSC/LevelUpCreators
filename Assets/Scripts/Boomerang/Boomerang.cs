@@ -9,15 +9,7 @@ public class Boomerang : MonoBehaviour
     private bool isThrown = false;
     private float throwForce = 10.0f;
     private GameObject hitTree;
-
-    private float blueTimer;
-    private float greenTimer;
-    private bool blueOn;
-    private bool greenOn;
-    private GameObject colorPanel;
     GameObject player;
-
-    GameObject collidedEnemy;
 
     void Start()
     {
@@ -34,9 +26,6 @@ public class Boomerang : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
         gameObject.SetActive(false);
-        blueTimer = 0f;  
-        greenTimer = 0f;
-        colorPanel = GameObject.FindGameObjectWithTag("CommonCanvas").transform.Find("ColorPanel").gameObject;
     }
 
     public void Throw(Vector2 direction)
@@ -71,37 +60,6 @@ public class Boomerang : MonoBehaviour
                 renderer.enabled = true;
            // }
         } 
-        if(blueOn){
-            blueTimer+= Time.deltaTime;
-            if(blueTimer > 5){
-                GameObject icePrefab = collidedEnemy.transform.Find("iceCave").gameObject;
-                icePrefab.GetComponent<SpriteRenderer>().enabled = false;
-                foreach(Transform transform in colorPanel.transform) {
-                    if(transform.CompareTag("ColorButton")) {
-                        Button colorButton = transform.gameObject.GetComponent<Button>();
-                        colorButton.interactable=false; // switching off the colors when power up is being used
-                    }
-                }
-                GameObject.FindGameObjectWithTag("mixArea").GetComponent<Button>().interactable=false;
-                blueOn=false;
-                blueTimer = 0f;
-            } 
-        } else if (greenOn){
-            greenTimer+= Time.deltaTime;
-            if(greenTimer > 5){
-                foreach(Transform transform in colorPanel.transform) {
-                    if(transform.CompareTag("ColorButton")) {
-                        Button colorButton = transform.gameObject.GetComponent<Button>();
-                        colorButton.interactable=false; // switching off the colors when power up is being used
-                    }
-                }
-                GameObject.FindGameObjectWithTag("mixArea").GetComponent<Button>().interactable=false;
-                greenOn=false;
-                greenTimer = 0f;
-                Player.playerMoveSpeed+=5.0f;
-                player.GetComponent<SpriteRenderer>().color = Color.white;
-            } 
-        }
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
@@ -119,30 +77,6 @@ public class Boomerang : MonoBehaviour
 
             hitTree.GetComponent<Tree>().DropFruits();
 
-        } else if (collision.gameObject.CompareTag("Enemy") ){
-            
-            collidedEnemy = collision.gameObject;
-            Debug.Log("enemy hit");
-            if(currColor==Color.blue){
-                blueOn=true;
-                GameObject icePrefab = collidedEnemy.transform.Find("iceCave").gameObject;
-                icePrefab.GetComponent<SpriteRenderer>().enabled = true;
-                blueTimer=Time.deltaTime;
-                foreach(Transform transform in colorPanel.transform) {
-                    if(transform.CompareTag("ColorButton")) {
-                        Button colorButton = transform.gameObject.GetComponent<Button>();
-                        colorButton.interactable=false;
-                    }
-                }
-            }
-            gameObject.SetActive(false);
-            // Destroy(gameObject);
-        } else if (collision.gameObject.CompareTag("Tree") && currColor == Color.green){
-            transform.position = transform.parent.position;
-            player.GetComponent<SpriteRenderer>().color = Color.green;
-            greenOn=true;
-            greenTimer=Time.deltaTime;
-            Player.playerMoveSpeed-=5.0f;
         } else if (collision.gameObject.layer == LayerMask.NameToLayer("Default")){
             transform.position = transform.parent.position;
             gameObject.SetActive(false);
