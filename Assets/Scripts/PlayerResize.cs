@@ -10,6 +10,7 @@ public class PlayerResize : MonoBehaviour
     private Vector3 originalScale;
     private bool ogscale;
     float resizeTimer;
+    Player p;
     GameObject player;
     private MiniPathDetector mpd;
     private Player play;
@@ -36,6 +37,7 @@ public class PlayerResize : MonoBehaviour
         play = playObj.GetComponent<Player>();
         playerTransform = player.GetComponent<Transform>();
         originalScale = playerTransform.localScale;
+	p = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         ogscale = true;
         resizeTimer = Time.deltaTime;
         mushrooms = 0;
