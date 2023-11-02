@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     public static int powerup = 0;
     public static int collectables = 0;
 
-    public  int number_of_lives = 3;
+    public int number_of_lives = 3;
     private float checkpoint1 = 0.0f;
     private float checkpoint2 = 0.0f;
     private float checkpoint3 = 0.0f;
@@ -74,9 +74,15 @@ public class Player : MonoBehaviour
     public static int blueCollected = 5;
     public static int greenCollected = 5;
 
+    private TrailRenderer trail;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        trail = GetComponent<TrailRenderer>();
+        trail.enabled = false;  // Start with the trail turned off.
+
         rb = GetComponent<Rigidbody2D>();
         respawnPoint = transform.position;
         initialPosition = transform.position;
@@ -125,7 +131,12 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);            
+
+            float actualJumpForce = isPowerUpOn ? jumpForce * 2.0f : jumpForce;
+
+            rb.velocity = new Vector2(rb.velocity.x, actualJumpForce);
+ 
+
         }
 
         if (Input.GetKeyDown(KeyCode.B))
@@ -134,22 +145,39 @@ public class Player : MonoBehaviour
             current_mechs.Add("Boomerang");
             boomerang.GetComponent<SpriteRenderer>().color = GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color;
             Color currColor = boomerang.GetComponent<SpriteRenderer>().color;
-            if(currColor==Color.red){
-                if(redCollected>0){
+            if (currColor == Color.red)
+            {
+                if (redCollected > 0)
+                {
                     boomerang.Throw(direction);
                     Player.redCollected--;
                 }
-            } else if(currColor==Color.green){
-                if(greenCollected>0){
+            }
+            else if (currColor == Color.green)
+            {
+                if (greenCollected > 0)
+                {
                     boomerang.Throw(direction);
                     Player.greenCollected--;
                 }
-            } else if(currColor==Color.blue){
-                if(blueCollected>0){
+            }
+            else if (currColor == Color.blue)
+            {
+                if (blueCollected > 0)
+                {
                     boomerang.Throw(direction);
                     Player.blueCollected--;
                 }
             }
+        }
+
+        if (isPowerUpOn)
+        {
+            trail.enabled = true;
+        }
+        else
+        {
+            trail.enabled = false;
         }
 
         /*if (Input.GetKeyDown(KeyCode.R))
@@ -173,7 +201,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         inputHorizontal = Input.GetAxisRaw("Horizontal");
-        if (inputHorizontal<0)
+        if (inputHorizontal < 0)
         {
             isFacingRight = false;
             Flip(isFacingRight);
@@ -190,7 +218,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Maze")
         {
             Debug.Log("Hit the wall");
-            if (Input.GetKey(KeyCode.LeftArrow) )
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
                 transform.Translate(playerMoveSpeed * Time.deltaTime, 0, 0);
             }
@@ -214,18 +242,18 @@ public class Player : MonoBehaviour
         //Debug.Log("I am on trigger player");
         if (collision.gameObject.tag == "FallDetection")
         {
-           // transform.position = initialPosition;
+            // transform.position = initialPosition;
             Timetaken = time_running;
             Debug.Log("mc" + current_mechs.Count);
             mechanics_exit = current_mechs;
             current_mechs = new List<string>();
             win = 1;
             Send();
-       
+
         }
         if (collision.gameObject.tag == "Checkpoint1")
         {
-            respawnPoint.x = transform.position.x +4;
+            respawnPoint.x = transform.position.x + 4;
             respawnPoint.y = transform.position.y;
 
             Debug.Log("Time taken" + time_checkpoint);
@@ -285,8 +313,8 @@ public class Player : MonoBehaviour
             deathPoints.Add(this.transform.position);
             death_reasons.Add("Color");
 
-                this.transform.position = this.respawnPoint;
-                 LoseLife();
+            this.transform.position = this.respawnPoint;
+            LoseLife();
 
             Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
             rb.gravityScale = 1;
@@ -305,10 +333,10 @@ public class Player : MonoBehaviour
         Debug.Log("Send called");
         Debug.Log("Collectable locations" + ConvertVectorListToString(CollectablePoints));
         Debug.Log("cp1");
-        StartCoroutine(Post(Timetaken, antigravity, reflection, camouflage,resize,powerup, boomerang_used, checkpoint1, checkpoint2, checkpoint3, checkpoint4, CollectablePoints.Count, win,number_of_lives));
+        StartCoroutine(Post(Timetaken, antigravity, reflection, camouflage, resize, powerup, boomerang_used, checkpoint1, checkpoint2, checkpoint3, checkpoint4, CollectablePoints.Count, win, number_of_lives));
     }
 
-    IEnumerator Post(float timetaken, int mech1, int mech2, int mech3,int mech4,int mech5,int mech6, float cp1, float cp2, float cp3, float cp4, int score, int win, int lives)
+    IEnumerator Post(float timetaken, int mech1, int mech2, int mech3, int mech4, int mech5, int mech6, float cp1, float cp2, float cp3, float cp4, int score, int win, int lives)
     {
         Debug.Log("Post called" + (string.Format("{0:N2}", Timetaken)) + " " + (string.Format("{0}", mech1)));
         WWWForm form = new WWWForm();
@@ -316,7 +344,7 @@ public class Player : MonoBehaviour
         form.AddField("entry.305553560", string.Format("{0}", mech1));
         form.AddField("entry.1168732002", string.Format("{0}", mech2));
         form.AddField("entry.1274496277", string.Format("{0}", mech3));
-        form.AddField("entry.1477920271", string.Format("{0:N2}", cp1)+"*"+ ConvertListToString(mechanics_cp1));
+        form.AddField("entry.1477920271", string.Format("{0:N2}", cp1) + "*" + ConvertListToString(mechanics_cp1));
         form.AddField("entry.2118230736", string.Format("{0:N2}", cp2) + "*" + ConvertListToString(mechanics_cp2));
         form.AddField("entry.2104200455", string.Format("{0:N2}", cp3) + "*" + ConvertListToString(mechanics_cp3));
         form.AddField("entry.1640424427", string.Format("{0:N2}", cp4) + "*" + ConvertListToString(mechanics_cp4));
@@ -332,7 +360,7 @@ public class Player : MonoBehaviour
         form.AddField("entry.883242844", ConvertListToString(death_reasons));
 
 
-       UnityWebRequest WWW = UnityWebRequest.Post(URL, form);
+        UnityWebRequest WWW = UnityWebRequest.Post(URL, form);
         yield return WWW.SendWebRequest();
     }
     string ConvertVectorListToString(List<Vector2> vectors)
@@ -350,10 +378,10 @@ public class Player : MonoBehaviour
         Time.timeScale = 0f;
         Timetaken = time_running;
         Send();
-       
+
     }
     public void LoseLife()
-    {   
+    {
         lives[number_of_lives].enabled = false;
         number_of_lives--;
         if (number_of_lives < 0)
