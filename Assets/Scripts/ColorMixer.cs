@@ -65,7 +65,18 @@ public class ColorMixer : MonoBehaviour
     }
     private void OnButtonClick(Button clicked){
 
-        mixArea.GetComponent<Image>().color = clicked.GetComponent<Image>().color;
+        if(!PairDoors.byTheDoor){
+            //just show one color in mixer
+            mixArea.GetComponent<Image>().color = clicked.GetComponent<Image>().color;
+        } else{ 
+            //enable matching
+            clicked.interactable = false; //disable the button so player cannot click twice
+            Debug.Log("clicked button is "+ clicked);
+            Color buttonColor = clicked.GetComponent<Image>().color;
+            colorList.Add(buttonColor);
+            UpdateOutputColor();
+        }
+        
         
     }
     //this function is for mixing
@@ -82,26 +93,14 @@ public class ColorMixer : MonoBehaviour
     //                 Color curr = button.GetComponent<Image>().color;
     //                 if(curr==Color.red){
     //                     Player.redCollected--;
-    //                     if(Player.redCollected==0){
-    //                         buttonRed.interactable=false;
-    //                     }
     //                 } if(curr==Color.blue){
     //                     Player.blueCollected--;
-    //                     if(Player.blueCollected==0){
-    //                         buttonBlue.interactable=false;
-    //                     }
     //                 } if(curr==Color.green){
     //                     Player.greenCollected--;
-    //                     if(Player.greenCollected==0){
-    //                         buttonGreen.interactable=false;
-    //                     }
     //                 }
     //             }
     //         }
-    //         mixArea.interactable=false;
     //         // player.color = mixArea.GetComponent<Image>().color;
-    //     } else{
-    //         mixArea.interactable=true;
     //     }
     //     colorList.Add(buttonColor);
     //     UpdateOutputColor();
@@ -141,6 +140,6 @@ public class ColorMixer : MonoBehaviour
         }
         Debug.Log("Camouflage count" + Player.camouflage);
         mixArea.GetComponent<Image>().color = resultColor;
-        // player.color = resultColor;
+        player.color = resultColor;
     }
 }
