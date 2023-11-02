@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PairDoor2 : MonoBehaviour
 {
@@ -23,13 +24,30 @@ public class PairDoor2 : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        // Debug.Log("player color is "+ player.GetComponent<SpriteRenderer>().color);
+        // Debug.Log("door color is "+ image.GetComponent<SpriteRenderer>().color);
         if (byTheDoor && image.GetComponent<SpriteRenderer>().color == player.GetComponent<SpriteRenderer>().color && Input.GetKeyUp(KeyCode.UpArrow) && timer>0.1)
         {
             player.transform.position = otherDoor.transform.position;
             byTheDoor = false;
             Debug.Log("From " + transform.position.ToString() + " transfer to " + otherDoor.transform.position.ToString());
             otherDoor.GetComponent<PairDoor1>().timer = 0;
-        }
+            GameObject[] colorButtons = GameObject.FindGameObjectsWithTag("ColorButton");
+            foreach(GameObject colorButton in colorButtons){
+                Button button = colorButton.GetComponent<Button>();
+                if(button.interactable==false){
+                    Color curr = button.GetComponent<Image>().color;
+                    if(curr==Color.red){
+                        Player.redCollected--;
+                    } if(curr==Color.blue){
+                        Player.blueCollected--;
+                    } if(curr==Color.green){
+                        Player.greenCollected--;
+                    }
+                }
+            }
+            //return player back to normal color after exiting the door?
+        }     
     }
 
 
