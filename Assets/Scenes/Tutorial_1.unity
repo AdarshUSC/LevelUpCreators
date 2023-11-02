@@ -326,6 +326,17 @@ MonoBehaviour:
   HintPannel: {fileID: 815734881}
   PauseButton: {fileID: 247224877}
   timeToHit: 3
+--- !u!114 &156402481 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3850846370560416266, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+  m_PrefabInstance: {fileID: 281131152}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &218832029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -428,6 +439,10 @@ PrefabInstance:
     - target: {fileID: 2207071645074078133, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_Name
       value: CommonCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2220466413569198346, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3200220889366229177, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_IsActive
@@ -534,7 +549,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2220466413569198346, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5077212188704324059, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       insertIndex: 0
@@ -5951,6 +5967,10 @@ PrefabInstance:
       propertyPath: MushroomsText
       value: 
       objectReference: {fileID: 1476231615}
+    - target: {fileID: 8980352946019348296, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+      propertyPath: resizeTimerText
+      value: 
+      objectReference: {fileID: 156402481}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
