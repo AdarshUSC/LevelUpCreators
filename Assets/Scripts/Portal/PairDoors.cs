@@ -8,7 +8,7 @@ public class PairDoors : MonoBehaviour
     [SerializeReference] GameObject player;
     [SerializeReference] GameObject image;
 
-    private bool byTheDoor = false;
+    public static bool byTheDoor = false;
 
 
     // Start is called before the first frame update
