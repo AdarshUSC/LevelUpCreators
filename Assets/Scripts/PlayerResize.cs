@@ -88,7 +88,11 @@ public class PlayerResize : MonoBehaviour
             }
             else if (resizeTimer > 15 && mpd.playerInside == true)
             {
+		Debug.Log("Calling lose life");
+                playerTransform.position = p.respawnPoint;
                 play.LoseLife();
+                resizeTimer = 0;
+                playerTransform.localScale = originalScale;
             }
         }
 
