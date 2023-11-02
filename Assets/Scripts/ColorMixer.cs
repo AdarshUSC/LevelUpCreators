@@ -9,11 +9,8 @@ public class ColorMixer : MonoBehaviour
     public Button buttonRed;
     public Button buttonGreen;
     public Button mixArea;
-    SpriteRenderer spriteRenderer;
-
     public Button buttonBlue;
     public Button reset;
-    public SpriteRenderer boomerang;
     private Color originalColor;
 
     // public SpriteRenderer mixingArea;
@@ -49,15 +46,12 @@ public class ColorMixer : MonoBehaviour
         reset.onClick.AddListener(OnResetClick);
         reset_flag = true;
         mixArea.interactable=false;
-        // buttonRed.interactable=false;
-        // buttonGreen.interactable=false;
-        // buttonBlue.interactable=false;
+        buttonRed.interactable=Player.redCollected==0?false:true;
+        buttonGreen.interactable=Player.greenCollected==0?false:true;
+        buttonBlue.interactable=Player.blueCollected==0?false:true;
         buttonRed.GetComponentInChildren<TMP_Text>().text = Player.redCollected.ToString();
         buttonGreen.GetComponentInChildren<TMP_Text>().text = Player.greenCollected.ToString();
         buttonBlue.GetComponentInChildren<TMP_Text>().text = Player.blueCollected.ToString();
-        originalColor = boomerang.color;
-        Debug.Log("Original color" + originalColor);
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update(){
@@ -147,7 +141,6 @@ public class ColorMixer : MonoBehaviour
         }
         Debug.Log("Camouflage count" + Player.camouflage);
         mixArea.GetComponent<Image>().color = resultColor;
-        boomerang.color = resultColor;
         // player.color = resultColor;
     }
 }
