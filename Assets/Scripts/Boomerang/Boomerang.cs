@@ -121,13 +121,9 @@ public class Boomerang : MonoBehaviour
                     }
                 }
             }
-            Destroy(gameObject);
-        } else if (collision.gameObject.CompareTag("Bush")){
-            transform.position = transform.parent.position;
-            hitTree = collision.gameObject;
-            hitTree.GetComponent<Tree>().DropFruits();
-            player.GetComponent<SpriteRenderer>().color = Color.green;
-        } else if (collision.gameObject.layer == LayerMask.NameToLayer("Default")){
+            gameObject.SetActive(false);
+        }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Default")){
             transform.position = transform.parent.position;
             gameObject.SetActive(false);
         }
