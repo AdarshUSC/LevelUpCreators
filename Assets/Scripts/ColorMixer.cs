@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ColorMixer : MonoBehaviour
 {
     public Button buttonRed;
     public Button buttonGreen;
     public Button mixArea;
+    SpriteRenderer spriteRenderer;
 
     public Button buttonBlue;
     public Button reset;
+    public SpriteRenderer boomerang;
+    private Color originalColor;
 
     // public SpriteRenderer mixingArea;
     public SpriteRenderer player;
@@ -19,6 +23,11 @@ public class ColorMixer : MonoBehaviour
     private List<Color> colorList = new List<Color>();
     private Color enemyColor;
     public bool reset_flag;
+
+    //TODO: deactivate color panel for 5 seconds if blue/green is on so that player can't use two powers at once.
+    public bool isRedOn; //no need to deactivate as it is not timed.
+    public bool isBlueOn;
+    public bool isGreenOn;
     public static Color CombineColors(params Color[] aColors)
     {
         Color result = new Color(0,0,0,0);
@@ -40,54 +49,75 @@ public class ColorMixer : MonoBehaviour
         reset.onClick.AddListener(OnResetClick);
         reset_flag = true;
         mixArea.interactable=false;
-        buttonRed.interactable=false;
-        buttonGreen.interactable=false;
-        buttonBlue.interactable=false;
+        // buttonRed.interactable=false;
+        // buttonGreen.interactable=false;
+        // buttonBlue.interactable=false;
+        buttonRed.GetComponentInChildren<TMP_Text>().text = Player.redCollected.ToString();
+        buttonGreen.GetComponentInChildren<TMP_Text>().text = Player.greenCollected.ToString();
+        buttonBlue.GetComponentInChildren<TMP_Text>().text = Player.blueCollected.ToString();
+        originalColor = boomerang.color;
+        Debug.Log("Original color" + originalColor);
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    //private void Update()
-    //{
-    //    if(FindObjectOfType<SelectEnemy>()==null)
-    //    {
-    //        Debug.Log("enemy not initialized yet");
-    //    }else
-    //    {
-    //        enemyColor = FindObjectOfType<SelectEnemy>().enemyColor;
-    //        Debug.Log("enemy color is:" + enemyColor);
-    //    }
-    //}
+    private void Update(){
 
-    private void OnButtonClick(Button clicked)
-    {   
-        clicked.interactable = false; //disable the button so player cannot click twice
-        Debug.Log("clicked button is "+ clicked);
-        Color buttonColor = clicked.GetComponent<Image>().color;
-        if(clicked.name=="mixArea"){
-            GameObject[] colorButtons = GameObject.FindGameObjectsWithTag("ColorButton");
-            foreach(GameObject colorButton in colorButtons){
-                Button button = colorButton.GetComponent<Button>();
-                if(button.interactable==false){
-                    Color curr = button.GetComponent<Image>().color;
-                    if(curr==Color.red){
-                        Player.redCollected--;
-                    } if(curr==Color.blue){
-                        Player.blueCollected--;
-                    } if(curr==Color.green){
-                        Player.greenCollected--;
-                    }
-                }
-            }
-            mixArea.interactable=false;
-            player.color = mixArea.GetComponent<Image>().color;
-        } else{
-            mixArea.interactable=true;
-        }
-        colorList.Add(buttonColor);
-        UpdateOutputColor();
-        //clicked.GetComponent<Image>().color *= new Color((float)0.78,(float)0.78,(float)0.78,(float)0.5);             
+            buttonRed.interactable=Player.redCollected==0?false:true;
+            buttonGreen.interactable=Player.greenCollected==0?false:true;
+            buttonBlue.interactable=Player.blueCollected==0?false:true;
+            buttonRed.GetComponentInChildren<TMP_Text>().text = Player.redCollected.ToString();
+            buttonGreen.GetComponentInChildren<TMP_Text>().text = Player.greenCollected.ToString();
+            buttonBlue.GetComponentInChildren<TMP_Text>().text = Player.blueCollected.ToString();
     }
+    private void OnButtonClick(Button clicked){
+
+        mixArea.GetComponent<Image>().color = clicked.GetComponent<Image>().color;
+        
+    }
+    //this function is for mixing
+    // private void OnButtonClick(Button clicked)
+    // {   
+    //     clicked.interactable = false; //disable the button so player cannot click twice
+    //     Debug.Log("clicked button is "+ clicked);
+    //     Color buttonColor = clicked.GetComponent<Image>().color;
+    //     if(clicked.name=="mixArea"){
+    //         GameObject[] colorButtons = GameObject.FindGameObjectsWithTag("ColorButton");
+    //         foreach(GameObject colorButton in colorButtons){
+    //             Button button = colorButton.GetComponent<Button>();
+    //             if(button.interactable==false){
+    //                 Color curr = button.GetComponent<Image>().color;
+    //                 if(curr==Color.red){
+    //                     Player.redCollected--;
+    //                     if(Player.redCollected==0){
+    //                         buttonRed.interactable=false;
+    //                     }
+    //                 } if(curr==Color.blue){
+    //                     Player.blueCollected--;
+    //                     if(Player.blueCollected==0){
+    //                         buttonBlue.interactable=false;
+    //                     }
+    //                 } if(curr==Color.green){
+    //                     Player.greenCollected--;
+    //                     if(Player.greenCollected==0){
+    //                         buttonGreen.interactable=false;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //         mixArea.interactable=false;
+    //         // player.color = mixArea.GetComponent<Image>().color;
+    //     } else{
+    //         mixArea.interactable=true;
+    //     }
+    //     colorList.Add(buttonColor);
+    //     UpdateOutputColor();
+    //     //clicked.GetComponent<Image>().color *= new Color((float)0.78,(float)0.78,(float)0.78,(float)0.5);             
+    // }
+
+    //resetForMixing
     public void OnResetClick()
     {
+        // maybe at start disable/HIDE it, only use it for mixing.
         if(Player.redCollected>0){
             buttonRed.interactable = true;
         } if(Player.blueCollected>0){
@@ -102,7 +132,6 @@ public class ColorMixer : MonoBehaviour
         reset_flag = true;
         
     }
-
     private void UpdateOutputColor()
     {
         Color[] selectedColors = colorList.ToArray();
@@ -118,12 +147,7 @@ public class ColorMixer : MonoBehaviour
         }
         Debug.Log("Camouflage count" + Player.camouflage);
         mixArea.GetComponent<Image>().color = resultColor;
+        boomerang.color = resultColor;
         // player.color = resultColor;
-    }
-    private void Win(){
-        if(player.color.Equals(enemyColor)){
-            //this equals might not work as expected due to the color calculation? try use the same way to express color RGB value in this script and emenySpawner.
-            //enemy pass by without huring player ship.
-        }
     }
 }

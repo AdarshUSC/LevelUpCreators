@@ -36,51 +36,17 @@ public class FruitCollector : MonoBehaviour
             }
         } else if (collision.gameObject.CompareTag("ColorCollectible")){
             
-            Debug.Log("I am on color enter 2D" + collision.gameObject.transform.position.y);
+            // Debug.Log("I am on color enter 2D" + collision.gameObject.transform.position.y);
             SpriteRenderer sr = collision.gameObject.GetComponent<SpriteRenderer>();
             Destroy(collision.gameObject);
             if(sr.color==Color.red){
-                if(Player.redCollected++==0){
-                    GameObject[] colorButtons = GameObject.FindGameObjectsWithTag("ColorButton");
-                    foreach(GameObject colorButton in colorButtons){
-                        Button button = colorButton.GetComponent<Button>();
-                        Color curr = button.GetComponent<Image>().color;
-                        if(curr==Color.red){
-                            button.interactable=true;
-                            break;
-                        }
-                    }
-                }
+                Player.redCollected++;
             } else if(sr.color==Color.green){
-                if(Player.greenCollected++==0){
-                    GameObject[] colorButtons = GameObject.FindGameObjectsWithTag("ColorButton");
-                    foreach(GameObject colorButton in colorButtons){
-                        Button button = colorButton.GetComponent<Button>();
-                        Color curr = button.GetComponent<Image>().color;
-                        if(curr==Color.green){
-                            button.interactable=true;
-                            break;
-                        }
-                    }
-                }
+                Player.greenCollected++;
             } else if(sr.color==Color.blue){
-                if(Player.blueCollected++==0){
-                    GameObject[] colorButtons = GameObject.FindGameObjectsWithTag("ColorButton");
-                    foreach(GameObject colorButton in colorButtons){
-                        Button button = colorButton.GetComponent<Button>();
-                        Color curr = button.GetComponent<Image>().color;
-                        if(curr==Color.blue){
-                            button.interactable=true;
-                            break;
-                        }
-                    }
-                }
+                Player.blueCollected++;
             }
-
-            // Player.CollectablePoints.Add(collision.gameObject.transform.position);
-            // Destroy(collision.gameObject);
-            // CollectiblesText.text = collectibles.ToString();
-            Debug.Log("Colors Collected :"+ Player.redCollected+","+Player.greenCollected+","+Player.blueCollected);
+            // Debug.Log("Colors Collected :"+ Player.redCollected+","+Player.greenCollected+","+Player.blueCollected);
         }
     }
 

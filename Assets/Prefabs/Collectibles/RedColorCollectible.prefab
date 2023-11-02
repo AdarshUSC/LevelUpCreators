@@ -76,7 +76,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: ColorCollectible
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7716799646176568882, guid: ee37a4974ea514b7a83519c190e8a0e9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

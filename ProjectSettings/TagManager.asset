@@ -20,6 +20,8 @@ TagManager:
   - ColorCollectible
   - ColorButton
   - Mushroom
+  - Enemy
+  - CommonCanvas
   layers:
   - Default
   - TransparentFX
