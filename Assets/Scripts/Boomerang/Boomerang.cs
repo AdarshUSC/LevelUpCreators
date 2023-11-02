@@ -89,7 +89,7 @@ public class Boomerang : MonoBehaviour
             } 
         } else if (greenOn){
             greenTimer+= Time.deltaTime;
-            if(greenTimer > 10){
+            if(greenTimer > 5){
                 foreach(Transform transform in colorPanel.transform) {
                     if(transform.CompareTag("ColorButton")) {
                         Button colorButton = transform.gameObject.GetComponent<Button>();
@@ -100,6 +100,7 @@ public class Boomerang : MonoBehaviour
                 greenOn=false;
                 greenTimer = 0f;
                 Player.playerMoveSpeed+=5.0f;
+                player.GetComponent<SpriteRenderer>().color = Color.white;
             } 
         }
     }
