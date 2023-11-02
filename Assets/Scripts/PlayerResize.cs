@@ -11,6 +11,10 @@ public class PlayerResize : MonoBehaviour
     private bool ogscale;
     float resizeTimer;
     GameObject player;
+    private MiniPathDetector mpd;
+    private Player play;
+    public GameObject mpdObj;
+    public GameObject playObj;
 
     private int mushrooms = 0;
     [SerializeField] private TMP_Text MushroomsText;
@@ -23,10 +27,12 @@ public class PlayerResize : MonoBehaviour
             MushroomsText.text = mushrooms.ToString();
         }
     }
-        // Start is called before the first frame update
+    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        mpd = mpdObj.GetComponent<MiniPathDetector>();
+        play = playObj.GetComponent<Player>();
         playerTransform = player.GetComponent<Transform>();
         originalScale = playerTransform.localScale;
         ogscale = true;
@@ -39,7 +45,7 @@ public class PlayerResize : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (ogscale && mushrooms>0)
+            if (ogscale && mushrooms > 0)
             {
                 Player.resize++;
                 Player.current_mechs.Add("Resize");
@@ -53,11 +59,16 @@ public class PlayerResize : MonoBehaviour
         if (!ogscale)
         {
             resizeTimer += Time.deltaTime;
-            if (resizeTimer > 10)
+
+            if (resizeTimer > 15 && mpd.playerInside == false)
             {
                 playerTransform.localScale = originalScale;
                 ogscale = true;
                 resizeTimer = 0;
+            }
+            else if (resizeTimer > 15 && mpd.playerInside == true)
+            {
+                play.LoseLife();
             }
         }
     }

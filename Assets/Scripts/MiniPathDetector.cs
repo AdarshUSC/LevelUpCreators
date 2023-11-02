@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MiniPathDetector : MonoBehaviour
 {
-    private bool playerInside = false;
+    public bool playerInside = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -24,12 +24,12 @@ public class MiniPathDetector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerInside = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

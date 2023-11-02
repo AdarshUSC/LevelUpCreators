@@ -16784,6 +16784,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 916899382}
     - target: {fileID: 8980352946019348296, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+      propertyPath: mpdObj
+      value: 
+      objectReference: {fileID: 1095485409}
+    - target: {fileID: 8980352946019348296, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+      propertyPath: playObj
+      value: 
+      objectReference: {fileID: 1030165145}
+    - target: {fileID: 8980352946019348296, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
       propertyPath: MushroomsText
       value: 
       objectReference: {fileID: 1741593920}
@@ -16795,6 +16803,11 @@ PrefabInstance:
 --- !u!4 &1030165144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1006939528251101905, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+  m_PrefabInstance: {fileID: 1030165143}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1030165145 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2081760706506450670, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
   m_PrefabInstance: {fileID: 1030165143}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1036030689
@@ -17077,6 +17090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd2791586185be4a8417be472469350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInside: 0
 --- !u!1001 &1159912270
 PrefabInstance:
   m_ObjectHideFlags: 0
