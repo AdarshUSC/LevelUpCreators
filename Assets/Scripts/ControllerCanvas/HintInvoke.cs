@@ -7,6 +7,8 @@ public class HintInvoke : MonoBehaviour
     [SerializeField] GameObject HintPannel;
     [SerializeField] GameObject PauseButton;
 
+    public int timeToHit = 3;
+
     private bool hintDisabled = true;
     // Start is called before the first frame update
     void Start()
@@ -17,12 +19,17 @@ public class HintInvoke : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!hintDisabled && Input.GetKey(KeyCode.Space))
+        if (!hintDisabled && Input.GetKeyDown(KeyCode.Space))
         {
             HintPannel.SetActive(false);
             Time.timeScale = 1f;
             hintDisabled = true;
             PauseButton.SetActive(true);
+
+            if (timeToHit <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -35,6 +42,7 @@ public class HintInvoke : MonoBehaviour
             Time.timeScale = 0f;
             hintDisabled = false;
             PauseButton.SetActive(false);
+            timeToHit -= 1;
         }
     }
 }
