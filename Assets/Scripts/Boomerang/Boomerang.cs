@@ -41,11 +41,10 @@ public class Boomerang : MonoBehaviour
 
     public void Throw(Vector2 direction)
     {
-        // Instantiate(bullet, firePoint.position, Quaternion.identity);
+        gameObject.SetActive(true);
         transform.position = transform.parent.position;
         throwDirection = direction.normalized;
         rb.velocity = throwDirection * throwForce;
-        gameObject.SetActive(true);
         isThrown = true;
     }
 
@@ -136,7 +135,6 @@ public class Boomerang : MonoBehaviour
                     }
                 }
             }
-            transform.position = transform.parent.position;
             gameObject.SetActive(false);
             // Destroy(gameObject);
         } else if (collision.gameObject.CompareTag("Tree") && currColor == Color.green){
