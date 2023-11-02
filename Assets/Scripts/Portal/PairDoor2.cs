@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PairDoors : MonoBehaviour
+public class PairDoor2 : MonoBehaviour
 {
     [SerializeReference] GameObject otherDoor;
     [SerializeReference] GameObject player;
     [SerializeReference] GameObject image;
 
     public static bool byTheDoor = false;
+    public float timer = 0;
 
 
     // Start is called before the first frame update
@@ -21,21 +22,30 @@ public class PairDoors : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (byTheDoor && image.GetComponent<SpriteRenderer>().color == player.GetComponent<SpriteRenderer>().color && Input.GetKeyDown(KeyCode.UpArrow))
+        timer += Time.deltaTime;
+        if (byTheDoor && image.GetComponent<SpriteRenderer>().color == player.GetComponent<SpriteRenderer>().color && Input.GetKeyUp(KeyCode.UpArrow) && timer>0.1)
         {
             player.transform.position = otherDoor.transform.position;
             byTheDoor = false;
-            Debug.Log(otherDoor.transform.position);
+            Debug.Log("From " + transform.position.ToString() + " transfer to " + otherDoor.transform.position.ToString());
+            otherDoor.GetComponent<PairDoor1>().timer = 0;
         }
     }
 
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.tag == "Player")
         {
             byTheDoor = true;
         }
-        else byTheDoor = false;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "Player")
+        {
+            byTheDoor = false;
+        }
     }
 }
