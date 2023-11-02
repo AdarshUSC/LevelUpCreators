@@ -345,12 +345,6 @@ public class Player : MonoBehaviour
         number_of_lives--;
         if (number_of_lives < 0)
             Lost();
-       
-       
-
-        
-
-
     }
     private string ConvertListToString(List<string> list)
     {
