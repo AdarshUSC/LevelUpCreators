@@ -16374,6 +16374,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 257685939}
     - target: {fileID: 8249823047524164766, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+      propertyPath: upBoundary
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8249823047524164766, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+      propertyPath: downBoundary
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8249823047524164766, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
       propertyPath: boomerangObject
       value: 
       objectReference: {fileID: 1510883371}
