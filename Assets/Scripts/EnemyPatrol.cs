@@ -11,7 +11,6 @@ public class EnemyPatrol : MonoBehaviour
     float walkingDirection = 1.0f;
     Vector2 walkAmount;
     float originalX; // Original float value
-
     float blueTimer;
     bool blueOn;
 
