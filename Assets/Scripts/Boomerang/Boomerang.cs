@@ -75,18 +75,31 @@ public class Boomerang : MonoBehaviour
         if(blueOn){
             blueTimer+= Time.deltaTime;
             if(blueTimer > 5){
-                Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
                 GameObject icePrefab = collidedEnemy.transform.Find("iceCave").gameObject;
                 icePrefab.GetComponent<SpriteRenderer>().enabled = false;
                 foreach(Transform transform in colorPanel.transform) {
                     if(transform.CompareTag("ColorButton")) {
                         Button colorButton = transform.gameObject.GetComponent<Button>();
-                        // colorButton.interactable=true based on colors count;
+                        colorButton.interactable=false; // switching off the colors when power up is being used
                     }
                 }
                 GameObject.FindGameObjectWithTag("mixArea").GetComponent<Button>().interactable=false;
                 blueOn=false;
                 blueTimer = 0f;
+            } 
+        } else if (greenOn){
+            greenTimer+= Time.deltaTime;
+            if(greenTimer > 10){
+                foreach(Transform transform in colorPanel.transform) {
+                    if(transform.CompareTag("ColorButton")) {
+                        Button colorButton = transform.gameObject.GetComponent<Button>();
+                        colorButton.interactable=false; // switching off the colors when power up is being used
+                    }
+                }
+                GameObject.FindGameObjectWithTag("mixArea").GetComponent<Button>().interactable=false;
+                greenOn=false;
+                greenTimer = 0f;
+                Player.playerMoveSpeed+=5.0f;
             } 
         }
     }
@@ -95,8 +108,8 @@ public class Boomerang : MonoBehaviour
 
         Color currentColor = GetCurrentColor();
         Debug.Log("Current color boomerang"+ currentColor);
-
-        if (collision.gameObject.CompareTag("Tree"))
+        Color currColor = gameObject.GetComponent<SpriteRenderer>().color;
+        if (collision.gameObject.CompareTag("Tree") && currColor == Color.red)
         {
             transform.position = transform.parent.position;
             gameObject.SetActive(false);
@@ -110,7 +123,6 @@ public class Boomerang : MonoBehaviour
             
             collidedEnemy = collision.gameObject;
             Debug.Log("enemy hit");
-            Color currColor = colorPanel.transform.Find("mixArea").gameObject.GetComponent<Image>().color;
             if(currColor==Color.blue){
                 blueOn=true;
                 GameObject icePrefab = collidedEnemy.transform.Find("iceCave").gameObject;
@@ -126,11 +138,12 @@ public class Boomerang : MonoBehaviour
             transform.position = transform.parent.position;
             gameObject.SetActive(false);
             // Destroy(gameObject);
-        } else if (collision.gameObject.CompareTag("Bush")){
+        } else if (collision.gameObject.CompareTag("Tree") && currColor == Color.green){
             transform.position = transform.parent.position;
-            hitTree = collision.gameObject;
-            hitTree.GetComponent<Tree>().DropFruits();
             player.GetComponent<SpriteRenderer>().color = Color.green;
+            greenOn=true;
+            greenTimer=Time.deltaTime;
+            Player.playerMoveSpeed-=5.0f;
         } else if (collision.gameObject.layer == LayerMask.NameToLayer("Default")){
             transform.position = transform.parent.position;
             gameObject.SetActive(false);
