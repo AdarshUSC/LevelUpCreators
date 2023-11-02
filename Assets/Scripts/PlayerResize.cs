@@ -41,6 +41,8 @@ public class PlayerResize : MonoBehaviour
         {
             if (ogscale && mushrooms>0)
             {
+                Player.resize++;
+                Player.current_mechs.Add("Resize");
                 Vector3 newScale = new Vector3(3.0f, 3.0f, 3.0f);
                 playerTransform.localScale = newScale;
                 ogscale = false;
