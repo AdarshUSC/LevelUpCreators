@@ -77,7 +77,9 @@ public class Player : MonoBehaviour
     public static int redCollected = 5;
     public static int blueCollected = 5;
     public static int greenCollected = 5;
-
+    public static int redUsed = 0;
+    public static int blueUsed = 0;
+    public static int greenUsed = 0;
     private TrailRenderer trail;
 
 
@@ -156,6 +158,7 @@ public class Player : MonoBehaviour
                 {
                     boomerang.Throw(direction);
                     Player.redCollected--;
+                    redUsed++;
                 }
             }
             else if (currColor == Color.green)
@@ -164,6 +167,7 @@ public class Player : MonoBehaviour
                 {
                     boomerang.Throw(direction);
                     Player.greenCollected--;
+                    greenUsed++;
                 }
             }
             else if (currColor == Color.blue)
@@ -172,6 +176,7 @@ public class Player : MonoBehaviour
                 {
                     boomerang.Throw(direction);
                     Player.blueCollected--;
+                    blueUsed++;
                 }
             }
         }

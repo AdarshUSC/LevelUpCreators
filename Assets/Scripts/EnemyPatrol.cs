@@ -32,6 +32,7 @@ public class EnemyPatrol : MonoBehaviour
             if(blueTimer > 5){
                 blueOn=false;
                 blueTimer = 0.0f;
+                
                 icePrefab.GetComponent<SpriteRenderer>().enabled = false;
                 // foreach(Transform transform in colorPanel.transform) {
                 //     if(transform.CompareTag("ColorButton")) {
@@ -62,6 +63,7 @@ public class EnemyPatrol : MonoBehaviour
             Debug.Log("enemy hit");
             blueOn=true;
             blueTimer=Time.deltaTime;
+            Player.current_mechs.Add("Froze Enemy");
             GameObject icePrefab = gameObject.transform.Find("iceCave").gameObject;
             icePrefab.GetComponent<SpriteRenderer>().enabled = true;
             // gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;

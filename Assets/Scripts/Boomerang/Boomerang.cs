@@ -67,11 +67,12 @@ public class Boomerang : MonoBehaviour
         Color currentColor = GetCurrentColor();
         Debug.Log("Current color boomerang"+ currentColor);
         Color currColor = gameObject.GetComponent<SpriteRenderer>().color;
+
         if (collision.gameObject.CompareTag("Tree") && currColor == Color.red)
         {
             transform.position = transform.parent.position;
             gameObject.SetActive(false);
-
+            Player.current_mechs.Add("Tree Hit");
             Debug.Log("I am hit the tree");
             hitTree = collision.gameObject;
 
