@@ -56,6 +56,10 @@ public class Player : MonoBehaviour
     [SerializeReference] GameObject lostCanvas;
     public Image[] lives;
     public int win = 0;
+
+    public float upBoundary;
+    public float downBoundary;
+
     private string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdHKBSGlrH4LG-W3gfj3Dc--PUgpnOvAnQwZ1SXpbi_AFyVKQ/formResponse";
 
     Rigidbody2D rb;
@@ -108,7 +112,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log(gameObject.GetComponent<Collider2D>().bounds.size);
+        checkBoundary();
+        Debug.Log(gameObject.GetComponent<Collider2D>().bounds.size);
         groundLine = (float)(gameObject.GetComponent<Collider2D>().bounds.size.y * 1.4 / 2.4);
         time_running += Time.deltaTime;
         time_checkpoint += Time.deltaTime;
@@ -382,7 +387,8 @@ public class Player : MonoBehaviour
     }
     public void LoseLife()
     {
-        lives[number_of_lives].enabled = false;
+        if (number_of_lives>=0)
+            lives[number_of_lives].enabled = false;
         number_of_lives--;
         if (number_of_lives < 0)
             Lost();
@@ -400,5 +406,15 @@ public class Player : MonoBehaviour
         // Add parentheses to the beginning and end
         return "(" + joinedString + ")";
     }
+
+    private void checkBoundary()
+    {
+        if (gameObject.transform.position.y > upBoundary || gameObject.transform.position.y < downBoundary)
+        {
+            LoseLife();
+        }
+    }
+
+
 
 }

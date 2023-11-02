@@ -19,9 +19,9 @@ public class Spike : MonoBehaviour
             Player.deathPoints.Add(other.transform.position);
             Player.death_reasons.Add("Spikes");
             
-                other.transform.position = respawnPos;
+            other.transform.position = respawnPos;
               
-                player.LoseLife();
+            player.LoseLife();
             
            
             other.transform.position = respawnPos;
