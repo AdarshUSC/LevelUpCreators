@@ -390,7 +390,7 @@ public class Player : MonoBehaviour
         if (number_of_lives>=0)
             lives[number_of_lives].enabled = false;
         number_of_lives--;
-        if (number_of_lives < 0)
+        if (number_of_lives == -1)
             Lost();
     }
     private string ConvertListToString(List<string> list)
@@ -411,6 +411,7 @@ public class Player : MonoBehaviour
     {
         if (gameObject.transform.position.y > upBoundary || gameObject.transform.position.y < downBoundary)
         {
+            gameObject.transform.position = this.respawnPoint;
             LoseLife();
         }
     }
