@@ -17,7 +17,7 @@ public class ColorMixer : MonoBehaviour
     public SpriteRenderer player;
     public Color resultColor;
     //private Color selectedColor1 = GetComponent<Button> ().colors; // Initial color
-    private List<Color> colorList = new List<Color>();
+    public static List<Color> colorList = new List<Color>();
     private Color enemyColor;
     public bool reset_flag;
 

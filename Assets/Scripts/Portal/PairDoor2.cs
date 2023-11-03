@@ -46,6 +46,7 @@ public class PairDoor2 : MonoBehaviour
             mixArea.GetComponent<Image>().color = new Color(1,1,1,1);
             //return player back to normal color after exiting the door
             player.GetComponent<SpriteRenderer>().color = Color.white;
+            ColorMixer.colorList.Clear();
         }     
     }
 
