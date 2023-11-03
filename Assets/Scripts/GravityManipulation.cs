@@ -49,14 +49,16 @@ public class GravityManipulation : MonoBehaviour
     void Update()
     {
         playerTransform = player.GetComponent<Transform>();
-        if (playerTransform.localScale!=originalScale)
+        if (Mathf.Abs(playerTransform.localScale.y - originalScale.y) > float.Epsilon ||
+            Mathf.Abs(playerTransform.localScale.z - originalScale.z) > float.Epsilon)
         {
             antiGravityButton.interactable = false;
         }
-        else if (playerTransform.localScale == originalScale)
+        else
         {
             antiGravityButton.interactable = true;
         }
+
         if (isAntiGravityActive)
         {
             gravityTimer+= Time.deltaTime;
