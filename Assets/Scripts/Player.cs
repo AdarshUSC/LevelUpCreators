@@ -132,6 +132,8 @@ public class Player : MonoBehaviour
         checkpoint8 = new List<float>();
         checkpoint9 = new List<float>();
 
+        playerMoveSpeed = 8.0f;
+
     }
 
     // Update is called once per frame
