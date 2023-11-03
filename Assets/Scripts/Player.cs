@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
     {
         trail = GetComponent<TrailRenderer>();
         trail.enabled = false;  // Start with the trail turned off.
-
+        isPowerUpOn = false;
         rb = GetComponent<Rigidbody2D>();
         respawnPoint = transform.position;
         initialPosition = transform.position;
