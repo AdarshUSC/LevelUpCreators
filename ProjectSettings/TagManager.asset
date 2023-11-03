@@ -23,6 +23,11 @@ TagManager:
   - Enemy
   - CommonCanvas
   - Boomerang
+  - Checkpoint5
+  - Checkpoint6
+  - Checkpoint7
+  - Checkpoint8
+  - Checkpoint9
   layers:
   - Default
   - TransparentFX
