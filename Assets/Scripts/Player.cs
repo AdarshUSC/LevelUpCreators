@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
     public float upBoundary;
     public float downBoundary;
 
-    private string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdHKBSGlrH4LG-W3gfj3Dc--PUgpnOvAnQwZ1SXpbi_AFyVKQ/formResponse";
+    private string URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSc71cZ5bBANtKNVknFWt9a4XmLe0vVOLf68XRKFKcVsQmzlGQ/formResponse";
 
     Rigidbody2D rb;
     //private Vector3 respawnPoint;
@@ -94,8 +94,7 @@ public class Player : MonoBehaviour
     public static int blueUsed = 0;
     public static int greenUsed = 0;
     private TrailRenderer trail;
-
-
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -114,7 +113,8 @@ public class Player : MonoBehaviour
         //originalScale = playerTransform.localScale;
         //ogscale = true;
         isFacingRight = true;
-        timelimit = 90.0f;
+       
+        
         current_mechs = new List<string>();
         death_reasons = new List<string>();
         deathPoints = new List<Vector2>();
@@ -131,7 +131,16 @@ public class Player : MonoBehaviour
         checkpoint7 = new List<float>();
         checkpoint8 = new List<float>();
         checkpoint9 = new List<float>();
-
+        mechanics_cp1 = new List<string>();
+        mechanics_cp2 = new List<string>();
+        mechanics_cp3 = new List<string>();
+        mechanics_cp4 = new List<string>();
+        mechanics_cp5 = new List<string>();
+        mechanics_cp6 = new List<string>();
+        mechanics_cp7 = new List<string>();
+        mechanics_cp8 = new List<string>();
+        mechanics_cp9 = new List<string>();
+        mechanics_exit = new List<string>();
         playerMoveSpeed = 8.0f;
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
 
@@ -294,7 +303,7 @@ public class Player : MonoBehaviour
             Debug.Log("Time taken" + time_checkpoint);
             checkpoint1.Add(time_checkpoint);
             time_checkpoint = 0.0f;
-            timelimit = 270.0f;
+            timelimit = timelimit - timelimit/9;
             Debug.Log("mc" + current_mechs.Count);
             if(mechanics_cp1!=null)
             mechanics_cp1.AddRange(current_mechs);
@@ -311,7 +320,7 @@ public class Player : MonoBehaviour
             Debug.Log("Time taken" + time_checkpoint);
             checkpoint2.Add(time_checkpoint);
             time_checkpoint = 0.0f;
-            timelimit = 240.0f;
+            timelimit = timelimit - timelimit / 9;
             Debug.Log("mc" + current_mechs.Count);
             if (mechanics_cp2 != null)
                 mechanics_cp2.AddRange(current_mechs);
@@ -327,7 +336,7 @@ public class Player : MonoBehaviour
             Debug.Log("Time taken" + time_checkpoint);
             checkpoint3.Add(time_checkpoint);
             time_checkpoint = 0.0f;
-            timelimit = 210.0f;
+            timelimit = timelimit - timelimit / 9;
             if (mechanics_cp3 != null)
                 mechanics_cp3.AddRange(current_mechs);
             else
@@ -348,8 +357,8 @@ public class Player : MonoBehaviour
             else
                 mechanics_cp4 = current_mechs;
             current_mechs = new List<string>();
-            timelimit = 180.0f;
-            
+            timelimit = timelimit - timelimit / 9;
+
         }
         if (collision.gameObject.tag == "Checkpoint5")
         {
@@ -364,8 +373,8 @@ public class Player : MonoBehaviour
             else
                 mechanics_cp5 = current_mechs;
             current_mechs = new List<string>();
-            timelimit = 150.0f;
-         
+            timelimit = timelimit - timelimit / 9;
+
         }
         if (collision.gameObject.tag == "Checkpoint6")
         {
@@ -380,8 +389,8 @@ public class Player : MonoBehaviour
             else
                 mechanics_cp6 = current_mechs;
             current_mechs = new List<string>();
-            timelimit = 120.0f;
-           
+            timelimit = timelimit - timelimit / 9;
+
         }
         if (collision.gameObject.tag == "Checkpoint7")
         {
@@ -398,8 +407,8 @@ public class Player : MonoBehaviour
             else
                 mechanics_cp7 = current_mechs;
             current_mechs = new List<string>();
-            timelimit = 90.0f;
-           
+            timelimit = timelimit - timelimit / 9;
+
         }
         if (collision.gameObject.tag == "Checkpoint8")
         {
@@ -414,8 +423,8 @@ public class Player : MonoBehaviour
             else
                 mechanics_cp8 = current_mechs;
             current_mechs = new List<string>();
-            timelimit = 60.0f;
-            
+            timelimit = timelimit - timelimit / 9;
+
         }
         if (collision.gameObject.tag == "Checkpoint9")
         {
@@ -430,8 +439,8 @@ public class Player : MonoBehaviour
             else
                 mechanics_cp9 = current_mechs;
             current_mechs = new List<string>();
-            timelimit = 30.0f;
-           
+            timelimit = timelimit - timelimit / 9;
+
         }
         if (collision.gameObject.tag == "Bullet" && !isPowerUpOn)
         {
@@ -458,32 +467,41 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Send called");
         Debug.Log("Collectable locations" + ConvertVectorListToString(CollectablePoints));
+        string boom =  redUsed + "," + greenUsed + "," + blueUsed ;
         Debug.Log("cp1");
-        StartCoroutine(Post(Timetaken, antigravity, reflection, camouflage, resize, powerup, boomerang_used, CollectablePoints.Count, win, number_of_lives));
+        StartCoroutine(Post(Timetaken, antigravity, reflection, boom, resize, powerup,  CollectablePoints.Count, win, number_of_lives));
     }
 
-    IEnumerator Post(float timetaken, int mech1, int mech2, int mech3, int mech4, int mech5, int mech6,int score, int win, int lives)
+    IEnumerator Post(float timetaken, int mech1, int mech2, String mech3, int mech4, int mech5, int score, int win, int lives)
     {
         Debug.Log("Post called" + (string.Format("{0:N2}", Timetaken)) + " " + (string.Format("{0}", mech1)));
         WWWForm form = new WWWForm();
-        form.AddField("entry.1747016377", string.Format("{0:N2}", Timetaken));
-        form.AddField("entry.305553560", string.Format("{0}", mech1));
-        form.AddField("entry.1168732002", string.Format("{0}", mech2));
-        form.AddField("entry.1274496277", string.Format("{0}", mech3));
-        form.AddField("entry.1477920271", string.Join(", ", checkpoint1.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp1));
-        form.AddField("entry.2118230736", string.Join(", ", checkpoint2.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp2));
-        form.AddField("entry.2104200455", string.Join(", ", checkpoint3.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp3));
-        form.AddField("entry.1640424427", string.Join(", ", checkpoint4.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp4));
-        form.AddField("entry.73026754", ConvertVectorListToString(deathPoints));
-        form.AddField("entry.1506435532", SceneManager.GetActiveScene().name);
-        form.AddField("entry.1784470240", string.Format("{0}", mech4));
-        form.AddField("entry.767592848", string.Format("{0}", mech5));
-        form.AddField("entry.161259885", string.Format("{0}", mech6));
-        form.AddField("entry.1830111561", string.Format("{0}", win));
-        form.AddField("entry.103162259", string.Format("{0}", lives));
-        form.AddField("entry.1934928186", string.Format("{0}", score));
+        form.AddField("entry.1799182697", string.Format("{0:N2}", Timetaken));
+        form.AddField("entry.1547985899", string.Format("{0}", mech1));
+        form.AddField("entry.581641062", string.Format("{0}", mech2));
+        form.AddField("entry.432734104",mech3);
+        form.AddField("entry.1232089860", string.Format("{0}", mech4));
+        form.AddField("entry.974851201", string.Format("{0}", mech5));
+            
+        form.AddField("entry.1983630373", string.Join(", ", checkpoint1.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp1));
+        form.AddField("entry.42050814", string.Join(", ", checkpoint2.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp2));
+        form.AddField("entry.1935611261", string.Join(", ", checkpoint3.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp3));
+        form.AddField("entry.768600681", string.Join(", ", checkpoint4.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp4));
+        form.AddField("entry.2006277911", string.Join(", ", checkpoint5.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp5));
+        form.AddField("entry.1270636874", string.Join(", ", checkpoint6.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp6));
+        form.AddField("entry.933386671", string.Join(", ", checkpoint7.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp7));
+        form.AddField("entry.1225392766", string.Join(", ", checkpoint8.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp8));
+        form.AddField("entry.2002246635", string.Join(", ", checkpoint9.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp9));
+        form.AddField("entry.1023813854", ConvertVectorListToString(deathPoints));
+        form.AddField("entry.1419751759", SceneManager.GetActiveScene().name);
+        form.AddField("entry.869054239", string.Format("{0}", score));
+        form.AddField("entry.445882654", ConvertVectorListToString(CollectablePoints));
+        form.AddField("entry.155712438", ConvertListToString(death_reasons));
+        form.AddField("entry.1343752448", string.Format("{0}", win));
+        form.AddField("entry.1568783835", string.Format("{0}", lives));
+        
         // form.AddField("entry.883242844", ConvertVectorListToString(CollectablePoints));
-        form.AddField("entry.883242844", ConvertListToString(death_reasons));
+
 
 
         UnityWebRequest WWW = UnityWebRequest.Post(URL, form);

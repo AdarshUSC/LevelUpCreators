@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] public TextMeshProUGUI timerText;
-    [SerializeField] public float timelimit = 90.0f;
+    [SerializeField] public  float timelimit = 90.0f;
     public Player player;
     float limit = 0;
     bool once = false;
@@ -15,6 +15,7 @@ public class Timer : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         once = true;
+        player.timelimit = timelimit;
     }
 
     // Update is called once per frame

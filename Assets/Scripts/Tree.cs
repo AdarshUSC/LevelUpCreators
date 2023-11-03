@@ -50,6 +50,7 @@ public class Tree : MonoBehaviour
         if (collision.gameObject.CompareTag("Boomerang") && currColor == Color.green){
             Debug.Log("tree is hit w green bullet with "+ collision.gameObject+" and "+gameObject);
             player.GetComponent<SpriteRenderer>().color = Color.green;
+            Player.current_mechs.Add("Camouflage");
             greenOn=true;
             greenTimer=Time.deltaTime;
             Player.playerMoveSpeed=3.6f;
