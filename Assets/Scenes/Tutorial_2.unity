@@ -620,6 +620,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1394128227351156785, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
   m_PrefabInstance: {fileID: 430207849}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &449120271 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4822870496544247098, guid: 39757b015d53f4e7a99c03ea71139f47, type: 3}
+  m_PrefabInstance: {fileID: 1642827721}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &527877469
 GameObject:
   m_ObjectHideFlags: 0
@@ -12420,7 +12425,7 @@ PrefabInstance:
     - target: {fileID: 73381526104031913, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 449120271}
     - target: {fileID: 73381526104031913, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_SortingOrder
       value: 1

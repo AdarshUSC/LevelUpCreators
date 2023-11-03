@@ -444,6 +444,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CommonCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2207071645074078133, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2220466413569198346, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6895,8 +6899,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.52, y: -8.3376}
-  m_SizeDelta: {x: 7.8519, y: 1.0461}
+  m_AnchoredPosition: {x: -11.2454, y: -8.09}
+  m_SizeDelta: {x: 8.4011, y: 0.802}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1538135974
 MonoBehaviour:
@@ -6918,7 +6922,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: magic mushroom gives an ability
+  m_text: collect magic mushroom - use later
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -7310,7 +7314,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1037114819964978368, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_text
-      value: press r to use mushroom
+      value: press r to eat mushroom
       objectReference: {fileID: 0}
     - target: {fileID: 1037114819964978368, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_margin.w
