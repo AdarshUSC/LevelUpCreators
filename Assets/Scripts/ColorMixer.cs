@@ -17,7 +17,7 @@ public class ColorMixer : MonoBehaviour
     public SpriteRenderer player;
     public Color resultColor;
     //private Color selectedColor1 = GetComponent<Button> ().colors; // Initial color
-    private List<Color> colorList = new List<Color>();
+    public static List<Color> colorList = new List<Color>();
     private Color enemyColor;
     public bool reset_flag;
 
@@ -60,7 +60,17 @@ public class ColorMixer : MonoBehaviour
             mixArea.GetComponent<Image>().color = clicked.GetComponent<Image>().color;
         } else{ 
             //enable matching
-            clicked.interactable = false; //disable the button so player cannot click twice
+            // clicked.interactable = false; //disable the button so player cannot click twice, wont wwork here
+            Color mixAreaColor = mixArea.GetComponent<Image>().color ;
+            Color clickedColor = clicked.GetComponent<Image>().color;
+            // to avoid multiple additions of same color.
+            if(mixAreaColor.r!=clickedColor.r){
+                mixAreaColor.r=clickedColor.r;
+            } if(mixAreaColor.g!=clickedColor.g){
+                mixAreaColor.g=clickedColor.g;
+            } if(mixAreaColor.b!=clickedColor.b){
+                mixAreaColor.b=clickedColor.b;
+            }
             Debug.Log("clicked button is "+ clicked);
             Color buttonColor = clicked.GetComponent<Image>().color;
             colorList.Add(buttonColor);
@@ -101,15 +111,14 @@ public class ColorMixer : MonoBehaviour
     public void OnResetClick()
     {
         // maybe at start disable/HIDE it, only use it for mixing.
-        if(Player.redCollected>0){
-            buttonRed.interactable = true;
-        } if(Player.blueCollected>0){
-            buttonBlue.interactable = true;
-        } if(Player.greenCollected>0){
-            buttonGreen.interactable = true;
-        } 
-        mixArea.GetComponent<Image>().color = new Color(0,0,0,0);
-        mixArea.interactable=false;
+        // if(Player.redCollected>0){
+        //     buttonRed.interactable = true;
+        // } if(Player.blueCollected>0){
+        //     buttonBlue.interactable = true;
+        // } if(Player.greenCollected>0){
+        //     buttonGreen.interactable = true;
+        // } 
+        mixArea.GetComponent<Image>().color = new Color(1,1,1,1);
         colorList.Clear();
         UpdateOutputColor();
         reset_flag = true;

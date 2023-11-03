@@ -32,21 +32,21 @@ public class PairDoor2 : MonoBehaviour
             byTheDoor = false;
             Debug.Log("From " + transform.position.ToString() + " transfer to " + otherDoor.transform.position.ToString());
             otherDoor.GetComponent<PairDoor1>().timer = 0;
-            GameObject[] colorButtons = GameObject.FindGameObjectsWithTag("ColorButton");
-            foreach(GameObject colorButton in colorButtons){
-                Button button = colorButton.GetComponent<Button>();
-                if(button.interactable==false){
-                    Color curr = button.GetComponent<Image>().color;
-                    if(curr==Color.red){
-                        Player.redCollected--;
-                    } if(curr==Color.blue){
-                        Player.blueCollected--;
-                    } if(curr==Color.green){
-                        Player.greenCollected--;
-                    }
-                }
+
+            // GameObject colorPanel = GameObject.FindGameObjectWithTag("CommonCanvas").transform.FindChild("colorPanel").gameObject;
+            GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
+            Color mixAreaColor = mixArea.GetComponent<Image>().color;
+            if(mixAreaColor.r==1){
+                Player.redCollected-=1;
+            } if(mixAreaColor.g==1){
+                Player.greenCollected-=1;
+            } if(mixAreaColor.b==1){
+                Player.blueCollected-=1;
             }
-            //return player back to normal color after exiting the door?
+            mixArea.GetComponent<Image>().color = new Color(1,1,1,1);
+            //return player back to normal color after exiting the door
+            player.GetComponent<SpriteRenderer>().color = Color.white;
+            ColorMixer.colorList.Clear();
         }     
     }
 
