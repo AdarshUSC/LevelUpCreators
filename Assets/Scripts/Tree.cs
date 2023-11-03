@@ -27,7 +27,7 @@ public class Tree : MonoBehaviour
         if(greenOn){
             greenTimer+= Time.deltaTime;
             Debug.Log("green timer is "+ greenTimer);
-            if(greenTimer > 5.0f){
+            if(greenTimer > 10.0f){
                 // foreach(Transform transform in colorPanel.transform) {
                 //     if(transform.CompareTag("ColorButton")) {
                 //         Button colorButton = transform.gameObject.GetComponent<Button>();
@@ -51,7 +51,7 @@ public class Tree : MonoBehaviour
             player.GetComponent<SpriteRenderer>().color = Color.green;
             greenOn=true;
             greenTimer=Time.deltaTime;
-            Player.playerMoveSpeed=1.0f;
+            Player.playerMoveSpeed=2.5f;
             collision.gameObject.transform.position = collision.gameObject.transform.parent.position;
             collision.gameObject.SetActive(false);
         } 
