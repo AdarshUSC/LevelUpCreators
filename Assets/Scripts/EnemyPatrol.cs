@@ -28,7 +28,7 @@ public class EnemyPatrol : MonoBehaviour
         GameObject icePrefab = gameObject.transform.Find("iceCave").gameObject;
         if(blueOn){
             blueTimer+= Time.deltaTime;
-            Debug.Log("blue timer is "+ blueTimer);
+           // Debug.Log("blue timer is "+ blueTimer);
             if(blueTimer > 5){
                 blueOn=false;
                 blueTimer = 0.0f;
