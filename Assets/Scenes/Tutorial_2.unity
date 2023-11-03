@@ -128,22 +128,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7959246771223943235, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
   m_PrefabInstance: {fileID: 1144922476}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &117054970 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4199771183519521383, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
-  m_PrefabInstance: {fileID: 1905038943}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!20 &172628164 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 4822870496544247098, guid: 39757b015d53f4e7a99c03ea71139f47, type: 3}
-  m_PrefabInstance: {fileID: 1642827721}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &198354761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11973,10 +11957,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4861984018030006223, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
-      propertyPath: CollectiblesText
-      value: 
-      objectReference: {fileID: 117054970}
     - target: {fileID: 6543659421209712257, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
       propertyPath: m_Size.x
       value: 0.21639124
