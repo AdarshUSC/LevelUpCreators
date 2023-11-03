@@ -48,10 +48,11 @@ public class Tree : MonoBehaviour
 
         Color currColor =  collision.gameObject.GetComponent<SpriteRenderer>()!=null?collision.gameObject.GetComponent<SpriteRenderer>().color:Color.white;
         if (collision.gameObject.CompareTag("Boomerang") && currColor == Color.green){
+            Debug.Log("tree is hit w green bullet with "+ collision.gameObject+" and "+gameObject);
             player.GetComponent<SpriteRenderer>().color = Color.green;
             greenOn=true;
             greenTimer=Time.deltaTime;
-            Player.playerMoveSpeed=2.5f;
+            Player.playerMoveSpeed=3.6f;
             collision.gameObject.transform.position = collision.gameObject.transform.parent.position;
             collision.gameObject.SetActive(false);
         } 

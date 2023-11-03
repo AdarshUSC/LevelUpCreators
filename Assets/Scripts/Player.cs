@@ -133,6 +133,7 @@ public class Player : MonoBehaviour
         checkpoint9 = new List<float>();
 
         playerMoveSpeed = 8.0f;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
 
     }
 
@@ -510,6 +511,8 @@ public class Player : MonoBehaviour
         if (number_of_lives>=0)
             lives[number_of_lives].enabled = false;
         number_of_lives--;
+        playerMoveSpeed = 8.0f;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         if (number_of_lives == -1)
             Lost();
     }
