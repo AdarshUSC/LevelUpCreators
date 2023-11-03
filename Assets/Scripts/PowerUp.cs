@@ -26,7 +26,7 @@ public class PowerUp : MonoBehaviour
         
         if(Player.isPowerUpOn){
             powerUpTimer+= Time.deltaTime;
-            if(powerUpTimer > 5){
+            if(powerUpTimer > 10){
                 Player.isPowerUpOn=false;
                 Player.playerMoveSpeed-=4.0f;
                 powerUpTimer = 0;  
