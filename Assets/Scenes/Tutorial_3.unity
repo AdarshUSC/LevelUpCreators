@@ -10944,6 +10944,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1959544882}
+    - target: {fileID: 299021755703293086, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -38.719025
+      objectReference: {fileID: 0}
     - target: {fileID: 1300626908520955606, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_Layer
       value: 5
@@ -10968,6 +10972,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3047833252927601768, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -38.86093
+      objectReference: {fileID: 0}
     - target: {fileID: 3200220889366229177, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -10982,11 +10990,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3418947211479522128, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 74.276764
+      value: 74.276855
       objectReference: {fileID: 0}
     - target: {fileID: 3418947211479522128, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 18.262894
+      value: 18.26294
       objectReference: {fileID: 0}
     - target: {fileID: 3573015159367646385, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_SortingOrder
@@ -11080,6 +11088,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5585203387529179953, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 72.09985
+      objectReference: {fileID: 0}
     - target: {fileID: 6983920437560644085, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_Layer
       value: 5
@@ -11091,6 +11103,14 @@ PrefabInstance:
     - target: {fileID: 7825663524723755563, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805674523928914106, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -38.86093
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911033796317288578, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -38.86093
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11539,7 +11559,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 771915398225650239, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_text
-      value: Press B to shoot the bullet
+      value: Collect fruits from the tree
       objectReference: {fileID: 0}
     - target: {fileID: 771915398225650239, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_fontSize
@@ -11551,7 +11571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1037114819964978368, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_text
-      value: Press the power-up button
+      value: Collect 15 Fruits to be acitvate invincibility !
       objectReference: {fileID: 0}
     - target: {fileID: 1037114819964978368, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_fontSize
@@ -11651,11 +11671,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2747762444288129155, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 10.1152
+      value: 18.73
       objectReference: {fileID: 0}
     - target: {fileID: 2747762444288129155, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -18.1938
+      value: -25.21
       objectReference: {fileID: 0}
     - target: {fileID: 3229723317245692994, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_SizeDelta.x
@@ -11663,11 +11683,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3229723317245692994, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -13.37
+      value: -12.23
       objectReference: {fileID: 0}
     - target: {fileID: 3229723317245692994, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -8.11
+      value: -10.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357412885774023040, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8623048885543139403, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_Name
