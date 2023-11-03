@@ -66,13 +66,13 @@ public class ColorMixer : MonoBehaviour
             Color mixAreaColor = mixArea.GetComponent<Image>().color ;
             Color clickedColor = clicked.GetComponent<Image>().color;
             // to avoid multiple additions of same color.
-            if(mixAreaColor.r!=clickedColor.r){
-                mixAreaColor.r=clickedColor.r;
-            } if(mixAreaColor.g!=clickedColor.g){
-                mixAreaColor.g=clickedColor.g;
-            } if(mixAreaColor.b!=clickedColor.b){
-                mixAreaColor.b=clickedColor.b;
-            }
+            // if(mixAreaColor.r!=clickedColor.r){
+            //     mixAreaColor.r=clickedColor.r;
+            // } if(mixAreaColor.g!=clickedColor.g){
+            //     mixAreaColor.g=clickedColor.g;
+            // } if(mixAreaColor.b!=clickedColor.b){
+            //     mixAreaColor.b=clickedColor.b;
+            // }
             Debug.Log("clicked button is "+ clicked);
             Color buttonColor = clicked.GetComponent<Image>().color;
             colorList.Add(buttonColor);
@@ -154,6 +154,14 @@ public class ColorMixer : MonoBehaviour
         }
         // result /= aColors.Length;
         result.a = 1;
+        // to avoid multiple additions of same color.
+        if(result.r>1){
+            result.r=1;
+        } if(result.g>1){
+            result.g=1;
+        } if(result.b>1){
+            result.b=1;
+        }
         Debug.Log("the resultant color is "+ result);
         return result;
     }
