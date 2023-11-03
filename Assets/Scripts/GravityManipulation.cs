@@ -10,7 +10,8 @@ public class GravityManipulation : MonoBehaviour
     GameObject player ;
     float gravityTimer;
     public Button antiGravityButton;
-
+    private Transform playerTransform;
+    private Vector3 originalScale;
 
     [SerializeField] private TMP_Text AGTimerText;
     bool isAntiGravityActive;
@@ -21,7 +22,8 @@ public class GravityManipulation : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-
+        playerTransform = player.GetComponent<Transform>();
+        originalScale = playerTransform.localScale;
         isAntiGravityActive = false;
         gravityTimer = 0;
 
@@ -45,8 +47,17 @@ public class GravityManipulation : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
-        if(isAntiGravityActive)
+    {
+        playerTransform = player.GetComponent<Transform>();
+        if (playerTransform.localScale!=originalScale)
+        {
+            antiGravityButton.interactable = false;
+        }
+        else if (playerTransform.localScale == originalScale)
+        {
+            antiGravityButton.interactable = true;
+        }
+        if (isAntiGravityActive)
         {
             gravityTimer+= Time.deltaTime;
 
