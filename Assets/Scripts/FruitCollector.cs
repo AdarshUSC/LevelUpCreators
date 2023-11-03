@@ -25,7 +25,7 @@ public class FruitCollector : MonoBehaviour
         {
             Debug.Log("I am on trigger enter 2D" + collision.gameObject.transform.position.y);
             Player.CollectablePoints.Add(collision.gameObject.transform.position);
-            Player.current_mechs.Add("Fruit Collected");
+            //Player.current_mechs.Add("Fruit Collected");
             Destroy(collision.gameObject);
             collectibles++;
             CollectiblesText.text = collectibles.ToString();
@@ -58,7 +58,7 @@ public class FruitCollector : MonoBehaviour
         {
             Debug.Log("I am on trigger enter 2D"+ collision.gameObject.transform.position.y);
             Player.CollectablePoints.Add(collision.gameObject.transform.position);
-            Player.current_mechs.Add("Fruit Collected");
+            //Player.current_mechs.Add("Fruit Collected");
             Destroy(collision.gameObject);
             collectibles++;
             CollectiblesText.text = collectibles.ToString();

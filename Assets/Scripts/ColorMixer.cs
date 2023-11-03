@@ -125,7 +125,7 @@ public class ColorMixer : MonoBehaviour
         if (reset_flag)
         {
             Player.camouflage++;
-            Player.current_mechs.Add("Camouflage");
+           // Player.current_mechs.Add("Camouflage");
             reset_flag = false;
         }
         Debug.Log("Camouflage count" + Player.camouflage);
