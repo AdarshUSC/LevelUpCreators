@@ -14,7 +14,8 @@ public class ColorMixer : MonoBehaviour
     private Color originalColor;
 
     // public SpriteRenderer mixingArea;
-    public SpriteRenderer player;
+    public GameObject player;
+    private SpriteRenderer playerSr;
     public Color resultColor;
     //private Color selectedColor1 = GetComponent<Button> ().colors; // Initial color
     public static List<Color> colorList = new List<Color>();
@@ -28,6 +29,7 @@ public class ColorMixer : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        playerSr = player.GetComponent<SpriteRenderer>();
         buttonRed.onClick.AddListener(() => OnButtonClick(buttonRed));
         buttonGreen.onClick.AddListener(() => OnButtonClick(buttonGreen));
         mixArea.onClick.AddListener(() => OnButtonClick(mixArea));
@@ -139,7 +141,7 @@ public class ColorMixer : MonoBehaviour
         }
         Debug.Log("Camouflage count" + Player.camouflage);
         mixArea.GetComponent<Image>().color = resultColor;
-        player.color = resultColor;
+        playerSr.color = resultColor;
 
     }
 
