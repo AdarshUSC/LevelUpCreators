@@ -77,7 +77,9 @@ public class Player : MonoBehaviour
     public static int redCollected = 5;
     public static int blueCollected = 5;
     public static int greenCollected = 5;
-
+    public static int redUsed = 0;
+    public static int blueUsed = 0;
+    public static int greenUsed = 0;
     private TrailRenderer trail;
 
 
@@ -156,6 +158,7 @@ public class Player : MonoBehaviour
                 {
                     boomerang.Throw(direction);
                     Player.redCollected--;
+                    redUsed++;
                 }
             }
             else if (currColor == Color.green)
@@ -164,6 +167,7 @@ public class Player : MonoBehaviour
                 {
                     boomerang.Throw(direction);
                     Player.greenCollected--;
+                    greenUsed++;
                 }
             }
             else if (currColor == Color.blue)
@@ -172,6 +176,7 @@ public class Player : MonoBehaviour
                 {
                     boomerang.Throw(direction);
                     Player.blueCollected--;
+                    blueUsed++;
                 }
             }
         }
@@ -390,7 +395,7 @@ public class Player : MonoBehaviour
         if (number_of_lives>=0)
             lives[number_of_lives].enabled = false;
         number_of_lives--;
-        if (number_of_lives < 0)
+        if (number_of_lives == -1)
             Lost();
     }
     private string ConvertListToString(List<string> list)
@@ -411,6 +416,7 @@ public class Player : MonoBehaviour
     {
         if (gameObject.transform.position.y > upBoundary || gameObject.transform.position.y < downBoundary)
         {
+            gameObject.transform.position = this.respawnPoint;
             LoseLife();
         }
     }

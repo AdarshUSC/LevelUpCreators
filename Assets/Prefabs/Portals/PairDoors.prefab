@@ -112,7 +112,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -12.44, y: 7.5331516, z: 0.21223375}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 8.02083, y: 8.02083, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8321987201280122462}
@@ -150,7 +150,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.005451478, y: 0.06580591}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -161,7 +161,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.37128097, y: 0.5795244}
   m_EdgeRadius: 0
 --- !u!114 &442778889721218120
 MonoBehaviour:
@@ -178,6 +178,7 @@ MonoBehaviour:
   otherDoor: {fileID: 3918337746389239575}
   player: {fileID: 2081760706506450670, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
   image: {fileID: 1444458228312010890}
+  timer: 0
 --- !u!1 &2931343504828736651
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +291,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.92, y: -3.42, z: 0.21223375}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 8.02083, y: 8.02083, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8158978454382374735}
@@ -328,7 +329,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0070170164, y: 0.06783934}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -339,7 +340,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.37553877, y: 0.56721103}
   m_EdgeRadius: 0
 --- !u!114 &3648394429143349784
 MonoBehaviour:
@@ -356,6 +357,7 @@ MonoBehaviour:
   otherDoor: {fileID: 1920038084298574211}
   player: {fileID: 2081760706506450670, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
   image: {fileID: 2931343504828736651}
+  timer: 0
 --- !u!1 &3989480376240728602
 GameObject:
   m_ObjectHideFlags: 0

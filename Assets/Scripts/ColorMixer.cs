@@ -25,17 +25,6 @@ public class ColorMixer : MonoBehaviour
     public bool isRedOn; //no need to deactivate as it is not timed.
     public bool isBlueOn;
     public bool isGreenOn;
-    public static Color CombineColors(params Color[] aColors)
-    {
-        Color result = new Color(0,0,0,0);
-        foreach(Color c in aColors)
-        {
-            result += c;
-        }
-        // result /= aColors.Length;
-        return result;
-    }
-
     // Start is called before the first frame update
     private void Start()
     {
@@ -65,7 +54,7 @@ public class ColorMixer : MonoBehaviour
     }
     private void OnButtonClick(Button clicked){
 
-        if(!PairDoor1.byTheDoor || !PairDoor2.byTheDoor)
+        if(!PairDoor1.byTheDoor && !PairDoor2.byTheDoor)
         {
             //just show one color in mixer
             mixArea.GetComponent<Image>().color = clicked.GetComponent<Image>().color;
@@ -142,5 +131,20 @@ public class ColorMixer : MonoBehaviour
         Debug.Log("Camouflage count" + Player.camouflage);
         mixArea.GetComponent<Image>().color = resultColor;
         player.color = resultColor;
+
     }
+
+    public static Color CombineColors(params Color[] aColors)
+    {
+        Color result = new Color(0,0,0,0);
+        foreach(Color c in aColors)
+        {
+            result += c;
+        }
+        // result /= aColors.Length;
+        result.a = 1;
+        Debug.Log("the resultant color is "+ result);
+        return result;
+    }
+
 }
