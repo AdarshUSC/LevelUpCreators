@@ -388,7 +388,9 @@ public class Player : MonoBehaviour
             Debug.Log("Time taken" + time_checkpoint);
             checkpoint7.Add(time_checkpoint);
             time_checkpoint = 0.0f;
-            if (mechanics_cp7. != null)
+
+
+            if (mechanics_cp7 != null)
                 mechanics_cp7.AddRange(current_mechs);
             else
                 mechanics_cp7 = current_mechs;
