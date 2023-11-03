@@ -586,7 +586,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.8403015, y: -0.19473934}
+  m_Offset: {x: 0.24919724, y: -0.19473958}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -597,7 +597,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4983978, y: 11.508722}
+  m_Size: {x: 1.4983945, y: 11.508722}
   m_EdgeRadius: 0
 --- !u!4 &294278635
 Transform:
@@ -608,7 +608,7 @@ Transform:
   m_GameObject: {fileID: 294278633}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.7, y: -13.8, z: 99.6472}
+  m_LocalPosition: {x: 24.5, y: -13.8, z: 99.6472}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -822,7 +822,7 @@ GameObject:
   - component: {fileID: 394757193}
   m_Layer: 0
   m_Name: Checkpoint2
-  m_TagString: Checkpoint2
+  m_TagString: Checkpoint1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10904,7 +10904,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.24919724, y: -0.108915806}
+  m_Offset: {x: 0.24919724, y: 1.6820803}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -10915,7 +10915,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4983945, y: 10.983136}
+  m_Size: {x: 1.4983945, y: 5.6101456}
   m_EdgeRadius: 0
 --- !u!4 &1310903596
 Transform:
@@ -10944,10 +10944,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1959544882}
-    - target: {fileID: 299021755703293086, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -38.718994
-      objectReference: {fileID: 0}
     - target: {fileID: 1300626908520955606, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_Layer
       value: 5

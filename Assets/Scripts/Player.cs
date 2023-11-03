@@ -291,7 +291,7 @@ public class Player : MonoBehaviour
             Debug.Log("Time taken" + time_checkpoint);
             checkpoint1.Add(time_checkpoint);
             time_checkpoint = 0.0f;
-            timelimit = timelimit- timelimit/9;
+            timelimit = 270.0f;
             Debug.Log("mc" + current_mechs.Count);
             if(mechanics_cp1!=null)
             mechanics_cp1.AddRange(current_mechs);
@@ -308,7 +308,7 @@ public class Player : MonoBehaviour
             Debug.Log("Time taken" + time_checkpoint);
             checkpoint2.Add(time_checkpoint);
             time_checkpoint = 0.0f;
-            timelimit = timelimit - timelimit / 9;
+            timelimit = 240.0f;
             Debug.Log("mc" + current_mechs.Count);
             if (mechanics_cp2 != null)
                 mechanics_cp2.AddRange(current_mechs);
@@ -324,7 +324,7 @@ public class Player : MonoBehaviour
             Debug.Log("Time taken" + time_checkpoint);
             checkpoint3.Add(time_checkpoint);
             time_checkpoint = 0.0f;
-            timelimit = timelimit - timelimit / 9;
+            timelimit = 210.0f;
             if (mechanics_cp3 != null)
                 mechanics_cp3.AddRange(current_mechs);
             else
@@ -345,8 +345,8 @@ public class Player : MonoBehaviour
             else
                 mechanics_cp4 = current_mechs;
             current_mechs = new List<string>();
-            timelimit = timelimit - timelimit / 9;
-
+            timelimit = 180.0f;
+            
         }
         if (collision.gameObject.tag == "Checkpoint5")
         {
@@ -361,8 +361,8 @@ public class Player : MonoBehaviour
             else
                 mechanics_cp5 = current_mechs;
             current_mechs = new List<string>();
-            timelimit = timelimit - timelimit / 9;
-
+            timelimit = 150.0f;
+         
         }
         if (collision.gameObject.tag == "Checkpoint6")
         {
@@ -377,8 +377,8 @@ public class Player : MonoBehaviour
             else
                 mechanics_cp6 = current_mechs;
             current_mechs = new List<string>();
-            timelimit = timelimit - timelimit / 9;
-
+            timelimit = 120.0f;
+           
         }
         if (collision.gameObject.tag == "Checkpoint7")
         {
@@ -395,8 +395,8 @@ public class Player : MonoBehaviour
             else
                 mechanics_cp7 = current_mechs;
             current_mechs = new List<string>();
-            timelimit = timelimit - timelimit / 9;
-
+            timelimit = 90.0f;
+           
         }
         if (collision.gameObject.tag == "Checkpoint8")
         {
@@ -411,8 +411,8 @@ public class Player : MonoBehaviour
             else
                 mechanics_cp8 = current_mechs;
             current_mechs = new List<string>();
-            timelimit = timelimit - timelimit / 9;
-
+            timelimit = 60.0f;
+            
         }
         if (collision.gameObject.tag == "Checkpoint9")
         {
@@ -427,8 +427,8 @@ public class Player : MonoBehaviour
             else
                 mechanics_cp9 = current_mechs;
             current_mechs = new List<string>();
-            timelimit = timelimit - timelimit / 9;
-
+            timelimit = 30.0f;
+           
         }
         if (collision.gameObject.tag == "Bullet" && !isPowerUpOn)
         {
@@ -463,7 +463,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Post called" + (string.Format("{0:N2}", Timetaken)) + " " + (string.Format("{0}", mech1)));
         WWWForm form = new WWWForm();
-        form.AddField("entry.1747016377", string.Format("{0:N2}", Timetaken)+"*"+ ConvertListToString(mechanics_exit));
+        form.AddField("entry.1747016377", string.Format("{0:N2}", Timetaken));
         form.AddField("entry.305553560", string.Format("{0}", mech1));
         form.AddField("entry.1168732002", string.Format("{0}", mech2));
         form.AddField("entry.1274496277", string.Format("{0}", mech3));
