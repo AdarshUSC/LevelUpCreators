@@ -12121,12 +12121,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1037114819964978368, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_text
-      value: Collect 15 Fruits to be acitvate invincibility! Click on power-up button
-        below.
+      value: Collect 15 Fruits to acitvate invincibility! Click on power-up button
       objectReference: {fileID: 0}
     - target: {fileID: 1037114819964978368, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_fontSize
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037114819964978368, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
+      propertyPath: m_margin.z
+      value: 183.07738
       objectReference: {fileID: 0}
     - target: {fileID: 1037114819964978368, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_fontSizeBase
