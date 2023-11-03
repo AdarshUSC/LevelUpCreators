@@ -31,7 +31,7 @@ public class PairDoor1 : MonoBehaviour
             byTheDoor = false;
             Debug.Log("From " + transform.position.ToString() + " transfer to " + otherDoor.transform.position.ToString());
             otherDoor.GetComponent<PairDoor2>().timer = 0;
-
+            Player.current_mechs.Add("Portal");
             // GameObject colorPanel = GameObject.FindGameObjectWithTag("CommonCanvas").transform.FindChild("colorPanel").gameObject;
             GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
             Color mixAreaColor = mixArea.GetComponent<Image>().color;
