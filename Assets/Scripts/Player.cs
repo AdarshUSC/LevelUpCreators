@@ -24,10 +24,8 @@ public class Player : MonoBehaviour
     public static int collectables = 0;
 
     public int number_of_lives = 3;
-    private float checkpoint1 = 0.0f;
-    private float checkpoint2 = 0.0f;
-    private float checkpoint3 = 0.0f;
-    private float checkpoint4 = 0.0f;
+    private float[][] checkpoints;
+
     private float time_running = 0.0f;
     private float time_checkpoint = 0.0f;
     public float timelimit = 90.0f;
@@ -49,8 +47,23 @@ public class Player : MonoBehaviour
     public static List<string> mechanics_cp2;
     public static List<string> mechanics_cp3;
     public static List<string> mechanics_cp4;
+    public static List<string> mechanics_cp5;
+    public static List<string> mechanics_cp6;
+    public static List<string> mechanics_cp7;
+    public static List<string> mechanics_cp8;
+    public static List<string> mechanics_cp9;
     public static List<string> mechanics_exit;
     public static List<string> current_mechs;
+    private List<float> checkpoint1;
+    private List<float> checkpoint2;
+    private List<float> checkpoint3;
+    private List<float> checkpoint4;
+    private List<float> checkpoint5;
+    private List<float> checkpoint6;
+    private List<float> checkpoint7;
+    private List<float> checkpoint8;
+    private List<float> checkpoint9;
+
     System.String current_sublevel = "";
 
     [SerializeReference] GameObject lostCanvas;
@@ -108,6 +121,16 @@ public class Player : MonoBehaviour
         CollectablePoints = new List<Vector2>();
         direction = new Vector2(1, 0);
         lostCanvas.SetActive(false);
+        checkpoints = new float[8][];
+        checkpoint1 = new List<float>();
+        checkpoint2 = new List<float>();
+        checkpoint3 = new List<float>();
+        checkpoint4 = new List<float>();
+        checkpoint5 = new List<float>();
+        checkpoint6 = new List<float>();
+        checkpoint7 = new List<float>();
+        checkpoint8 = new List<float>();
+        checkpoint9 = new List<float>();
 
     }
 
@@ -222,7 +245,6 @@ public class Player : MonoBehaviour
             Flip(isFacingRight);
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Maze")
@@ -265,15 +287,18 @@ public class Player : MonoBehaviour
         {
             respawnPoint.x = transform.position.x + 4;
             respawnPoint.y = transform.position.y;
-
+            Debug.Log("enter cp1");
             Debug.Log("Time taken" + time_checkpoint);
-            checkpoint1 = time_checkpoint;
+            checkpoint1.Add(time_checkpoint);
             time_checkpoint = 0.0f;
-            timelimit = 60.0f;
+            timelimit = 270.0f;
             Debug.Log("mc" + current_mechs.Count);
+            if(mechanics_cp1!=null)
+            mechanics_cp1.AddRange(current_mechs);
+            else
             mechanics_cp1 = current_mechs;
             current_mechs = new List<string>();
-            current_sublevel = "cp1";
+           
         }
         if (collision.gameObject.tag == "Checkpoint2")
         {
@@ -281,13 +306,15 @@ public class Player : MonoBehaviour
             respawnPoint.y = transform.position.y;
             Debug.Log("Checkpoint encountered at" + transform.position.x + " " + transform.position.y + " ");
             Debug.Log("Time taken" + time_checkpoint);
-            checkpoint2 = time_checkpoint;
-            Debug.Log("mc" + current_mechs.Count);
-            mechanics_cp2 = current_mechs;
-            current_mechs = new List<string>();
+            checkpoint2.Add(time_checkpoint);
             time_checkpoint = 0.0f;
-            timelimit = 45.0f;
-            current_sublevel = "cp2";
+            timelimit = 240.0f;
+            Debug.Log("mc" + current_mechs.Count);
+            if (mechanics_cp2 != null)
+                mechanics_cp2.AddRange(current_mechs);
+            else
+                mechanics_cp2 = current_mechs;
+            current_mechs = new List<string>();
         }
         if (collision.gameObject.tag == "Checkpoint3")
         {
@@ -295,13 +322,15 @@ public class Player : MonoBehaviour
             respawnPoint.y = transform.position.y;
             Debug.Log("Checkpoint encountered at" + transform.position.x + " " + transform.position.y);
             Debug.Log("Time taken" + time_checkpoint);
-            checkpoint3 = time_checkpoint;
+            checkpoint3.Add(time_checkpoint);
             time_checkpoint = 0.0f;
-            timelimit = 30.0f;
-            Debug.Log("mc" + current_mechs.Count);
-            mechanics_cp3 = current_mechs;
+            timelimit = 210.0f;
+            if (mechanics_cp3 != null)
+                mechanics_cp3.AddRange(current_mechs);
+            else
+                mechanics_cp3 = current_mechs;
             current_mechs = new List<string>();
-            current_sublevel = "cp3";
+           
         }
         if (collision.gameObject.tag == "Checkpoint4")
         {
@@ -309,13 +338,95 @@ public class Player : MonoBehaviour
             respawnPoint.y = transform.position.y;
             Debug.Log("Checkpoint encountered at" + transform.position.x + " " + transform.position.y);
             Debug.Log("Time taken" + time_checkpoint);
-            checkpoint4 = time_checkpoint;
+            checkpoint4.Add(time_checkpoint);
             time_checkpoint = 0.0f;
-            Debug.Log("mc" + current_mechs.Count);
-            mechanics_cp4 = current_mechs;
+            if (mechanics_cp4 != null)
+                mechanics_cp4.AddRange(current_mechs);
+            else
+                mechanics_cp4 = current_mechs;
             current_mechs = new List<string>();
-            timelimit = 15.0f;
-            current_sublevel = "cp4";
+            timelimit = 180.0f;
+            
+        }
+        if (collision.gameObject.tag == "Checkpoint5")
+        {
+            respawnPoint.x = transform.position.x + 4;
+            respawnPoint.y = transform.position.y;
+            Debug.Log("Checkpoint encountered at" + transform.position.x + " " + transform.position.y);
+            Debug.Log("Time taken" + time_checkpoint);
+            checkpoint5.Add(time_checkpoint);
+            time_checkpoint = 0.0f;
+            if (mechanics_cp5 != null)
+                mechanics_cp5.AddRange(current_mechs);
+            else
+                mechanics_cp5 = current_mechs;
+            current_mechs = new List<string>();
+            timelimit = 150.0f;
+         
+        }
+        if (collision.gameObject.tag == "Checkpoint6")
+        {
+            respawnPoint.x = transform.position.x + 4;
+            respawnPoint.y = transform.position.y;
+            Debug.Log("Checkpoint encountered at" + transform.position.x + " " + transform.position.y);
+            Debug.Log("Time taken" + time_checkpoint);
+            checkpoint6.Add(time_checkpoint);
+            time_checkpoint = 0.0f;
+            if (mechanics_cp6 != null)
+                mechanics_cp6.AddRange(current_mechs);
+            else
+                mechanics_cp6 = current_mechs;
+            current_mechs = new List<string>();
+            timelimit = 120.0f;
+           
+        }
+        if (collision.gameObject.tag == "Checkpoint7")
+        {
+            respawnPoint.x = transform.position.x + 4;
+            respawnPoint.y = transform.position.y;
+            Debug.Log("Checkpoint encountered at" + transform.position.x + " " + transform.position.y);
+            Debug.Log("Time taken" + time_checkpoint);
+            checkpoint7.Add(time_checkpoint);
+            time_checkpoint = 0.0f;
+            if (mechanics_cp7. != null)
+                mechanics_cp7.AddRange(current_mechs);
+            else
+                mechanics_cp7 = current_mechs;
+            current_mechs = new List<string>();
+            timelimit = 90.0f;
+           
+        }
+        if (collision.gameObject.tag == "Checkpoint8")
+        {
+            respawnPoint.x = transform.position.x + 4;
+            respawnPoint.y = transform.position.y;
+            Debug.Log("Checkpoint encountered at" + transform.position.x + " " + transform.position.y);
+            Debug.Log("Time taken" + time_checkpoint);
+            checkpoint8.Add(time_checkpoint);
+            time_checkpoint = 0.0f;
+            if (mechanics_cp8 != null)
+                mechanics_cp8.AddRange(current_mechs);
+            else
+                mechanics_cp8 = current_mechs;
+            current_mechs = new List<string>();
+            timelimit = 60.0f;
+            
+        }
+        if (collision.gameObject.tag == "Checkpoint9")
+        {
+            respawnPoint.x = transform.position.x + 4;
+            respawnPoint.y = transform.position.y;
+            Debug.Log("Checkpoint encountered at" + transform.position.x + " " + transform.position.y);
+            Debug.Log("Time taken" + time_checkpoint);
+            checkpoint9.Add(time_checkpoint);
+            time_checkpoint = 0.0f;
+            if (mechanics_cp9 != null)
+                mechanics_cp9.AddRange(current_mechs);
+            else
+                mechanics_cp9 = current_mechs;
+            current_mechs = new List<string>();
+            timelimit = 30.0f;
+           
         }
         if (collision.gameObject.tag == "Bullet" && !isPowerUpOn)
         {
@@ -343,10 +454,10 @@ public class Player : MonoBehaviour
         Debug.Log("Send called");
         Debug.Log("Collectable locations" + ConvertVectorListToString(CollectablePoints));
         Debug.Log("cp1");
-        StartCoroutine(Post(Timetaken, antigravity, reflection, camouflage, resize, powerup, boomerang_used, checkpoint1, checkpoint2, checkpoint3, checkpoint4, CollectablePoints.Count, win, number_of_lives));
+        StartCoroutine(Post(Timetaken, antigravity, reflection, camouflage, resize, powerup, boomerang_used, CollectablePoints.Count, win, number_of_lives));
     }
 
-    IEnumerator Post(float timetaken, int mech1, int mech2, int mech3, int mech4, int mech5, int mech6, float cp1, float cp2, float cp3, float cp4, int score, int win, int lives)
+    IEnumerator Post(float timetaken, int mech1, int mech2, int mech3, int mech4, int mech5, int mech6,int score, int win, int lives)
     {
         Debug.Log("Post called" + (string.Format("{0:N2}", Timetaken)) + " " + (string.Format("{0}", mech1)));
         WWWForm form = new WWWForm();
@@ -354,10 +465,10 @@ public class Player : MonoBehaviour
         form.AddField("entry.305553560", string.Format("{0}", mech1));
         form.AddField("entry.1168732002", string.Format("{0}", mech2));
         form.AddField("entry.1274496277", string.Format("{0}", mech3));
-        form.AddField("entry.1477920271", string.Format("{0:N2}", cp1) + "*" + ConvertListToString(mechanics_cp1));
-        form.AddField("entry.2118230736", string.Format("{0:N2}", cp2) + "*" + ConvertListToString(mechanics_cp2));
-        form.AddField("entry.2104200455", string.Format("{0:N2}", cp3) + "*" + ConvertListToString(mechanics_cp3));
-        form.AddField("entry.1640424427", string.Format("{0:N2}", cp4) + "*" + ConvertListToString(mechanics_cp4));
+        form.AddField("entry.1477920271", string.Join(", ", checkpoint1.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp1));
+        form.AddField("entry.2118230736", string.Join(", ", checkpoint2.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp2));
+        form.AddField("entry.2104200455", string.Join(", ", checkpoint3.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp3));
+        form.AddField("entry.1640424427", string.Join(", ", checkpoint4.Select(f => f.ToString())) + "*" + ConvertListToString(mechanics_cp4));
         form.AddField("entry.73026754", ConvertVectorListToString(deathPoints));
         form.AddField("entry.1506435532", SceneManager.GetActiveScene().name);
         form.AddField("entry.1784470240", string.Format("{0}", mech4));
