@@ -446,7 +446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2207071645074078133, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2220466413569198346, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_IsActive
@@ -7017,6 +7017,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1807782695}
     m_Modifications:
+    - target: {fileID: 2794066245245296872, guid: 78a363f87f3a149eb8ab374b4806c670, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -38.71901
+      objectReference: {fileID: 0}
     - target: {fileID: 4337103544474000764, guid: 78a363f87f3a149eb8ab374b4806c670, type: 3}
       propertyPath: m_Name
       value: TipPanel

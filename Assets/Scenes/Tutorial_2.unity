@@ -12701,7 +12701,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.29850006}
+  m_Offset: {x: 0.14924812, y: -0.29850197}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -12712,7 +12712,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5970001}
+  m_Size: {x: 4.8805046, y: 4.581997}
   m_EdgeRadius: 0
 --- !u!4 &1995049452
 Transform:
@@ -12792,6 +12792,10 @@ PrefabInstance:
     - target: {fileID: 5058851144734219331, guid: 512f24364a3044243aaf6474c2a7beec, type: 3}
       propertyPath: m_Name
       value: Enemy2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058851144734219331, guid: 512f24364a3044243aaf6474c2a7beec, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
