@@ -6,6 +6,7 @@ public class MainMenu : MonoBehaviour
     public void GoToScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+        Player.playerMoveSpeed = 8f;
     }
 
 
