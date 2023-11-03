@@ -87,9 +87,9 @@ public class Player : MonoBehaviour
     bool onGround = false;
     public float groundLine = 2;
 
-    public static int redCollected = 5;
-    public static int blueCollected = 5;
-    public static int greenCollected = 5;
+    public static int redCollected = 0;
+    public static int blueCollected = 0;
+    public static int greenCollected = 0;
     public static int redUsed = 0;
     public static int blueUsed = 0;
     public static int greenUsed = 0;
