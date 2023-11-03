@@ -30,6 +30,9 @@ public class ColorMixer : MonoBehaviour
     private void Start()
     {
         playerSr = player.GetComponent<SpriteRenderer>();
+        Player.redCollected=0;
+        Player.greenCollected=0;
+        Player.blueCollected=0;
         buttonRed.onClick.AddListener(() => OnButtonClick(buttonRed));
         buttonGreen.onClick.AddListener(() => OnButtonClick(buttonGreen));
         mixArea.onClick.AddListener(() => OnButtonClick(mixArea));
@@ -43,6 +46,7 @@ public class ColorMixer : MonoBehaviour
         buttonRed.GetComponentInChildren<TMP_Text>().text = Player.redCollected.ToString();
         buttonGreen.GetComponentInChildren<TMP_Text>().text = Player.greenCollected.ToString();
         buttonBlue.GetComponentInChildren<TMP_Text>().text = Player.blueCollected.ToString();
+        
     }
 
     private void Update(){
