@@ -10441,6 +10441,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7083859249442994599, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
+      propertyPath: fruits.Array.data[0]
+      value: 
+      objectReference: {fileID: 1099184861}
+    - target: {fileID: 7083859249442994599, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
+      propertyPath: fruits.Array.data[1]
+      value: 
+      objectReference: {fileID: 1099184860}
     - target: {fileID: 8422847350134939194, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
       propertyPath: m_Name
       value: Tree (1)
@@ -10570,7 +10578,7 @@ Transform:
   m_GameObject: {fileID: 1022627676}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2863, y: -12.2012, z: -9171.656}
+  m_LocalPosition: {x: -3.3, y: -12.2012, z: -9171.656}
   m_LocalScale: {x: 5.585315, y: 6.825401, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10772,6 +10780,86 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fe64a66a364a4d869c1ac8b3bfd0125, type: 3}
+--- !u!1001 &1099184859
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2706383348537941567, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 333.2952
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706383348537941567, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 207.76309
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706383348537941567, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.134784
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706383348537941567, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706383348537941567, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706383348537941567, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706383348537941567, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706383348537941567, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706383348537941567, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706383348537941567, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000418334154300333, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -317.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697519249684679547, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -316.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485234294576866126, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+      propertyPath: m_Name
+      value: TreeCollectibles (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653393048146084082, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -311.67
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 2680716891771671498, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+--- !u!1 &1099184860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7959246771223943235, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+  m_PrefabInstance: {fileID: 1099184859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1099184861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8396810312001751189, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
+  m_PrefabInstance: {fileID: 1099184859}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1144922476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11168,7 +11256,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4822870496544247098, guid: 39757b015d53f4e7a99c03ea71139f47, type: 3}
       propertyPath: orthographic size
-      value: 12
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8222074239195985924, guid: 39757b015d53f4e7a99c03ea71139f47, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11404,6 +11492,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7083859249442994599, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
+      propertyPath: fruits.Array.data[0]
+      value: 
+      objectReference: {fileID: 1099184861}
+    - target: {fileID: 7083859249442994599, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
+      propertyPath: fruits.Array.data[1]
+      value: 
+      objectReference: {fileID: 1099184860}
     - target: {fileID: 8422847350134939194, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
       propertyPath: m_Name
       value: Tree (3)
@@ -11864,6 +11960,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7083859249442994599, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
+      propertyPath: fruits.Array.data[0]
+      value: 
+      objectReference: {fileID: 1099184861}
+    - target: {fileID: 7083859249442994599, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
+      propertyPath: fruits.Array.data[1]
+      value: 
+      objectReference: {fileID: 1099184860}
     - target: {fileID: 8422847350134939194, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
       propertyPath: m_Name
       value: Tree (2)
@@ -12111,3 +12215,4 @@ SceneRoots:
   - {fileID: 877179934}
   - {fileID: 2084766739}
   - {fileID: 1790185083}
+  - {fileID: 1099184859}
