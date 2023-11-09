@@ -25,14 +25,14 @@ public class Player : MonoBehaviour
 
     public int number_of_lives = 3;
     private float[][] checkpoints;
-
     private float time_running = 0.0f;
     private float time_checkpoint = 0.0f;
     public float timelimit = 90.0f;
     private float[] checks;
     private int count = 0;
-    private Boomerang boomerang;
-    public GameObject boomerangObject;
+    // private Boomerang boomerang;
+    private Boomerang boomerangClass;
+    // public GameObject boomerangObject;
     [HideInInspector]
     public bool isFacingRight;
     public float inputHorizontal;
@@ -94,6 +94,9 @@ public class Player : MonoBehaviour
     public static int blueUsed = 0;
     public static int greenUsed = 0;
     private TrailRenderer trail;
+
+    public Transform firePoint;
+    public GameObject boomerangPrefab;
    
     // Start is called before the first frame update
     void Start()
@@ -108,7 +111,7 @@ public class Player : MonoBehaviour
         count = 0;
         win = 0;
         current_sublevel = "entry";
-        boomerang = boomerangObject.GetComponent<Boomerang>();
+        // boomerang = boomerangObject.GetComponent<Boomerang>();
         playerTransform = GetComponent<Transform>();
         //originalScale = playerTransform.localScale;
         //ogscale = true;
@@ -185,13 +188,18 @@ public class Player : MonoBehaviour
         {
             boomerang_used++;
             current_mechs.Add("Boomerang");
-            boomerang.GetComponent<SpriteRenderer>().color = GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color;
-            Color currColor = boomerang.GetComponent<SpriteRenderer>().color;
+            GameObject newBoomerang = Instantiate(boomerangPrefab, firePoint.position, Quaternion.identity).gameObject;
+            boomerangClass = newBoomerang.GetComponent<Boomerang>();
+            // boomerang.GetComponent<SpriteRenderer>().color = GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color;
+            newBoomerang.GetComponent<SpriteRenderer>().color = GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color;
+            // Color currColor = boomerang.GetComponent<SpriteRenderer>().color;
+            Color currColor = newBoomerang.GetComponent<SpriteRenderer>().color;
             if (currColor == Color.red)
             {
                 if (redCollected > 0)
                 {
-                    boomerang.Throw(direction);
+                    // boomerang.Throw(direction);
+                    boomerangClass.Throw(direction);
                     Player.redCollected--;
                     redUsed++;
                 }
@@ -200,7 +208,8 @@ public class Player : MonoBehaviour
             {
                 if (greenCollected > 0)
                 {
-                    boomerang.Throw(direction);
+                    // boomerang.Throw(direction);
+                    boomerangClass.Throw(direction);
                     Player.greenCollected--;
                     greenUsed++;
                 }
@@ -209,7 +218,8 @@ public class Player : MonoBehaviour
             {
                 if (blueCollected > 0)
                 {
-                    boomerang.Throw(direction);
+                    // boomerang.Throw(direction);
+                    boomerangClass.Throw(direction);
                     Player.blueCollected--;
                     blueUsed++;
                 }

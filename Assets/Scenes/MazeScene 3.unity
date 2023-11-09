@@ -23147,6 +23147,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boomerang
       objectReference: {fileID: 0}
+    - target: {fileID: 695155875406451478, guid: 2840e1cf746954a788e05fef53fc8351, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8028448491357191638, guid: 2840e1cf746954a788e05fef53fc8351, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.8603

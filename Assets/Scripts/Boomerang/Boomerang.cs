@@ -7,31 +7,32 @@ public class Boomerang : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 throwDirection;
     private bool isThrown = false;
-    private float throwForce = 10.0f;
+    private float throwForce = 20.0f;
     private GameObject hitTree;
     GameObject player;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            transform.parent = player.transform;
-        }
-        else
-        {
-            Debug.LogError("Player GameObject not found. Make sure to set the correct player object name.");
-        }
-        rb.velocity = Vector2.zero;
-        rb.angularVelocity = 0f;
-        gameObject.SetActive(false);
+        // rb = gameObject.GetComponent<Rigidbody2D>();
+        // player = GameObject.FindGameObjectWithTag("Player");
+        // if (player != null)
+        // {
+        //     transform.parent = player.transform;
+        // }
+        // else
+        // {
+        //     Debug.LogError("Player GameObject not found. Make sure to set the correct player object name.");
+        // }
+        // rb.velocity = Vector2.zero;
+        // rb.angularVelocity = 0f;
+        // gameObject.SetActive(false);
     }
 
     public void Throw(Vector2 direction)
     {
-        gameObject.SetActive(true);
-        transform.position = transform.parent.position;
+        // gameObject.SetActive(true);
+        // transform.position = transform.parent.position;
+        rb = this.gameObject.GetComponent<Rigidbody2D>();
         throwDirection = direction.normalized;
         rb.velocity = throwDirection * throwForce;
         isThrown = true;
@@ -70,8 +71,8 @@ public class Boomerang : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Tree") && currColor == Color.red)
         {
-            transform.position = transform.parent.position;
-            gameObject.SetActive(false);
+            // transform.position = transform.parent.position;
+            // gameObject.SetActive(false);
             Player.current_mechs.Add("Tree Hit");
             Debug.Log("I am hit the tree");
             hitTree = collision.gameObject;
@@ -80,9 +81,10 @@ public class Boomerang : MonoBehaviour
 
         } else if (collision.gameObject.layer == LayerMask.NameToLayer("Default") || collision.gameObject.layer == LayerMask.NameToLayer("Enemy") || collision.gameObject.layer == LayerMask.NameToLayer("TreeLayer"))
         {
-            transform.position = transform.parent.position;
-            gameObject.SetActive(false);
+            // transform.position = transform.parent.position;
+            // gameObject.SetActive(false);
         }
+        Destroy(gameObject);
     }
     Color GetCurrentColor()
     {
