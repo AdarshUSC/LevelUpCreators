@@ -7,6 +7,8 @@ using TMPro;
 
 public class GravityManipulation : MonoBehaviour
 {
+    public Image antiGravityTimerImage;
+
     GameObject player ;
     float gravityTimer;
     public Button antiGravityButton;
@@ -36,6 +38,10 @@ public class GravityManipulation : MonoBehaviour
             AGTimerText.text = ""; // Initialize the text
         }
 
+        if (antiGravityTimerImage != null)
+        {
+            antiGravityTimerImage.fillAmount = 0;
+        }
 
         // Rigidbody rb = player.GetComponent<Rigidbody>();
         // Vector3 direction = player.transform.position - transform.position;
@@ -65,6 +71,11 @@ public class GravityManipulation : MonoBehaviour
 
             float timeLeft = antiGravityDuration - gravityTimer;
 
+            if (antiGravityTimerImage != null)
+            {
+                antiGravityTimerImage.fillAmount = timeLeft / antiGravityDuration;
+            }
+
 
             if (AGTimerText != null)
             {
@@ -80,12 +91,21 @@ public class GravityManipulation : MonoBehaviour
 
             if (gravityTimer > antiGravityDuration)
             {
+                if (antiGravityTimerImage != null)
+                {
+                    // Reset radial timer fill amount when anti-gravity is not active
+                    antiGravityTimerImage.fillAmount = 0;
+                }
+
+
                 Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
                 rb.gravityScale=1;
                 isAntiGravityActive = false;
                 gravityTimer = 0;  
                 antiGravityButton.interactable=true;
                 return; 
+
+
         }
         }
         

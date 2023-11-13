@@ -6,6 +6,9 @@ using TMPro;
 
 public class PlayerResize : MonoBehaviour
 {
+    public Image resizeTimerImage;
+    private float resizeTimerMax = 15.0f;
+
     private Transform playerTransform;
     private Vector3 originalScale;
     private bool ogscale;
@@ -46,6 +49,11 @@ public class PlayerResize : MonoBehaviour
         {
             resizeTimerText.text = "";
         }
+
+        if (resizeTimerImage != null)
+        {
+            resizeTimerImage.fillAmount = 0;
+        }
     }
 
     // Update is called once per frame
@@ -60,6 +68,7 @@ public class PlayerResize : MonoBehaviour
                 Vector3 newScale = new Vector3(3.0f, 3.0f, 3.0f);
                 playerTransform.localScale = newScale;
                 ogscale = false;
+                resizeTimer = 0; // Reset timer
                 mushrooms--;
                 MushroomsText.text = mushrooms.ToString();
             }
@@ -82,11 +91,22 @@ public class PlayerResize : MonoBehaviour
                 }
             }
 
+            if (resizeTimerImage != null)
+            {
+                resizeTimerImage.fillAmount = timeLeft / resizeTimerMax;
+            }
+
+       
+
             if (resizeTimer > 15 && mpd.playerInside == false)
             {
                 playerTransform.localScale = originalScale;
                 ogscale = true;
                 resizeTimer = 0;
+                if (resizeTimerImage != null)
+                {
+                    resizeTimerImage.fillAmount = 0;
+                }
             }
             else if (resizeTimer > 15 && mpd.playerInside == true)
             {

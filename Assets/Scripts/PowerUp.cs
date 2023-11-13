@@ -5,19 +5,28 @@ using UnityEngine.UI;
 
 public class PowerUp : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Image powerUpTimerImage; // Radial image for the power-up timer
+    private float powerUpDuration = 10.0f; // Duration of the power-up
     GameObject player ;
     float powerUpTimer;
     public Button powerUpButton;
     
     // Start is called before the first frame update
-    void Start(){
-        if(powerUpButton!=null){
-            player = GameObject.FindGameObjectWithTag("Player");
-            powerUpTimer = 0;  
-            powerUpButton.interactable=false;
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        powerUpTimer = 0;
+
+        if (powerUpButton != null)
+        {
+            powerUpButton.interactable = false;
         }
-        
+
+        if (powerUpTimerImage != null)
+        {
+            powerUpTimerImage.fillAmount = 0;
+        }
+
     }
 
     // Update is called once per frame
@@ -26,7 +35,11 @@ public class PowerUp : MonoBehaviour
         
         if(Player.isPowerUpOn){
             powerUpTimer+= Time.deltaTime;
-            if(powerUpTimer > 10){
+            if (powerUpTimerImage != null)
+            {
+                powerUpTimerImage.fillAmount = (powerUpDuration-powerUpTimer) / powerUpDuration;
+            }
+            if (powerUpTimer > 10){
                 Player.isPowerUpOn=false;
                 Player.playerMoveSpeed-=4.0f;
                 powerUpTimer = 0;  
@@ -45,6 +58,11 @@ public class PowerUp : MonoBehaviour
             powerUpButton.interactable=false;
             Player.powerup++;
             Player.current_mechs.Add("Powerup");
+
+            if (powerUpTimerImage != null)
+            {
+                powerUpTimerImage.fillAmount = 0;
+            }
         }
         
         
