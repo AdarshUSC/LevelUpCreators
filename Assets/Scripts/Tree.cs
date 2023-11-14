@@ -16,7 +16,7 @@ public class Tree : MonoBehaviour
         {
             fruit.SetActive(false);
         }
-
+        
         greenOn=false;
         greenTimer=0.0f;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -24,10 +24,10 @@ public class Tree : MonoBehaviour
 
     void Update()
     {   
-        
+        Debug.Log("green Timer is " + greenTimer);
         if(greenOn){
             greenTimer+= Time.deltaTime;
-            Debug.Log("green timer is "+ greenTimer);
+            // Debug.Log("green timer is "+ greenTimer);
             if(greenTimer > 10.0f){
                 // foreach(Transform transform in colorPanel.transform) {
                 //     if(transform.CompareTag("ColorButton")) {
