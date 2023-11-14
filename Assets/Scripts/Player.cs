@@ -188,41 +188,35 @@ public class Player : MonoBehaviour
         {
             boomerang_used++;
             current_mechs.Add("Boomerang");
-            GameObject newBoomerang = Instantiate(boomerangPrefab, firePoint.position, Quaternion.identity).gameObject;
-            boomerangClass = newBoomerang.GetComponent<Boomerang>();
-            // boomerang.GetComponent<SpriteRenderer>().color = GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color;
-            newBoomerang.GetComponent<SpriteRenderer>().color = GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color;
             // Color currColor = boomerang.GetComponent<SpriteRenderer>().color;
-            Color currColor = newBoomerang.GetComponent<SpriteRenderer>().color;
-            if (currColor == Color.red)
+            Color currColor = GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color;
+            if (currColor == Color.red && redCollected>0)
             {
-                if (redCollected > 0)
-                {
-                    // boomerang.Throw(direction);
-                    boomerangClass.Throw(direction);
-                    Player.redCollected--;
-                    redUsed++;
-                }
+                GameObject newBoomerang = Instantiate(boomerangPrefab, firePoint.position, Quaternion.identity).gameObject;
+                boomerangClass = newBoomerang.GetComponent<Boomerang>();
+                newBoomerang.GetComponent<SpriteRenderer>().color = currColor;
+                boomerangClass.Throw(direction);
+                Player.redCollected--;
+                redUsed++;
             }
-            else if (currColor == Color.green)
+            else if (currColor == Color.green && greenCollected>0)
             {
-                if (greenCollected > 0)
-                {
-                    // boomerang.Throw(direction);
-                    boomerangClass.Throw(direction);
-                    Player.greenCollected--;
-                    greenUsed++;
-                }
+                GameObject newBoomerang = Instantiate(boomerangPrefab, firePoint.position, Quaternion.identity).gameObject;
+                boomerangClass = newBoomerang.GetComponent<Boomerang>();
+                newBoomerang.GetComponent<SpriteRenderer>().color = currColor;
+                boomerangClass.Throw(direction);
+                Player.greenCollected--;
+                greenUsed++;
+
             }
-            else if (currColor == Color.blue)
+            else if (currColor == Color.blue && blueCollected>0)
             {
-                if (blueCollected > 0)
-                {
-                    // boomerang.Throw(direction);
-                    boomerangClass.Throw(direction);
-                    Player.blueCollected--;
-                    blueUsed++;
-                }
+                GameObject newBoomerang = Instantiate(boomerangPrefab, firePoint.position, Quaternion.identity).gameObject;
+                boomerangClass = newBoomerang.GetComponent<Boomerang>();
+                newBoomerang.GetComponent<SpriteRenderer>().color = currColor;
+                boomerangClass.Throw(direction);
+                Player.blueCollected--;
+                blueUsed++;
             }
         }
 

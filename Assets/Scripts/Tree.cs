@@ -4,8 +4,8 @@ public class Tree : MonoBehaviour
 {
     // Public variable to store the tree's fruits
     public GameObject[] fruits;
-    private float greenTimer;
-    private bool greenOn;
+    public static float greenTimer;
+    public static bool greenOn;
 
     GameObject player;
 
@@ -23,7 +23,8 @@ public class Tree : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
+        
         if(greenOn){
             greenTimer+= Time.deltaTime;
             Debug.Log("green timer is "+ greenTimer);
@@ -46,17 +47,21 @@ public class Tree : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) {
 
-        Color currColor =  collision.gameObject.GetComponent<SpriteRenderer>()!=null?collision.gameObject.GetComponent<SpriteRenderer>().color:Color.white;
-        if (collision.gameObject.CompareTag("Boomerang") && currColor == Color.green){
-            Debug.Log("tree is hit w green bullet with "+ collision.gameObject+" and "+gameObject);
-            player.GetComponent<SpriteRenderer>().color = Color.green;
-            Player.current_mechs.Add("Camouflage");
-            greenOn=true;
-            greenTimer=Time.deltaTime;
-            Player.playerMoveSpeed=3.6f;
-            collision.gameObject.transform.position = collision.gameObject.transform.parent.position;
-            collision.gameObject.SetActive(false);
-        } 
+        // Color currColor =  collision.gameObject.GetComponent<SpriteRenderer>()!=null?collision.gameObject.GetComponent<SpriteRenderer>().color:Color.white;
+        // if (collision.gameObject.CompareTag("Boomerang") && currColor == Color.green){
+        //     Debug.Log("tree is hit w green bullet with "+ collision.gameObject+" and "+gameObject);
+        //     player.GetComponent<SpriteRenderer>().color = Color.green;
+        //     Player.current_mechs.Add("Camouflage");
+        //     greenOn=true;
+        //     greenTimer=Time.deltaTime;
+        //     Player.playerMoveSpeed=3.6f;
+        //     Destroy(collision.gameObject);
+        // } else if (collision.gameObject.CompareTag("Boomerang") && currColor == Color.red){
+        //     Player.current_mechs.Add("Tree Hit");
+        //     Debug.Log("I am hit the tree");
+        //     DropFruits();
+        //     Destroy(collision.gameObject);
+        // } 
     }
 
     public void DropFruits()

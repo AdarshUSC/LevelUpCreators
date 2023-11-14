@@ -11,8 +11,8 @@ public class EnemyPatrol : MonoBehaviour
     float walkingDirection = 1.0f;
     Vector2 walkAmount;
     float originalX; // Original float value
-    float blueTimer;
-    bool blueOn;
+    public static float blueTimer;
+    public static bool blueOn;
 
 
     void Start () {
@@ -58,19 +58,19 @@ public class EnemyPatrol : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision) {
         
-        Color currColor =  collision.gameObject.GetComponent<SpriteRenderer>()!=null?collision.gameObject.GetComponent<SpriteRenderer>().color:Color.white;
-        if (collision.gameObject.CompareTag("Boomerang") && currColor == Color.blue){
-            Debug.Log("enemy hit");
-            blueOn=true;
-            blueTimer=Time.deltaTime;
-            Player.current_mechs.Add("Froze Enemy");
-            GameObject icePrefab = gameObject.transform.Find("iceCave").gameObject;
-            icePrefab.GetComponent<SpriteRenderer>().enabled = true;
-            // gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
-            collision.gameObject.transform.position = collision.gameObject.transform.parent.position;
-            collision.gameObject.gameObject.SetActive(false);
-            // Destroy(gameObject);
-        }
+        // Color currColor =  collision.gameObject.GetComponent<SpriteRenderer>()!=null?collision.gameObject.GetComponent<SpriteRenderer>().color:Color.white;
+        // if (collision.gameObject.CompareTag("Boomerang") && currColor == Color.blue){
+        //     Debug.Log("enemy hit");
+        //     blueOn=true;
+        //     blueTimer=Time.deltaTime;
+        //     Player.current_mechs.Add("Froze Enemy");
+        //     GameObject icePrefab = gameObject.transform.Find("iceCave").gameObject;
+        //     icePrefab.GetComponent<SpriteRenderer>().enabled = true;
+        //     // gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+        //     // collision.gameObject.transform.position = collision.gameObject.transform.parent.position;
+        //     // collision.gameObject.gameObject.SetActive(false);
+        //     Destroy(collision.gameObject);
+        // }
     }
 }
 // 115, 72, 140 // 178, 238, 46 // 55, 199, 163 

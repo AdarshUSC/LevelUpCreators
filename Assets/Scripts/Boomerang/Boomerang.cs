@@ -14,7 +14,7 @@ public class Boomerang : MonoBehaviour
     void Start()
     {
         // rb = gameObject.GetComponent<Rigidbody2D>();
-        // player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         // if (player != null)
         // {
         //     transform.parent = player.transform;
@@ -65,26 +65,51 @@ public class Boomerang : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) {
 
-        Color currentColor = GetCurrentColor();
-        Debug.Log("Current color boomerang"+ currentColor);
-        Color currColor = gameObject.GetComponent<SpriteRenderer>().color;
-
-        if (collision.gameObject.CompareTag("Tree") && currColor == Color.red)
-        {
-            // transform.position = transform.parent.position;
-            // gameObject.SetActive(false);
+        Color currColor =  gameObject.GetComponent<SpriteRenderer>().color;
+        if (collision.gameObject.CompareTag("Tree") && currColor == Color.green){
+            Debug.Log("tree is hit w green bullet with "+ collision.gameObject+" and "+gameObject);
+            player.GetComponent<SpriteRenderer>().color = Color.green;
+            Player.current_mechs.Add("Camouflage");
+            Tree.greenOn=true;
+            Tree.greenTimer=Time.deltaTime;
+            Player.playerMoveSpeed=3.6f;
+        } else if (collision.gameObject.CompareTag("Tree") && currColor == Color.red){
             Player.current_mechs.Add("Tree Hit");
-            Debug.Log("I am hit the tree");
+            Debug.Log("tree has been hit");
             hitTree = collision.gameObject;
-
             hitTree.GetComponent<Tree>().DropFruits();
-
-        } else if (collision.gameObject.layer == LayerMask.NameToLayer("Default") || collision.gameObject.layer == LayerMask.NameToLayer("Enemy") || collision.gameObject.layer == LayerMask.NameToLayer("TreeLayer"))
-        {
-            // transform.position = transform.parent.position;
-            // gameObject.SetActive(false);
+        } else if (collision.gameObject.CompareTag("Enemy") && currColor == Color.blue){
+            Debug.Log("enemy hit");
+            EnemyPatrol.blueOn=true;
+            EnemyPatrol.blueTimer=Time.deltaTime;
+            Player.current_mechs.Add("Froze Enemy");
+            GameObject icePrefab = collision.gameObject.transform.Find("iceCave").gameObject;
+            icePrefab.GetComponent<SpriteRenderer>().enabled = true;
+            // gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+            // collision.gameObject.transform.position = collision.gameObject.transform.parent.position;
+            // collision.gameObject.gameObject.SetActive(false);
         }
         Destroy(gameObject);
+        // Color currentColor = GetCurrentColor();
+        // Debug.Log("Current color boomerang"+ currentColor);
+        // Color currColor = gameObject.GetComponent<SpriteRenderer>().color;
+
+        // if (collision.gameObject.CompareTag("Tree") && currColor == Color.red)
+        // {
+        //     // transform.position = transform.parent.position;
+        //     // gameObject.SetActive(false);
+        //     Player.current_mechs.Add("Tree Hit");
+        //     Debug.Log("I am hit the tree");
+        //     hitTree = collision.gameObject;
+
+        //     hitTree.GetComponent<Tree>().DropFruits();
+
+        // } else if (collision.gameObject.layer == LayerMask.NameToLayer("Default") || collision.gameObject.layer == LayerMask.NameToLayer("Enemy") || collision.gameObject.layer == LayerMask.NameToLayer("TreeLayer"))
+        // {
+        //     // transform.position = transform.parent.position;
+        //     // gameObject.SetActive(false);
+        // }
+        // Destroy(gameObject);
     }
     Color GetCurrentColor()
     {
