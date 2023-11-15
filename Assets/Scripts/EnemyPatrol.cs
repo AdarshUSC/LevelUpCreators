@@ -28,33 +28,30 @@ public class EnemyPatrol : MonoBehaviour
         GameObject icePrefab = gameObject.transform.Find("iceCave").gameObject;
         if(blueOn){
             blueTimer+= Time.deltaTime;
-           // Debug.Log("blue timer is "+ blueTimer);
-            if(blueTimer > 5){
-                blueOn=false;
+            Debug.Log("blue timer is "+ blueTimer);
+            if(blueTimer > 5.0f){
                 blueTimer = 0.0f;
-                
                 icePrefab.GetComponent<SpriteRenderer>().enabled = false;
-                // foreach(Transform transform in colorPanel.transform) {
-                //     if(transform.CompareTag("ColorButton")) {
-                //         Button colorButton = transform.gameObject.GetComponent<Button>();
-                //         colorButton.interactable=true; // switching off the colors when power up is being used
-                //     }
-                // }
-                // GameObject.FindGameObjectWithTag("mixArea").GetComponent<Button>().interactable=false;
-                // gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-                return;
+                // Debug.Log("prefab is " + icePrefab.GetComponent<SpriteRenderer>().enabled);
+                blueOn=false;
+                //return;
             } 
+        } else{
+            SpriteRenderer sr = icePrefab.GetComponent<SpriteRenderer>();
+            sr.enabled = false;
+            // Debug.Log("sr is " + icePrefab.GetComponent<SpriteRenderer>().enabled);
+            // if(!sr.enabled){
+                // Debug.Log("sr is disabled inside");
+                walkAmount.x = walkingDirection * walkSpeed * Time.deltaTime;
+                if (walkingDirection > 0.0f && transform.position.x >= wallRight) {
+                    walkingDirection = -1.0f;
+                } else if (walkingDirection < 0.0f && transform.position.x <= wallLeft) {
+                    walkingDirection = 1.0f;
+                }
+                transform.Translate(walkAmount);
+            // } 
         }
-        SpriteRenderer sr = icePrefab.GetComponent<SpriteRenderer>();
-        if(!sr.enabled){
-            walkAmount.x = walkingDirection * walkSpeed * Time.deltaTime;
-            if (walkingDirection > 0.0f && transform.position.x >= wallRight) {
-                walkingDirection = -1.0f;
-            } else if (walkingDirection < 0.0f && transform.position.x <= wallLeft) {
-                walkingDirection = 1.0f;
-            }
-            transform.Translate(walkAmount);
-        } 
+        
     }
     void OnCollisionEnter2D(Collision2D collision) {
         
