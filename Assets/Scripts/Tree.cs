@@ -24,10 +24,9 @@ public class Tree : MonoBehaviour
 
     void Update()
     {   
-        Debug.Log("green Timer is " + greenTimer);
         if(greenOn){
             greenTimer+= Time.deltaTime;
-            // Debug.Log("green timer is "+ greenTimer);
+            Debug.Log("green Timer is " + greenTimer);
             if(greenTimer > 10.0f){
                 // foreach(Transform transform in colorPanel.transform) {
                 //     if(transform.CompareTag("ColorButton")) {
@@ -35,12 +34,11 @@ public class Tree : MonoBehaviour
                 //         colorButton.interactable=false; // switching off the colors when power up is being used
                 //     }
                 // }
-                greenOn=false;
                 greenTimer = 0.0f;
                 // GameObject.FindGameObjectWithTag("mixArea").GetComponent<Button>().interactable=false;
                 Player.playerMoveSpeed=8.0f;
                 player.GetComponent<SpriteRenderer>().color = Color.white;
-                return;
+                greenOn=false;
             } 
         }
     }
