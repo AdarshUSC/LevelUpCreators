@@ -5991,6 +5991,14 @@ PrefabInstance:
       propertyPath: CollectiblesText
       value: 
       objectReference: {fileID: 1968179504}
+    - target: {fileID: 6833510994950345710, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+      propertyPath: shadowCamera
+      value: 
+      objectReference: {fileID: 2299262673932624948, guid: 0cdc0a8c011e54011b85b6b3c6263fd2, type: 3}
+    - target: {fileID: 6833510994950345710, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+      propertyPath: cameraZoomSize
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7330717185569479181, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
       propertyPath: m_Mass
       value: 16

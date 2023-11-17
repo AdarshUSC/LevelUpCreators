@@ -244,6 +244,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mirror: {fileID: 3020148356792450870, guid: 198ab47c514804a49b8a7b51637735b1, type: 3}
   shadow: {fileID: 1117728391328251014, guid: d11a5a9fe6dec44748fe48ecf3fd62d2, type: 3}
+  shadowCamera: {fileID: 2299262673932624948, guid: 0cdc0a8c011e54011b85b6b3c6263fd2, type: 3}
+  cameraZoomSize: 8
 --- !u!114 &4861984018030006223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d7f624ce2daa1479b97cf6e7f2586c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resizeTimerImage: {fileID: 0}
   mpdObj: {fileID: 0}
   playObj: {fileID: 2081760706506450670}
   MushroomsText: {fileID: 0}
