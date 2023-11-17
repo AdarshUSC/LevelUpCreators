@@ -15,7 +15,6 @@ public class GravityManipulation : MonoBehaviour
     private Transform playerTransform;
     private Vector3 originalScale;
 
-    [SerializeField] private TMP_Text AGTimerText;
     bool isAntiGravityActive;
     private float antiGravityDuration = 5.0f;
 
@@ -31,11 +30,6 @@ public class GravityManipulation : MonoBehaviour
 
         if (antiGravityButton!=null){
             antiGravityButton.interactable=true;
-        }
-
-        if (AGTimerText != null)
-        {
-            AGTimerText.text = ""; // Initialize the text
         }
 
         if (antiGravityTimerImage != null)
@@ -76,18 +70,6 @@ public class GravityManipulation : MonoBehaviour
                 antiGravityTimerImage.fillAmount = timeLeft / antiGravityDuration;
             }
 
-
-            if (AGTimerText != null)
-            {
-                if (timeLeft > 0)
-                {
-                    AGTimerText.text = $"Time for anti-gravity: {timeLeft.ToString("F2")}";
-                }
-                else
-                {
-                    AGTimerText.text = ""; // Hide the text when the countdown is over
-                }
-            }
 
             if (gravityTimer > antiGravityDuration)
             {
