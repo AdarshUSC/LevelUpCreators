@@ -10,7 +10,7 @@ public class ColorMixer : MonoBehaviour
     public Button buttonGreen;
     public Button mixArea;
     public Button buttonBlue;
-    public Button reset;
+    public Button resetButton;
     private Color originalColor;
 
     // public SpriteRenderer mixingArea;
@@ -37,7 +37,7 @@ public class ColorMixer : MonoBehaviour
         buttonGreen.onClick.AddListener(() => OnButtonClick(buttonGreen));
         mixArea.onClick.AddListener(() => OnButtonClick(mixArea));
         buttonBlue.onClick.AddListener(() => OnButtonClick(buttonBlue));
-        reset.onClick.AddListener(OnResetClick);
+        resetButton.onClick.AddListener(OnResetClick);
         reset_flag = true;
         mixArea.interactable=false;
         buttonRed.interactable=Player.redCollected==0?false:true;
@@ -46,7 +46,8 @@ public class ColorMixer : MonoBehaviour
         buttonRed.GetComponentInChildren<TMP_Text>().text = Player.redCollected.ToString();
         buttonGreen.GetComponentInChildren<TMP_Text>().text = Player.greenCollected.ToString();
         buttonBlue.GetComponentInChildren<TMP_Text>().text = Player.blueCollected.ToString();
-        
+        resetButton.interactable=false;
+        // resetButton.gameObject.SetActive(false);
     }
 
     private void Update(){

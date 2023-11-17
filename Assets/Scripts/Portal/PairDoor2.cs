@@ -8,7 +8,7 @@ public class PairDoor2 : MonoBehaviour
     [SerializeReference] GameObject otherDoor;
     [SerializeReference] GameObject player;
     [SerializeReference] GameObject image;
-
+    [SerializeReference] Button resetButton;
     public static bool byTheDoor = false;
     public float timer = 0;
 
@@ -17,6 +17,7 @@ public class PairDoor2 : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        resetButton = GameObject.FindGameObjectWithTag("ColorReset").GetComponent<Button>();
         byTheDoor = false;
     }
 
@@ -50,12 +51,13 @@ public class PairDoor2 : MonoBehaviour
         }     
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.tag == "Player")
         {
             byTheDoor = true;
+            resetButton.interactable=true;
+            // resetButton.gameObject.SetActive(true);
         }
     }
 
@@ -64,6 +66,8 @@ public class PairDoor2 : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             byTheDoor = false;
+            resetButton.interactable=false;
+            // resetButton.gameObject.SetActive(false);
         }
     }
 }

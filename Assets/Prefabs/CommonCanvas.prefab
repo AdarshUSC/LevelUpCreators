@@ -1812,7 +1812,7 @@ MonoBehaviour:
   buttonGreen: {fileID: 8044620352911190624}
   mixArea: {fileID: 7331695777861345557}
   buttonBlue: {fileID: 2815467008001147940}
-  reset: {fileID: 789544531938157912}
+  resetButton: {fileID: 789544531938157912}
   player: {fileID: 2081760706506450670, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
   resultColor: {r: 0, g: 0, b: 0, a: 0}
   reset_flag: 0
@@ -1831,6 +1831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a69f95213af459fb084981f5c9d8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  antiGravityTimerImage: {fileID: 0}
   antiGravityButton: {fileID: 261659667933065406}
   AGTimerText: {fileID: 0}
 --- !u!114 &7583204746316676762
@@ -1845,6 +1846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff14cf7a41f643938ade5ff98cbc751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpTimerImage: {fileID: 0}
   powerUpButton: {fileID: 6699840298380159240}
 --- !u!1 &2250180273850531267
 GameObject:
@@ -2471,7 +2473,7 @@ GameObject:
   - component: {fileID: 789544531938157912}
   m_Layer: 5
   m_Name: Reset
-  m_TagString: Untagged
+  m_TagString: ColorReset
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5697,6 +5699,7 @@ GameObject:
   - component: {fileID: 3829609387194742018}
   - component: {fileID: 7217908945750430395}
   - component: {fileID: 9199621978192556886}
+  - component: {fileID: 4522309440544070560}
   m_Layer: 5
   m_Name: ColorPanel
   m_TagString: Untagged
@@ -5767,6 +5770,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4522309440544070560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7825663524723755563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.8679245, g: 0.118725546, b: 0.118725546, a: 1}
+  outlineWidth: 4.17
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &7896536544670269488
 GameObject:
   m_ObjectHideFlags: 0
