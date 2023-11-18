@@ -167,10 +167,10 @@ public class Player : MonoBehaviour
             transform.Translate(playerMoveSpeed * Time.deltaTime, 0, 0);
             direction = Vector2.right;
         }
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(0, -playerMoveSpeed * Time.deltaTime, 0);
-        }
+        //if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        //{
+        //    transform.Translate(0, -playerMoveSpeed * Time.deltaTime, 0);
+        //}
 
         onGround = Physics2D.Raycast(transform.position, Vector2.down, groundLine, groundLayer);
 
@@ -281,10 +281,10 @@ public class Player : MonoBehaviour
             {
                 transform.Translate(0, -playerMoveSpeed * Time.deltaTime, 0);
             }
-            if (Input.GetKey(KeyCode.DownArrow))
-            {
-                transform.Translate(0, playerMoveSpeed * Time.deltaTime, 0);
-            }
+            //if (Input.GetKey(KeyCode.DownArrow))
+            //{
+            //    transform.Translate(0, playerMoveSpeed * Time.deltaTime, 0);
+            //}
         }
 
     }
