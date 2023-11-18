@@ -415,7 +415,7 @@ PrefabInstance:
     - target: {fileID: 73381526104031913, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1142471110}
     - target: {fileID: 1300626908520955606, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -10976,6 +10976,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!20 &1142471110 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4822870496544247098, guid: 39757b015d53f4e7a99c03ea71139f47, type: 3}
+  m_PrefabInstance: {fileID: 608381252}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1166463800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 783853318973923358, guid: 82249c30f8111234f9a1a7dd1515d469, type: 3}
@@ -12063,11 +12068,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1037114819964978368, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_text
-      value: press r to eat mushroom
+      value: Use the mushroom by pressing R
       objectReference: {fileID: 0}
     - target: {fileID: 1037114819964978368, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_margin.w
       value: 37.220066
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037114819964978368, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
+      propertyPath: m_margin.z
+      value: 115.261345
       objectReference: {fileID: 0}
     - target: {fileID: 1394128227351156785, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_Pivot.x
@@ -12159,11 +12168,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2747762444288129155, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2.29
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 2747762444288129155, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -16.47
+      value: -13.36
       objectReference: {fileID: 0}
     - target: {fileID: 3229723317245692994, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -12187,9 +12196,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7915744502931564107, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_text
-      value: 'tab button for reflection jump
+      value: 'toggle tab button for reflection jump
 
-'
+        ''Q'' to disable it '
       objectReference: {fileID: 0}
     - target: {fileID: 8623048885543139403, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_Name
