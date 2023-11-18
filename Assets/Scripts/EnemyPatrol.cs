@@ -29,7 +29,7 @@ public class EnemyPatrol : MonoBehaviour
         if(blueOn){
             blueTimer+= Time.deltaTime;
             Debug.Log("blue timer is "+ blueTimer);
-            if(blueTimer > 5.0f){
+            if(blueTimer > 10.0f){
                 blueTimer = 0.0f;
                 icePrefab.GetComponent<SpriteRenderer>().enabled = false;
                 // Debug.Log("prefab is " + icePrefab.GetComponent<SpriteRenderer>().enabled);
