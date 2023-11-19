@@ -249,6 +249,13 @@ public class Player : MonoBehaviour
                 ogscale = true;
             }
         }*/
+
+        if (gameObject.GetComponentInChildren<SensorScript>().isInWall)
+        {
+            gameObject.transform.position = this.respawnPoint;
+            LoseLife();
+            gameObject.GetComponentInChildren<SensorScript>().isInWall = false;
+        }
     }
     private void FixedUpdate()
     {
