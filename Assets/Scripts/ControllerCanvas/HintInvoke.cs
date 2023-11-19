@@ -7,7 +7,7 @@ public class HintInvoke : MonoBehaviour
     [SerializeField] GameObject HintPannel;
     [SerializeField] GameObject PauseButton;
 
-    public int timeToHit = 3;
+    public int timeToHit = 1;
 
     private bool hintDisabled = true;
     // Start is called before the first frame update
