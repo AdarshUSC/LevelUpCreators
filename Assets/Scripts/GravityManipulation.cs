@@ -90,7 +90,27 @@ public class GravityManipulation : MonoBehaviour
 
         }
         }
-        
+        if(Input.GetKeyDown(KeyCode.G) & !isAntiGravityActive)
+        {
+            Debug.Log("Antigravity active");
+            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            rb.gravityScale = -1;
+            Player.antigravity++;
+            Player.current_mechs.Add("Antigravity");
+            antiGravityButton.interactable = false;
+            isAntiGravityActive = true;
+            gravityTimer = 0;
+        } else if(Input.GetKeyDown(KeyCode.G) & isAntiGravityActive)
+        {
+            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            Debug.Log("Antigravity inactive");
+            rb.gravityScale = 1;
+            isAntiGravityActive = false;
+            gravityTimer = 0;
+            antiGravityTimerImage.fillAmount = 0;
+        }
+
+
     }
     public void ButtonClicked()
     {
