@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7374852207105242158, guid: 9aa91777ac2b3ab4fab7c1478f6f0300, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3496945
+      value: -2.24
       objectReference: {fileID: 0}
     - target: {fileID: 7374852207105242158, guid: 9aa91777ac2b3ab4fab7c1478f6f0300, type: 3}
       propertyPath: m_LocalPosition.z
@@ -603,7 +603,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5077212188704324059, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1061343408}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3582056115741371109, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
 --- !u!114 &281131153 stripped
 MonoBehaviour:
@@ -10785,11 +10788,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7374852207105242158, guid: 9aa91777ac2b3ab4fab7c1478f6f0300, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.51352
+      value: 26.7
       objectReference: {fileID: 0}
     - target: {fileID: 7374852207105242158, guid: 9aa91777ac2b3ab4fab7c1478f6f0300, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.282
+      value: -9.11
       objectReference: {fileID: 0}
     - target: {fileID: 7374852207105242158, guid: 9aa91777ac2b3ab4fab7c1478f6f0300, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11923,7 +11926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7374852207105242158, guid: 9aa91777ac2b3ab4fab7c1478f6f0300, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.317
+      value: -2.23
       objectReference: {fileID: 0}
     - target: {fileID: 7374852207105242158, guid: 9aa91777ac2b3ab4fab7c1478f6f0300, type: 3}
       propertyPath: m_LocalPosition.z
