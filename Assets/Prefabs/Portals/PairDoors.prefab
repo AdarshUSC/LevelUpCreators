@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 442778889721218120}
   m_Layer: 0
   m_Name: Door2
-  m_TagString: Untagged
+  m_TagString: OutlineObj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,6 +179,7 @@ MonoBehaviour:
   player: {fileID: 2081760706506450670, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
   image: {fileID: 1444458228312010890}
   timer: 0
+  floatingText: {fileID: 0}
 --- !u!1 &2931343504828736651
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +277,7 @@ GameObject:
   - component: {fileID: 3648394429143349784}
   m_Layer: 0
   m_Name: Door1
-  m_TagString: Untagged
+  m_TagString: OutlineObj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -358,6 +359,7 @@ MonoBehaviour:
   player: {fileID: 2081760706506450670, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
   image: {fileID: 2931343504828736651}
   timer: 0
+  floatingText: {fileID: 670206778037328135, guid: b6b94346013f44a5ebe833d13a7e7d93, type: 3}
 --- !u!1 &3989480376240728602
 GameObject:
   m_ObjectHideFlags: 0

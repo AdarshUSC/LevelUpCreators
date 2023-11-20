@@ -17,7 +17,7 @@ public class SensorScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.name);
+        // Debug.Log(collision.name);
         if (collision.tag == "Maze")
         {
             isInWall = true;

@@ -198,7 +198,7 @@ public class Player : MonoBehaviour
                 boomerangClass.Throw(direction);
                 Player.redCollected--;
                 redUsed++;
-                GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
+                // GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
             }
             else if (currColor == Color.green && greenCollected>0)
             {
@@ -208,7 +208,7 @@ public class Player : MonoBehaviour
                 boomerangClass.Throw(direction);
                 Player.greenCollected--;
                 greenUsed++;
-                GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
+                // GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
 
             }
             else if (currColor == Color.blue && blueCollected>0)
@@ -219,7 +219,7 @@ public class Player : MonoBehaviour
                 boomerangClass.Throw(direction);
                 Player.blueCollected--;
                 blueUsed++;
-                GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
+                // GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
             }
         }
 
@@ -459,6 +459,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Bullet" && !isPowerUpOn)
         {
             Destroy(collision.gameObject);
+            GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
             deathPoints.Add(this.transform.position);
             death_reasons.Add("Color");
 
@@ -529,12 +530,14 @@ public class Player : MonoBehaviour
     public void Lost()
     {
 
+
         Debug.Log("Did not reach end");
         Debug.Log("Collectable locations" + ConvertVectorListToString(CollectablePoints));
         lostCanvas.SetActive(true);
         timelimit = 0;
         Time.timeScale = 0f;
         Timetaken = time_running;
+        // GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
         Send();
 
     }
@@ -544,7 +547,7 @@ public class Player : MonoBehaviour
             lives[number_of_lives].enabled = false;
         number_of_lives--;
         playerMoveSpeed = 8.0f;
-        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
         if (number_of_lives == -1)
             Lost();
     }

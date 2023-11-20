@@ -8,9 +8,10 @@ public class PairDoor2 : MonoBehaviour
     [SerializeReference] GameObject otherDoor;
     [SerializeReference] GameObject player;
     [SerializeReference] GameObject image;
-    [SerializeReference] Button resetButton;
+    private Button resetButton;
     public static bool byTheDoor = false;
     public float timer = 0;
+    [SerializeField] private GameObject floatingText;
 
 
     // Start is called before the first frame update
@@ -18,6 +19,7 @@ public class PairDoor2 : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         resetButton = GameObject.FindGameObjectWithTag("ColorReset").GetComponent<Button>();
+        // floatingText = GameObject.FindGameObjectWithTag("floatingText");
         byTheDoor = false;
     }
 
@@ -57,6 +59,11 @@ public class PairDoor2 : MonoBehaviour
         {
             byTheDoor = true;
             resetButton.interactable=true;
+            GameObject colorPanel = GameObject.FindGameObjectWithTag("CommonCanvas").transform.Find("ColorPanel").gameObject;
+            Debug.Log("color panel position is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y);
+            Vector2 newPos = new Vector2(colorPanel.transform.position.x, colorPanel.transform.position.y+90);
+            Debug.Log("new position is "+ newPos);
+            Instantiate(floatingText, newPos,  Quaternion.identity);
             // resetButton.gameObject.SetActive(true);
         }
     }

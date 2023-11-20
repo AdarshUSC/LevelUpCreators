@@ -28,6 +28,9 @@ TagManager:
   - Checkpoint7
   - Checkpoint8
   - Checkpoint9
+  - ColorReset
+  - FloatingText
+  - OutlineObj
   layers:
   - Default
   - TransparentFX
