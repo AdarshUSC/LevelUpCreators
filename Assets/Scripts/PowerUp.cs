@@ -10,7 +10,7 @@ public class PowerUp : MonoBehaviour
     GameObject player ;
     float powerUpTimer;
     public Button powerUpButton;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,31 +31,30 @@ public class PowerUp : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
-        
-        if(Player.isPowerUpOn){
-            powerUpTimer+= Time.deltaTime;
+    {
+
+        if (Player.isPowerUpOn)
+        {
+            powerUpTimer += Time.deltaTime;
             if (powerUpTimerImage != null)
             {
-                powerUpTimerImage.fillAmount = (powerUpDuration-powerUpTimer) / powerUpDuration;
+                powerUpTimerImage.fillAmount = (powerUpDuration - powerUpTimer) / powerUpDuration;
             }
-            if (powerUpTimer > 10){
-                Player.isPowerUpOn=false;
-                Player.playerMoveSpeed-=4.0f;
-                powerUpTimer = 0;  
-                powerUpButton.interactable=true;
-                return; 
+            if (powerUpTimer > powerUpDuration)
+            {
+                DeactivatePowerUp();
             }
         }
-        
-    }
-    public void ButtonClicked(){
 
-        if(powerUpButton!=null){
-            powerUpTimer=Time.deltaTime;
-            Player.isPowerUpOn=true;
-            Player.playerMoveSpeed+=4.0f;
-            powerUpButton.interactable=false;
+    }
+
+    public void ActivatePowerUp()
+    {
+        if (!Player.isPowerUpOn)
+        {
+            Player.isPowerUpOn = true;
+            Player.playerMoveSpeed += 4.0f;
+            powerUpTimer = 0;
             Player.powerup++;
             Player.current_mechs.Add("Powerup");
 
@@ -64,8 +63,13 @@ public class PowerUp : MonoBehaviour
                 powerUpTimerImage.fillAmount = 0;
             }
         }
-        
-        
-
     }
+
+    void DeactivatePowerUp()
+    {
+        Player.isPowerUpOn = false;
+        Player.playerMoveSpeed -= 4.0f;
+    }
+
+
 }
