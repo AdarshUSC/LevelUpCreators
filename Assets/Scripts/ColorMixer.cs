@@ -52,12 +52,21 @@ public class ColorMixer : MonoBehaviour
 
     private void Update(){
 
-            buttonRed.interactable=Player.redCollected==0?false:true;
-            buttonGreen.interactable=Player.greenCollected==0?false:true;
-            buttonBlue.interactable=Player.blueCollected==0?false:true;
-            buttonRed.GetComponentInChildren<TMP_Text>().text = Player.redCollected.ToString();
-            buttonGreen.GetComponentInChildren<TMP_Text>().text = Player.greenCollected.ToString();
-            buttonBlue.GetComponentInChildren<TMP_Text>().text = Player.blueCollected.ToString();
+            // Debug.Log("color list count is....... " + colorList.Count);
+            if(colorList.Count==4){ // there's a bug which detects onclick twice, so, ideally count should be 2 only
+                Debug.Log("color list count is 2");
+                buttonRed.interactable=false;
+                buttonGreen.interactable=false;
+                buttonBlue.interactable=false;
+            } 
+            else{
+                buttonRed.interactable=Player.redCollected==0?false:true;
+                buttonGreen.interactable=Player.greenCollected==0?false:true;
+                buttonBlue.interactable=Player.blueCollected==0?false:true;
+                buttonRed.GetComponentInChildren<TMP_Text>().text = Player.redCollected.ToString();
+                buttonGreen.GetComponentInChildren<TMP_Text>().text = Player.greenCollected.ToString();
+                buttonBlue.GetComponentInChildren<TMP_Text>().text = Player.blueCollected.ToString();
+            }
     }
     private void OnButtonClick(Button clicked){
 

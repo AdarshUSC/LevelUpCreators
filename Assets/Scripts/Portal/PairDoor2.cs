@@ -59,7 +59,7 @@ public class PairDoor2 : MonoBehaviour
         {
             byTheDoor = true;
             resetButton.interactable=true;
-            Debug.Log("by the door is enabled");
+            // Debug.Log("by the door is enabled");
             GameObject colorPanel = GameObject.FindGameObjectWithTag("CommonCanvas").transform.Find("ColorPanel").gameObject;
             // Debug.Log("color panel position is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y);
             // Vector2 newPos = new Vector2(colorPanel.transform.position.x, colorPanel.transform.position.y+90);
@@ -68,6 +68,8 @@ public class PairDoor2 : MonoBehaviour
             // resetButton.gameObject.SetActive(true);
             GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
             mixArea.GetComponent<Image>().color = new Color(1,1,1,1);
+            ColorMixer.colorList.Clear();
+            Debug.Log("color list length nnear door 2 is "+ ColorMixer.colorList.Count);
         }
     }
 

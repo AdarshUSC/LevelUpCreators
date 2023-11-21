@@ -68,6 +68,8 @@ public class PairDoor1 : MonoBehaviour
             // Debug.Log("color panel position after is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y+ ",,,,,,,"+(colorPanel.transform.position.y+90));
             GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
             mixArea.GetComponent<Image>().color = new Color(1,1,1,1);
+            ColorMixer.colorList.Clear();
+            Debug.Log("color list length nnear door 1 is "+ ColorMixer.colorList.Count);
         }
     }
 
@@ -79,7 +81,7 @@ public class PairDoor1 : MonoBehaviour
             byTheDoor = false;
             resetButton.interactable=false;
             player.GetComponent<SpriteRenderer>().color = Color.white;
-            Debug.Log("by the door is disabled");
+            // Debug.Log("by the door is disabled");
             ColorMixer.colorList.Clear();
             GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
             mixArea.GetComponent<Image>().color = new Color(1,1,1,1);
