@@ -95,6 +95,7 @@ public class PlayerResize : MonoBehaviour
                 playerTransform.position = p.respawnPoint;
                 play.LoseLife();
                 resizeTimer = 0;
+                ogscale = true;
                 playerTransform.localScale = originalScale;
             }
         }
