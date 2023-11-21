@@ -189,7 +189,8 @@ public class Player : MonoBehaviour
             boomerang_used++;
             current_mechs.Add("Boomerang");
             // Color currColor = boomerang.GetComponent<SpriteRenderer>().color;
-            Color currColor = GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color;
+            GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
+            Color currColor = mixArea.GetComponent<Image>().color!=null?mixArea.GetComponent<Image>().color:Color.white;
             if (currColor == Color.red && redCollected>0)
             {
                 GameObject newBoomerang = Instantiate(boomerangPrefab, firePoint.position, Quaternion.identity).gameObject;
