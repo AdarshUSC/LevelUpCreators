@@ -59,12 +59,15 @@ public class PairDoor2 : MonoBehaviour
         {
             byTheDoor = true;
             resetButton.interactable=true;
+            Debug.Log("by the door is enabled");
             GameObject colorPanel = GameObject.FindGameObjectWithTag("CommonCanvas").transform.Find("ColorPanel").gameObject;
-            Debug.Log("color panel position is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y);
-            Vector2 newPos = new Vector2(colorPanel.transform.position.x, colorPanel.transform.position.y+90);
-            Debug.Log("new position is "+ newPos);
-            Instantiate(floatingText, newPos,  Quaternion.identity);
+            // Debug.Log("color panel position is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y);
+            // Vector2 newPos = new Vector2(colorPanel.transform.position.x, colorPanel.transform.position.y+90);
+            // Debug.Log("new position is "+ newPos);
+            // Instantiate(floatingText, newPos,  Quaternion.identity);
             // resetButton.gameObject.SetActive(true);
+            GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
+            mixArea.GetComponent<Image>().color = new Color(1,1,1,1);
         }
     }
 
@@ -74,6 +77,11 @@ public class PairDoor2 : MonoBehaviour
         {
             byTheDoor = false;
             resetButton.interactable=false;
+            player.GetComponent<SpriteRenderer>().color = Color.white;
+            Debug.Log("by the door is disabled");
+            ColorMixer.colorList.Clear();
+            GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
+            mixArea.GetComponent<Image>().color = new Color(1,1,1,1);
             // resetButton.gameObject.SetActive(false);
         }
     }

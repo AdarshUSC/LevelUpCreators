@@ -58,14 +58,16 @@ public class PairDoor1 : MonoBehaviour
         {
             byTheDoor = true;
             // resetButton.gameObject.SetActive(true);
+            Debug.Log("by the door is enabled");
             resetButton.interactable=true;
             GameObject colorPanel = GameObject.FindGameObjectWithTag("CommonCanvas").transform.Find("ColorPanel").gameObject;
-            Debug.Log("color panel position before is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y+ ",,,,,,,"+(colorPanel.transform.position.y+90));
-            Vector2 newPos = new Vector2(colorPanel.transform.position.x, colorPanel.transform.position.y+90);
-            Debug.Log("new position is "+ newPos);
-            Instantiate(floatingText, newPos,  Quaternion.identity);            
-            Debug.Log("color panel position after is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y+ ",,,,,,,"+(colorPanel.transform.position.y+90));
-           
+            // Debug.Log("color panel position before is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y+ ",,,,,,,"+(colorPanel.transform.position.y+90));
+            // Vector2 newPos = new Vector2(colorPanel.transform.position.x, colorPanel.transform.position.y+90);
+            // Debug.Log("new position is "+ newPos);
+            // Instantiate(floatingText, newPos,  Quaternion.identity);            
+            // Debug.Log("color panel position after is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y+ ",,,,,,,"+(colorPanel.transform.position.y+90));
+            GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
+            mixArea.GetComponent<Image>().color = new Color(1,1,1,1);
         }
     }
 
@@ -76,6 +78,11 @@ public class PairDoor1 : MonoBehaviour
         {
             byTheDoor = false;
             resetButton.interactable=false;
+            player.GetComponent<SpriteRenderer>().color = Color.white;
+            Debug.Log("by the door is disabled");
+            ColorMixer.colorList.Clear();
+            GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
+            mixArea.GetComponent<Image>().color = new Color(1,1,1,1);
             // resetButton.gameObject.SetActive(false);
         }
     }

@@ -198,7 +198,7 @@ public class Player : MonoBehaviour
                 boomerangClass.Throw(direction);
                 Player.redCollected--;
                 redUsed++;
-                // GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
+                GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
             }
             else if (currColor == Color.green && greenCollected>0)
             {
@@ -208,7 +208,7 @@ public class Player : MonoBehaviour
                 boomerangClass.Throw(direction);
                 Player.greenCollected--;
                 greenUsed++;
-                // GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
+                GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
 
             }
             else if (currColor == Color.blue && blueCollected>0)
@@ -219,7 +219,7 @@ public class Player : MonoBehaviour
                 boomerangClass.Throw(direction);
                 Player.blueCollected--;
                 blueUsed++;
-                // GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
+                GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
             }
         }
 
@@ -537,7 +537,7 @@ public class Player : MonoBehaviour
         timelimit = 0;
         Time.timeScale = 0f;
         Timetaken = time_running;
-        // GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
+        GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
         Send();
 
     }
