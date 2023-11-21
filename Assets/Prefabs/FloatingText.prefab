@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2861020931474038718}
   - component: {fileID: 1607882756382956999}
   - component: {fileID: 8640678444357284464}
+  - component: {fileID: 1049049015077814557}
   m_Layer: 5
   m_Name: FloatingText
   m_TagString: Untagged
@@ -164,7 +165,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -36.401257, w: 0}
+  m_margin: {x: 0, y: 0, z: -36.401257, w: 91.76215}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -181,7 +182,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670206778037328135}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4b62e748bad95471c82a47c3e8b39891, type: 2}
   m_CullingMode: 0
@@ -201,8 +202,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670206778037328135}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1518952e9e914538866d7ae07d89974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1049049015077814557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670206778037328135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a25dff0dbd51471f9cee52c20cc03c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

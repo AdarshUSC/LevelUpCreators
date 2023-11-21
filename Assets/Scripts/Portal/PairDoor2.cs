@@ -62,7 +62,7 @@ public class PairDoor2 : MonoBehaviour
             // Debug.Log("by the door is enabled");
             GameObject colorPanel = GameObject.FindGameObjectWithTag("CommonCanvas").transform.Find("ColorPanel").gameObject;
             Debug.Log("color panel position is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y);
-            Vector2 newPos = new Vector2(colorPanel.transform.position.x, colorPanel.transform.position.y+190);
+            Vector2 newPos = new Vector2(colorPanel.transform.position.x, colorPanel.transform.position.y);
             // Debug.Log("new position is "+ newPos);
             Instantiate(floatingText, newPos,  Quaternion.identity);
             // resetButton.gameObject.SetActive(true);
