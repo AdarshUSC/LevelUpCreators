@@ -11,7 +11,7 @@ public class PairDoor1 : MonoBehaviour
     private Button resetButton;
     public static bool byTheDoor = false;
     public float timer = 0;
-    [SerializeField] private GameObject floatingText;
+    [SerializeField] public GameObject floatingText;
 
 
     // Start is called before the first frame update
@@ -61,10 +61,10 @@ public class PairDoor1 : MonoBehaviour
             Debug.Log("by the door is enabled");
             resetButton.interactable=true;
             GameObject colorPanel = GameObject.FindGameObjectWithTag("CommonCanvas").transform.Find("ColorPanel").gameObject;
-            // Debug.Log("color panel position before is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y+ ",,,,,,,"+(colorPanel.transform.position.y+90));
-            // Vector2 newPos = new Vector2(colorPanel.transform.position.x, colorPanel.transform.position.y+90);
+            Debug.Log("color panel position before is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y+ ",,,,,,,"+(colorPanel.transform.position.y+90));
+            Vector2 newPos = new Vector2(colorPanel.transform.position.x, colorPanel.transform.position.y+190);
             // Debug.Log("new position is "+ newPos);
-            // Instantiate(floatingText, newPos,  Quaternion.identity);            
+            Instantiate(floatingText, newPos,  Quaternion.identity);            
             // Debug.Log("color panel position after is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y+ ",,,,,,,"+(colorPanel.transform.position.y+90));
             GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
             mixArea.GetComponent<Image>().color = new Color(1,1,1,1);
