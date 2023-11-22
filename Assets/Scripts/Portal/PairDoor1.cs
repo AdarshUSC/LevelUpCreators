@@ -67,7 +67,9 @@ public class PairDoor1 : MonoBehaviour
             Instantiate(floatingText, newPos,  Quaternion.identity);            
             // Debug.Log("color panel position after is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y+ ",,,,,,,"+(colorPanel.transform.position.y+90));
             GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
-            mixArea.GetComponent<Image>().color = new Color(1,1,1,1);
+            if(mixArea!=null){
+                mixArea.GetComponent<Image>().color = new Color(1,1,1,1);
+            }
             ColorMixer.colorList.Clear();
             Debug.Log("color list length nnear door 1 is "+ ColorMixer.colorList.Count);
         }
@@ -84,7 +86,9 @@ public class PairDoor1 : MonoBehaviour
             // Debug.Log("by the door is disabled");
             ColorMixer.colorList.Clear();
             GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
-            mixArea.GetComponent<Image>().color = new Color(1,1,1,1);
+            if(mixArea!=null){
+                mixArea.GetComponent<Image>().color = new Color(1,1,1,1);
+            }
             // resetButton.gameObject.SetActive(false);
         }
     }
