@@ -27,7 +27,7 @@ public class Tree : MonoBehaviour
         if(greenOn){
             greenTimer+= Time.deltaTime;
             Debug.Log("green Timer is " + greenTimer);
-            if(greenTimer > 30.0f){
+            if(greenTimer > 40.0f){
                 // foreach(Transform transform in colorPanel.transform) {
                 //     if(transform.CompareTag("ColorButton")) {
                 //         Button colorButton = transform.gameObject.GetComponent<Button>();
