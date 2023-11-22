@@ -548,7 +548,10 @@ public class Player : MonoBehaviour
             lives[number_of_lives].enabled = false;
         number_of_lives--;
         playerMoveSpeed = 8.0f;
-        GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
+        GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
+        if(mixArea!=null){
+            mixArea.GetComponent<Image>().color = Color.white;
+        }
         if (number_of_lives == -1)
             Lost();
     }
