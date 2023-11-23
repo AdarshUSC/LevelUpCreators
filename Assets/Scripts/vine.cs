@@ -23,7 +23,7 @@ public class vine : MonoBehaviour
 
             other.transform.position = respawnPos;
 
-            //player.LoseLife();
+            player.LoseLife();
 
 
             other.transform.position = respawnPos;
