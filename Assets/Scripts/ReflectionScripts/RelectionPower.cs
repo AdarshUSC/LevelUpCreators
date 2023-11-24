@@ -123,4 +123,14 @@ public class ReflectionPower : MonoBehaviour
         //    Destroy(myShadow);
         //}
     }
+
+    public void clearAll()
+    {
+        if (myMirror)
+        Destroy(myMirror);
+        if (myShadow)
+        Destroy(myShadow);
+        if (myShadowCamera)
+        Destroy(myShadowCamera);
+    }
 }
