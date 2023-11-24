@@ -14,7 +14,7 @@ public class TextFloating : MonoBehaviour
     void Update()
     {
         floatTimer += Time.deltaTime;
-        transform.position += (Vector3.up*Time.deltaTime);
+        transform.position += (Vector3.up*Time.deltaTime*1.5f);
         if (floatTimer > 2.0f)
         {
             Destroy(gameObject);

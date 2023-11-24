@@ -2865,7 +2865,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpTimerImage: {fileID: 0}
-  powerUpButton: {fileID: 0}
 --- !u!95 &7991349285016627821
 Animator:
   serializedVersion: 5
@@ -5422,7 +5421,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4089422542439854851}
         m_TargetAssemblyTypeName: PauseMenuScript, Assembly-CSharp
         m_MethodName: Reset
         m_Mode: 1
