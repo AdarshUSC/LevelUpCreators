@@ -566,11 +566,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8053554187904444734, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_LocalScale.x
-      value: 76.32975
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8053554187904444734, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_LocalScale.y
-      value: 79.3848
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8053554187904444734, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_LocalPosition.x
@@ -578,7 +578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8053554187904444734, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 197.9
+      value: 187
       objectReference: {fileID: 0}
     - target: {fileID: 8805674523928914106, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -603,10 +603,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5077212188704324059, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1061343408}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3582056115741371109, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
 --- !u!114 &281131153 stripped
 MonoBehaviour:
