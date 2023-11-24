@@ -260,9 +260,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c873d33126a96f45a1c75dbdb79023b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpTimerImage: {fileID: 0}
   CollectiblesText: {fileID: 0}
   fruitsRequiredForPowerUp: 1
-  powerUpButton: {fileID: 0}
 --- !u!114 &3645920101684822
 MonoBehaviour:
   m_ObjectHideFlags: 0
