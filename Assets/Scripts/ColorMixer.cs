@@ -54,7 +54,7 @@ public class ColorMixer : MonoBehaviour
 
             // Debug.Log("color list count is....... " + colorList.Count);
             if(colorList.Count==4){ // there's a bug which detects onclick twice, so, ideally count should be 2 only
-                Debug.Log("color list count is 2");
+                // Debug.Log("color list count is 2");
                 buttonRed.interactable=false;
                 buttonGreen.interactable=false;
                 buttonBlue.interactable=false;
@@ -155,7 +155,10 @@ public class ColorMixer : MonoBehaviour
         }
         Debug.Log("Camouflage count" + Player.camouflage);
         mixArea.GetComponent<Image>().color = resultColor;
+        Debug.Log("player color should be "+ resultColor);
         playerSr.color = resultColor;
+        Debug.Log("player color is "+ playerSr.color);
+        // player.GetComponent<SpriteRenderer>().color = resultColor;
 
     }
 

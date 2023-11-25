@@ -192,7 +192,7 @@ public class Player : MonoBehaviour
             GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
             Color currColor = Color.white;
             Debug.Log("color of mix area" +mixArea.GetComponent<Image>());
-            if(mixArea!=null){
+            if(mixArea.GetComponent<Image>()!=null){
                 currColor = mixArea.GetComponent<Image>().color;
             }
             if (currColor == Color.red && redCollected>0)
@@ -280,7 +280,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Maze")
         {
-            Debug.Log("Hit the wall");
+            // Debug.Log("Hit the wall");
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 transform.Translate(playerMoveSpeed * Time.deltaTime, 0, 0);
