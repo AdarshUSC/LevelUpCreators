@@ -46,10 +46,11 @@ public class Timer : MonoBehaviour
     {   //if (player.number_of_lives < 0)
         //    timelimit = 0;
         //else
-        {
+        {   if(player !=null && player.transform != null)
             Player.deathPoints.Add(player.transform.position);
             Player.death_reasons.Add("Timeout");
-            player.number_of_lives = 0;
+            if(player.number_of_lives>0)
+                 player.number_of_lives = 0;
             player.lives[1].enabled = false;
             player.lives[0].enabled = false;
             player.lives[2].enabled = false;
