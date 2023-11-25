@@ -191,7 +191,7 @@ public class Player : MonoBehaviour
             // Color currColor = boomerang.GetComponent<SpriteRenderer>().color;
             GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
             Color currColor = Color.white;
-            Debug.Log("color of mix area" +mixArea.GetComponent<Image>().color);
+            Debug.Log("color of mix area" +mixArea.GetComponent<Image>());
             if(mixArea!=null){
                 currColor = mixArea.GetComponent<Image>().color;
             }
