@@ -207,11 +207,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6608363767567705628, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.462112
+      value: -2.271923
       objectReference: {fileID: 0}
     - target: {fileID: 6608363767567705628, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -32.0884
+      value: -31.9
       objectReference: {fileID: 0}
     - target: {fileID: 6608363767567705628, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -486,11 +486,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6085040852920778188, guid: cec559e00f6db47008f3ebe4ba4b2dc8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.634657
+      value: -0.099378586
       objectReference: {fileID: 0}
     - target: {fileID: 6085040852920778188, guid: cec559e00f6db47008f3ebe4ba4b2dc8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -30.740404
+      value: -30.761599
       objectReference: {fileID: 0}
     - target: {fileID: 6085040852920778188, guid: cec559e00f6db47008f3ebe4ba4b2dc8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21905,7 +21905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2207071645074078133, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2220466413569198346, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_IsActive
@@ -22221,11 +22221,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6608363767567705628, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.934034
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6608363767567705628, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -32.0884
+      value: -31.9
       objectReference: {fileID: 0}
     - target: {fileID: 6608363767567705628, guid: 15a0bd2170f0b417b952ad15065ec0a8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23034,7 +23034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1037114819964978368, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_text
-      value: Collect 15 Fruits to acitvate invincibility! Click on C key for Powerup
+      value: Collect 20 Fruits and press 'C' to acitvate invincibility!
       objectReference: {fileID: 0}
     - target: {fileID: 1037114819964978368, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_fontSize
@@ -24150,11 +24150,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 190502551547634615, guid: 4e8da8092306449058a51f7f0f71758f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.18
+      value: 27.2
       objectReference: {fileID: 0}
     - target: {fileID: 190502551547634615, guid: 4e8da8092306449058a51f7f0f71758f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24.96
+      value: -25.06
       objectReference: {fileID: 0}
     - target: {fileID: 3128169799113741883, guid: 4e8da8092306449058a51f7f0f71758f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24182,11 +24182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5673024750107953108, guid: 4e8da8092306449058a51f7f0f71758f, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5673024750107953108, guid: 4e8da8092306449058a51f7f0f71758f, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5673024750107953108, guid: 4e8da8092306449058a51f7f0f71758f, type: 3}
       propertyPath: m_Color.r
@@ -24198,7 +24198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7565262040087801090, guid: 4e8da8092306449058a51f7f0f71758f, type: 3}
       propertyPath: m_Size.y
-      value: 2.6576138
+      value: 2.780358
       objectReference: {fileID: 0}
     - target: {fileID: 7565262040087801090, guid: 4e8da8092306449058a51f7f0f71758f, type: 3}
       propertyPath: m_Offset.x
@@ -24206,7 +24206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7565262040087801090, guid: 4e8da8092306449058a51f7f0f71758f, type: 3}
       propertyPath: m_Offset.y
-      value: 0.22743511
+      value: 0.28880727
       objectReference: {fileID: 0}
     - target: {fileID: 7646317784191644824, guid: 4e8da8092306449058a51f7f0f71758f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25217,8 +25217,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press G to reverse gravity \nTo disable gravity before timer expires,
-    press G again"
+  m_text: 'Press G to toggle anti-gravity '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
