@@ -190,7 +190,11 @@ public class Player : MonoBehaviour
             current_mechs.Add("Boomerang");
             // Color currColor = boomerang.GetComponent<SpriteRenderer>().color;
             GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
-            Color currColor = mixArea.GetComponent<Image>().color!=null?mixArea.GetComponent<Image>().color:Color.white;
+            Color currColor = Color.white;
+            Debug.Log("color of mix area" +mixArea.GetComponent<Image>().color);
+            if(mixArea!=null){
+                currColor = mixArea.GetComponent<Image>().color;
+            }
             if (currColor == Color.red && redCollected>0)
             {
                 GameObject newBoomerang = Instantiate(boomerangPrefab, firePoint.position, Quaternion.identity).gameObject;
