@@ -16,7 +16,7 @@ public class FruitCollector : MonoBehaviour
     private  int collectibles = 0;
     [SerializeField] private TMP_Text CollectiblesText;
 
-    [SerializeField] private int fruitsRequiredForPowerUp = 5; // 
+    [SerializeField] private int fruitsRequiredForPowerUp = 20; // 
 
     private KeyCode powerUpKey = KeyCode.C;
 
