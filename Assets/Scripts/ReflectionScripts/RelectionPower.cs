@@ -6,24 +6,31 @@ public class ReflectionPower : MonoBehaviour
     public GameObject shadow;
     public GameObject shadowCamera;
     public float cameraZoomSize;
-
+    private GameObject player;
     private GameObject myMirror;
     private GameObject myShadow;
     private GameObject myShadowCamera;
     private Vector3 direction;
     private bool isAbletoPut;
     private bool isAbletoGetBack;
-    
+    private Transform playerTransform;
+    private Transform shadowTransform;
+
 
     // Start is called before the first frame update
     void Start()
     {
         direction = new Vector2(1, 0);
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
+        playerTransform = player.GetComponent<Transform>();
+        shadowTransform = shadow.GetComponent<Transform>();
+        shadowTransform.localScale = playerTransform.localScale;
+        //originalScale = playerTransform.localScale;
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             direction = Vector2.right;
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
