@@ -325,7 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HintPannel: {fileID: 815734881}
   PauseButton: {fileID: 247224877}
-  timeToHit: 3
+  timeToHit: 1
 --- !u!1001 &218832029
 PrefabInstance:
   m_ObjectHideFlags: 0
