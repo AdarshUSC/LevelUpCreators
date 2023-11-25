@@ -8,6 +8,7 @@ public class PairDoor2 : MonoBehaviour
     [SerializeReference] GameObject otherDoor;
     [SerializeReference] GameObject player;
     [SerializeReference] GameObject image;
+    [SerializeReference] GameObject bg;
     private Button resetButton;
     public static bool byTheDoor = false;
     public float timer = 0;
@@ -21,6 +22,10 @@ public class PairDoor2 : MonoBehaviour
         resetButton = GameObject.FindGameObjectWithTag("ColorReset").GetComponent<Button>();
         // floatingText = GameObject.FindGameObjectWithTag("floatingText");
         byTheDoor = false;
+        Color curColor = image.GetComponent<SpriteRenderer>().color;
+        image.GetComponent<SpriteRenderer>().color = new Color(curColor.r, curColor.g, curColor.b, 0.5f);
+        Color bgColor = bg.GetComponent<SpriteRenderer>().color;
+        bg.GetComponent<SpriteRenderer>().color = new Color(bgColor.r, bgColor.g, bgColor.b, 0f);
     }
 
     // Update is called once per frame
@@ -57,6 +62,11 @@ public class PairDoor2 : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
+            Color curColor = image.GetComponent<SpriteRenderer>().color;
+            image.GetComponent<SpriteRenderer>().color = new Color(curColor.r, curColor.g, curColor.b, 1f);
+            Color bgColor = bg.GetComponent<SpriteRenderer>().color;
+            bg.GetComponent<SpriteRenderer>().color = new Color(bgColor.r, bgColor.g, bgColor.b, 1f);
+
             byTheDoor = true;
             resetButton.interactable=true;
             // Debug.Log("by the door is enabled");
@@ -79,6 +89,11 @@ public class PairDoor2 : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
+            Color curColor = image.GetComponent<SpriteRenderer>().color;
+            image.GetComponent<SpriteRenderer>().color = new Color(curColor.r, curColor.g, curColor.b, 0.5f);
+            Color bgColor = bg.GetComponent<SpriteRenderer>().color;
+            bg.GetComponent<SpriteRenderer>().color = new Color(bgColor.r, bgColor.g, bgColor.b, 0f);
+
             byTheDoor = false;
             resetButton.interactable=false;
             player.GetComponent<SpriteRenderer>().color = Color.white;
@@ -88,7 +103,7 @@ public class PairDoor2 : MonoBehaviour
             if(mixArea!=null){
                 mixArea.GetComponent<Image>().color = new Color(1,1,1,1);
             }
-            
+
             // resetButton.gameObject.SetActive(false);
         }
     }

@@ -8,6 +8,7 @@ public class PairDoor1 : MonoBehaviour
     [SerializeReference] GameObject otherDoor;
     [SerializeReference] GameObject player;
     [SerializeReference] GameObject image;
+    [SerializeReference] GameObject bg;
     private Button resetButton;
     public static bool byTheDoor = false;
     public float timer = 0;
@@ -20,6 +21,11 @@ public class PairDoor1 : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         resetButton = GameObject.FindGameObjectWithTag("ColorReset").GetComponent<Button>();
         byTheDoor = false;
+
+        Color curColor = image.GetComponent<SpriteRenderer>().color;
+        image.GetComponent<SpriteRenderer>().color = new Color(curColor.r, curColor.g, curColor.b, 0.5f);
+        Color bgColor = bg.GetComponent<SpriteRenderer>().color;
+        bg.GetComponent<SpriteRenderer>().color = new Color(bgColor.r, bgColor.g, bgColor.b, 0f);
     }
 
     // Update is called once per frame
@@ -56,6 +62,12 @@ public class PairDoor1 : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
+            // hightlight code
+            Color curColor = image.GetComponent<SpriteRenderer>().color;
+            image.GetComponent<SpriteRenderer>().color = new Color(curColor.r, curColor.g, curColor.b, 1f);
+            Color bgColor = bg.GetComponent<SpriteRenderer>().color;
+            bg.GetComponent<SpriteRenderer>().color = new Color(bgColor.r, bgColor.g, bgColor.b, 1f);
+
             byTheDoor = true;
             // resetButton.gameObject.SetActive(true);
             Debug.Log("by the door is enabled");
@@ -80,6 +92,13 @@ public class PairDoor1 : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
+            // hightlight code
+            Color curColor = image.GetComponent<SpriteRenderer>().color;
+            image.GetComponent<SpriteRenderer>().color = new Color(curColor.r, curColor.g, curColor.b, 0.5f);
+            Color bgColor = bg.GetComponent<SpriteRenderer>().color;
+            bg.GetComponent<SpriteRenderer>().color = new Color(bgColor.r, bgColor.g, bgColor.b, 0f);
+
+
             byTheDoor = false;
             resetButton.interactable=false;
             player.GetComponent<SpriteRenderer>().color = Color.white;
