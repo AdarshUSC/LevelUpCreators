@@ -446,7 +446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3047833252927601768, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -38.860992
+      value: -38.860962
       objectReference: {fileID: 0}
     - target: {fileID: 3200220889366229177, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_IsActive
@@ -582,11 +582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8805674523928914106, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -38.860992
+      value: -38.860962
       objectReference: {fileID: 0}
     - target: {fileID: 8911033796317288578, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -38.860992
+      value: -38.860962
       objectReference: {fileID: 0}
     - target: {fileID: 9199621978192556886, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_Enabled
@@ -11199,7 +11199,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.22, y: -9.71}
+  m_AnchoredPosition: {x: -3.16, y: -8.28}
   m_SizeDelta: {x: 171.5242, y: 49.2145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1270100542
@@ -11222,7 +11222,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: collect mushrooms
+  m_text: mushrooms
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -11780,7 +11780,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2794066245245296872, guid: 78a363f87f3a149eb8ab374b4806c670, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -38.719025
+      value: -38.718994
       objectReference: {fileID: 0}
     - target: {fileID: 4337103544474000764, guid: 78a363f87f3a149eb8ab374b4806c670, type: 3}
       propertyPath: m_Name
@@ -12248,7 +12248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4314116085185633557, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -9.11
+      value: -8.73
       objectReference: {fileID: 0}
     - target: {fileID: 4357412885774023040, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -12256,9 +12256,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7915744502931564107, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_text
-      value: 'toggle tab button for reflection jump
+      value: 'use tab button for reflection jump
 
         ''Q'' to disable it '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915744502931564107, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8623048885543139403, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_Name
