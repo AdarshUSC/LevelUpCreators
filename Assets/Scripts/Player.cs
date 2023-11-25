@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public static float playerMoveSpeed = 9.0f;
 
     public static bool isPowerUpOn = false;
-    float jumpForce = 10.0f;
+    float jumpForce = 12.0f;
     private float Timetaken = 7.0f;
     public static int antigravity = 0;
     public static int reflection = 0;

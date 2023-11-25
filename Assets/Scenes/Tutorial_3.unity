@@ -607,7 +607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7330717185569479181, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
       propertyPath: m_Mass
-      value: 16
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8249823047524164766, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
       propertyPath: timelimit
