@@ -7,7 +7,7 @@ public class PowerUp : MonoBehaviour
 {
     public Image powerUpTimerImage; // Radial image for the power-up timer
     private float powerUpDuration = 10.0f; // Duration of the power-up
-    GameObject player ;
+    GameObject player;
     float powerUpTimer;
 
     // Start is called before the first frame update

@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     private List<float> checkpoint7;
     private List<float> checkpoint8;
     private List<float> checkpoint9;
-
+    private GameObject glow;
     System.String current_sublevel = "";
 
     [SerializeReference] GameObject lostCanvas;
@@ -116,8 +116,9 @@ public class Player : MonoBehaviour
         //originalScale = playerTransform.localScale;
         //ogscale = true;
         isFacingRight = true;
-       
-        
+        glow = GameObject.FindGameObjectWithTag("Glow");
+        glow.SetActive(false);
+
         current_mechs = new List<string>();
         death_reasons = new List<string>();
         deathPoints = new List<Vector2>();
@@ -231,10 +232,12 @@ public class Player : MonoBehaviour
         if (isPowerUpOn)
         {
             trail.enabled = true;
+            glow.SetActive(true);
         }
         else
         {
             trail.enabled = false;
+            glow.SetActive(false);
         }
 
         /*if (Input.GetKeyDown(KeyCode.R))
