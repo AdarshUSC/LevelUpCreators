@@ -36,33 +36,10 @@ public class PowerUp : MonoBehaviour
             }
             if (powerUpTimer > powerUpDuration)
             {
-                DeactivatePowerUp();
-            }
-        }
-
-    }
-
-    public void ActivatePowerUp()
-    {
-        if (!Player.isPowerUpOn)
-        {
-            Player.isPowerUpOn = true;
-            Player.playerMoveSpeed += 4.0f;
-            powerUpTimer = 0;
-            Player.powerup++;
-            Player.current_mechs.Add("Powerup");
-
-            if (powerUpTimerImage != null)
-            {
                 powerUpTimerImage.fillAmount = 0;
             }
         }
-    }
 
-    public void DeactivatePowerUp()
-    {
-        Player.isPowerUpOn = false;
-        Player.playerMoveSpeed -= 4.0f;
     }
 
 
