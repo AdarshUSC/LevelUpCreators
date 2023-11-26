@@ -70,6 +70,9 @@ public class Boomerang : MonoBehaviour
             Debug.Log("tree is hit w green bullet with "+ collision.gameObject+" and "+gameObject);
             player.GetComponent<SpriteRenderer>().color = Color.green;
             Player.current_mechs.Add("Camouflage");
+            if(Player.isPowerUpOn){
+                PowerUp.powerUpTimer=10.0f;
+            }
             Tree.greenOn=true;
             Tree.greenTimer=Time.deltaTime;
             Player.playerMoveSpeed=3.6f;
