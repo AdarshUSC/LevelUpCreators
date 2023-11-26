@@ -98,6 +98,9 @@ public class Player : MonoBehaviour
     public Transform firePoint;
     public GameObject boomerangPrefab;
 
+    private GameObject mixArea;
+   
+
     private Color currColor;
    
     // Start is called before the first frame update
@@ -149,6 +152,12 @@ public class Player : MonoBehaviour
         mechanics_exit = new List<string>();
         playerMoveSpeed = 8.0f;
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+
+        mixArea = GameObject.FindGameObjectWithTag("mixArea");
+
+        Debug.Log("---------------");
+        Debug.Log(mixArea);
+        Debug.Log("---------------");
 
     }
 
@@ -560,7 +569,7 @@ public class Player : MonoBehaviour
             lives[number_of_lives].enabled = false;
         number_of_lives--;
         playerMoveSpeed = 8.0f;
-        GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
+        //GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
         if (mixArea!=null){
             mixArea.GetComponent<Image>().color = Color.white;
         }
