@@ -418,6 +418,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3460466612585483142, guid: c3aaa846d30736c488a3fbd5c4ceee38, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6445557
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460466612585483142, guid: c3aaa846d30736c488a3fbd5c4ceee38, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3674346
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460466612585483142, guid: c3aaa846d30736c488a3fbd5c4ceee38, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.6811
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460466612585483142, guid: c3aaa846d30736c488a3fbd5c4ceee38, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.8968
+      objectReference: {fileID: 0}
     - target: {fileID: 5265246465313714236, guid: c3aaa846d30736c488a3fbd5c4ceee38, type: 3}
       propertyPath: m_Name
       value: swingingVine (1)
@@ -23103,7 +23119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1037114819964978368, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_text
-      value: Collect 20 Fruits and press 'C' to acitvate invincibility!
+      value: 15 Fruits and press 'C' to acitvate invincibility!
       objectReference: {fileID: 0}
     - target: {fileID: 1037114819964978368, guid: 0ff4b453819514f5190e2eff6d292b33, type: 3}
       propertyPath: m_fontSize
@@ -24061,6 +24077,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3460466612585483142, guid: c3aaa846d30736c488a3fbd5c4ceee38, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6951551
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460466612585483142, guid: c3aaa846d30736c488a3fbd5c4ceee38, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.38016504
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460466612585483142, guid: c3aaa846d30736c488a3fbd5c4ceee38, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460466612585483142, guid: c3aaa846d30736c488a3fbd5c4ceee38, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.9619
+      objectReference: {fileID: 0}
     - target: {fileID: 5265246465313714236, guid: c3aaa846d30736c488a3fbd5c4ceee38, type: 3}
       propertyPath: m_Name
       value: swingingVine
