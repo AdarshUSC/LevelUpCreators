@@ -97,6 +97,8 @@ public class Player : MonoBehaviour
 
     public Transform firePoint;
     public GameObject boomerangPrefab;
+
+    private Color currColor;
    
     // Start is called before the first frame update
     void Start()
@@ -185,17 +187,20 @@ public class Player : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.B))
+        GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
+        currColor = Color.white;
+        // Debug.Log("color of mix area is " +mixArea.GetComponent<Image>());
+        // Debug.Log("curr color is "+ currColor);
+        if(mixArea.GetComponent<Image>()!=null){
+            currColor = mixArea.GetComponent<Image>().color;
+        }
+        Debug.Log("curr color is "+ currColor);
+        
+        if (Input.GetKeyDown(KeyCode.B) && currColor!=Color.white)
         {
             boomerang_used++;
             current_mechs.Add("Boomerang");
             // Color currColor = boomerang.GetComponent<SpriteRenderer>().color;
-            GameObject mixArea = GameObject.FindGameObjectWithTag("mixArea");
-            Color currColor = Color.white;
-            Debug.Log("color of mix area" +mixArea.GetComponent<Image>());
-            if(mixArea.GetComponent<Image>()!=null){
-                currColor = mixArea.GetComponent<Image>().color;
-            }
             if (currColor == Color.red && redCollected>0)
             {
                 GameObject newBoomerang = Instantiate(boomerangPrefab, firePoint.position, Quaternion.identity).gameObject;
