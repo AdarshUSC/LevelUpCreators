@@ -158,7 +158,7 @@ public class ColorMixer : MonoBehaviour
         Debug.Log("player color should be "+ resultColor);
         playerSr.color = resultColor;
         Debug.Log("player color is "+ playerSr.color);
-         player.GetComponent<SpriteRenderer>().color = resultColor;
+        //player.GetComponent<SpriteRenderer>().color = resultColor;
 
     }
 

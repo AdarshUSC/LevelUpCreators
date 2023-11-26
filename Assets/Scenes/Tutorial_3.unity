@@ -1300,6 +1300,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1860745998}
   m_SourcePrefab: {fileID: 100100000, guid: b6ec2af972101c94ebc3a0818da76b98, type: 3}
+--- !u!1 &346458832 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2081760706506450670, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+  m_PrefabInstance: {fileID: 228425351}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &362606657 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7959246771223943235, guid: ef1aa0888e14840debba33fdc25b3b80, type: 3}
@@ -21951,6 +21956,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4522309440544070560, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 346458832}
     - target: {fileID: 4800194187581730354, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -24166,6 +24175,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -25.21
       objectReference: {fileID: 0}
+    - target: {fileID: 491869932651949144, guid: 4e8da8092306449058a51f7f0f71758f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.2478
+      objectReference: {fileID: 0}
+    - target: {fileID: 491869932651949144, guid: 4e8da8092306449058a51f7f0f71758f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.3849
+      objectReference: {fileID: 0}
     - target: {fileID: 3128169799113741883, guid: 4e8da8092306449058a51f7f0f71758f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 117.5
@@ -24289,6 +24306,14 @@ PrefabInstance:
     - target: {fileID: 8321987201280122462, guid: 4e8da8092306449058a51f7f0f71758f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8816139618915850033, guid: 4e8da8092306449058a51f7f0f71758f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.886431
+      objectReference: {fileID: 0}
+    - target: {fileID: 8816139618915850033, guid: 4e8da8092306449058a51f7f0f71758f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.106137
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
