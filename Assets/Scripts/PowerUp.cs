@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class PowerUp : MonoBehaviour
 {
     public Image powerUpTimerImage; // Radial image for the power-up timer
-    private float powerUpDuration = 10.0f; // Duration of the power-up
+    public static float powerUpDuration = 10.0f; // Duration of the power-up
     GameObject player;
-    float powerUpTimer;
+    public static float powerUpTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +59,7 @@ public class PowerUp : MonoBehaviour
         }
     }
 
-    void DeactivatePowerUp()
+    public void DeactivatePowerUp()
     {
         Player.isPowerUpOn = false;
         Player.playerMoveSpeed -= 4.0f;
