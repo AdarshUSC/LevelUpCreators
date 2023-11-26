@@ -15,6 +15,7 @@ public class PauseMenuScript : MonoBehaviour
         levelDict.Add("Tutorial_1", "Tutorial_2");
         levelDict.Add("Tutorial_2", "Tutorial_3");
         levelDict.Add("Tutorial_3", "MazeScene 3");
+        levelDict.Add("MazeScene 3", "level_5");
 
     }
 
