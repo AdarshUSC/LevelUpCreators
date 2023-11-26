@@ -34705,7 +34705,7 @@ PrefabInstance:
       objectReference: {fileID: 1905038948}
     - target: {fileID: 8249823047524164766, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
       propertyPath: upBoundary
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8249823047524164766, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
       propertyPath: downBoundary
