@@ -32440,6 +32440,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winCanvas: {fileID: 1905038944}
+  player: {fileID: 2081760706506450670, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+  winTxt: {fileID: 1258350321}
 --- !u!1001 &1036146060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33555,6 +33557,11 @@ PrefabInstance:
       addedObject: {fileID: 1293563263}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d18bc6b970ed148998823c857d56f2c3, type: 3}
+--- !u!1 &1258350321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1910284996416555394, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+  m_PrefabInstance: {fileID: 1905038943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1276407196
 PrefabInstance:
   m_ObjectHideFlags: 0

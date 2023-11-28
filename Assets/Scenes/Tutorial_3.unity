@@ -2005,6 +2005,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winCanvas: {fileID: 945206464}
+  player: {fileID: 2081760706506450670, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+  winTxt: {fileID: 1360431999}
 --- !u!4 &423563533 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3944413902089643408, guid: 57d150acd200fa4479413c7dcfd1d96a, type: 3}
@@ -31650,6 +31652,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3220853646792403712, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
   m_PrefabInstance: {fileID: 1360431994}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1360431999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1910284996416555394, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+  m_PrefabInstance: {fileID: 1360431994}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1360432000 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4199771183519521383, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
@@ -33733,6 +33740,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winCanvas: {fileID: 945206464}
+  player: {fileID: 2081760706506450670, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+  winTxt: {fileID: 1360431999}
 --- !u!4 &1868731079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1335003541772970750, guid: 75e819487d3a46047a872f81c2a572be, type: 3}

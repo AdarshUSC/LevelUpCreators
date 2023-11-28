@@ -203,7 +203,7 @@ public class Player : MonoBehaviour
         if(mixArea.GetComponent<Image>()!=null){
             currColor = mixArea.GetComponent<Image>().color;
         }
-        Debug.Log("curr color is "+ currColor);
+        //Debug.Log("curr color is "+ currColor);
         
         if (Input.GetKeyDown(KeyCode.B) && currColor!=Color.white)
         {

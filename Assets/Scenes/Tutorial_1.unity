@@ -326,6 +326,11 @@ MonoBehaviour:
   HintPannel: {fileID: 815734881}
   PauseButton: {fileID: 247224877}
   timeToHit: 1
+--- !u!1 &138040228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1910284996416555394, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+  m_PrefabInstance: {fileID: 281131152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &218832029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11463,6 +11468,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winCanvas: {fileID: 905897913}
+  player: {fileID: 2081760706506450670, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+  winTxt: {fileID: 138040228}
 --- !u!1 &1416442479
 GameObject:
   m_ObjectHideFlags: 0
@@ -11554,6 +11561,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winCanvas: {fileID: 905897913}
+  player: {fileID: 2081760706506450670, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+  winTxt: {fileID: 138040228}
 --- !u!1 &1417496298
 GameObject:
   m_ObjectHideFlags: 0
