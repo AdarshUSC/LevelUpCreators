@@ -31564,6 +31564,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 72.09985
       objectReference: {fileID: 0}
+    - target: {fileID: 6261607728552700471, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 346458832}
     - target: {fileID: 6983920437560644085, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_Layer
       value: 5
@@ -31584,7 +31588,7 @@ PrefabInstance:
       objectReference: {fileID: 1120535162}
     - target: {fileID: 7825663524723755563, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8805674523928914106, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_AnchoredPosition.y
