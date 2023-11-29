@@ -200,7 +200,7 @@ public class Player : MonoBehaviour
         currColor = Color.white;
         // Debug.Log("color of mix area is " +mixArea.GetComponent<Image>());
         // Debug.Log("curr color is "+ currColor);
-        if(mixArea.GetComponent<Image>()!=null){
+        if(mixArea!=null && mixArea.GetComponent<Image>()!=null){
             currColor = mixArea.GetComponent<Image>().color;
         }
         //Debug.Log("curr color is "+ currColor);
