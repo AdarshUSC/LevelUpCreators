@@ -1297,6 +1297,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5e0af82ee00b47fea01dbc6944c3713, type: 3}
+--- !u!114 &360300874 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1393396300120609669, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+  m_PrefabInstance: {fileID: 1905038943}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &371703395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30351,81 +30362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &614346637
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 614346640}
-  - component: {fileID: 614346639}
-  - component: {fileID: 614346638}
-  m_Layer: 5
-  m_Name: ResizeTimerImage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &614346638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614346637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 051cc66b5d619d942acd128477011517, type: 3}
-  m_Type: 3
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &614346639
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614346637}
-  m_CullTransparentMesh: 1
---- !u!224 &614346640
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614346637}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5.6253657}
-  m_LocalScale: {x: 0.4109314, y: 0.4109314, z: 0.4109314}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2126184114}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -224.00002, y: 156.7815}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &615933199 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4906864044324320463, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
@@ -30768,6 +30704,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7208812566512984960, guid: 540603864e90946cd8e9718578d52b03, type: 3}
   m_PrefabInstance: {fileID: 702286386}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &685546960 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2403473531181171230, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+  m_PrefabInstance: {fileID: 1905038943}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &694809010
 GameObject:
   m_ObjectHideFlags: 0
@@ -31460,6 +31407,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57d150acd200fa4479413c7dcfd1d96a, type: 3}
+--- !u!114 &787021043 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8104187592889463057, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+  m_PrefabInstance: {fileID: 1905038943}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &813439748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35262,7 +35220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4861984018030006223, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4861984018030006223, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
       propertyPath: powerUpButton
@@ -35272,6 +35230,10 @@ PrefabInstance:
       propertyPath: CollectiblesText
       value: 
       objectReference: {fileID: 1488186910}
+    - target: {fileID: 4861984018030006223, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
+      propertyPath: powerUpTimerImage
+      value: 
+      objectReference: {fileID: 685546960}
     - target: {fileID: 6543659421209712257, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
       propertyPath: m_Size.x
       value: 0.21639124
@@ -35339,7 +35301,7 @@ PrefabInstance:
     - target: {fileID: 8980352946019348296, guid: 144060682bc1f46579f671b8ce40d541, type: 3}
       propertyPath: resizeTimerImage
       value: 
-      objectReference: {fileID: 614346638}
+      objectReference: {fileID: 787021043}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36073,6 +36035,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -38.719055
       objectReference: {fileID: 0}
+    - target: {fileID: 1416021991169189763, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: antiGravityTimerImage
+      value: 
+      objectReference: {fileID: 360300874}
     - target: {fileID: 1782090709129529724, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -36100,6 +36066,18 @@ PrefabInstance:
     - target: {fileID: 3573015159367646385, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087336811404942679, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.38463548
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087336811404942679, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.38463548
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087336811404942679, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.38463548
       objectReference: {fileID: 0}
     - target: {fileID: 4800194187581730354, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_IsActive
@@ -36212,9 +36190,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5077212188704324059, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 614346640}
     - targetCorrespondingSourceObject: {fileID: 3829609387194742018, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2005677819}
@@ -37599,11 +37574,6 @@ GameObject:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5013572432146897045, guid: 540603864e90946cd8e9718578d52b03, type: 3}
   m_PrefabInstance: {fileID: 2125693827}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &2126184114 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5077212188704324059, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
-  m_PrefabInstance: {fileID: 1905038943}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2133907743 stripped
 GameObject:
