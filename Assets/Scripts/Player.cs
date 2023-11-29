@@ -274,6 +274,8 @@ public class Player : MonoBehaviour
 
         if (gameObject.GetComponentInChildren<SensorScript>().isInWall)
         {
+            Player.deathPoints.Add(gameObject.transform.position);
+            Player.death_reasons.Add("in wall");
             gameObject.transform.position = this.respawnPoint;
             LoseLife();
             gameObject.GetComponentInChildren<SensorScript>().isInWall = false;
@@ -596,6 +598,8 @@ public class Player : MonoBehaviour
     {
         if (gameObject.transform.position.y > upBoundary || gameObject.transform.position.y < downBoundary)
         {
+            Player.deathPoints.Add(gameObject.transform.position);
+            Player.death_reasons.Add("Boundary");
             gameObject.transform.position = this.respawnPoint;
             LoseLife();
         }
