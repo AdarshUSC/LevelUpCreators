@@ -17,6 +17,8 @@ public class GravityManipulation : MonoBehaviour
 
     bool isAntiGravityActive;
     private float antiGravityDuration = 5.0f;
+    [SerializeField] private TMP_Text AGText;
+
 
 
     // Start is called before the first frame update
@@ -37,6 +39,10 @@ public class GravityManipulation : MonoBehaviour
             antiGravityTimerImage.fillAmount = 0;
         }
 
+        if (AGText != null)
+        {
+            AGText.gameObject.SetActive(false);
+        }
         // Rigidbody rb = player.GetComponent<Rigidbody>();
         // Vector3 direction = player.transform.position - transform.position;
         // rb.velocity  = new Vector2(direction.x, direction.y).normalized * force;
@@ -69,7 +75,10 @@ public class GravityManipulation : MonoBehaviour
             {
                 antiGravityTimerImage.fillAmount = timeLeft / antiGravityDuration;
             }
-
+            if (AGText != null)
+            {
+                AGText.gameObject.SetActive(true);
+            }
 
             if (gravityTimer > antiGravityDuration)
             {
@@ -78,7 +87,6 @@ public class GravityManipulation : MonoBehaviour
                     // Reset radial timer fill amount when anti-gravity is not active
                     antiGravityTimerImage.fillAmount = 0;
                 }
-
 
                 Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
                 rb.gravityScale=1;
@@ -89,8 +97,16 @@ public class GravityManipulation : MonoBehaviour
 
 
         }
+
         }
-        if(Input.GetKeyDown(KeyCode.G) & !isAntiGravityActive)
+        if (!isAntiGravityActive)
+        {
+            if (AGText != null)
+            {
+                AGText.gameObject.SetActive(false);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.G) & !isAntiGravityActive)
         {
             Debug.Log("Antigravity active");
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();

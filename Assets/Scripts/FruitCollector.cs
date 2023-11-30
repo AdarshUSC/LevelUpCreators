@@ -16,6 +16,7 @@ public class FruitCollector : MonoBehaviour
     private  int collectibles = 0;
     [SerializeField] private TMP_Text CollectiblesText;
 
+
     [SerializeField] private int fruitsRequiredForPowerUp = 20; // 
 
     private KeyCode powerUpKey = KeyCode.C;
@@ -30,6 +31,7 @@ public class FruitCollector : MonoBehaviour
         {
             powerUpTimerImage.fillAmount = 0;
         }
+
     }
 
     private void Update()
@@ -50,6 +52,7 @@ public class FruitCollector : MonoBehaviour
             {
                 DeactivatePowerUp();
             }
+
         }
     }
 
@@ -124,6 +127,7 @@ public class FruitCollector : MonoBehaviour
             {
                 powerUpTimerImage.fillAmount = 0;
             }
+
         }
         // 
         Debug.Log("Power-Up Activated!");
@@ -137,5 +141,6 @@ public class FruitCollector : MonoBehaviour
     {
         Player.isPowerUpOn = false;
         Player.playerMoveSpeed -= 4.0f;
+
     }
 }
