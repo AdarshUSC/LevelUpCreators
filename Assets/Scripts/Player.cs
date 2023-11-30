@@ -561,7 +561,7 @@ public class Player : MonoBehaviour
         timelimit = 0;
         Time.timeScale = 0f;
         Timetaken = time_running;
-        GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
+        if (GameObject.FindGameObjectWithTag("mixArea")!=null) GameObject.FindGameObjectWithTag("mixArea").GetComponent<Image>().color = Color.white;
         Send();
 
     }
