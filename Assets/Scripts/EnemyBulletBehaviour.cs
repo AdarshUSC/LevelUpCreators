@@ -27,12 +27,12 @@ public class EnemyBulletBehaviour : MonoBehaviour
     {
         
     }
-    // void OnTriggerEnter2D(Collider2D other){
+    void OnCollision2D(Collider2D other){
 
-    //     if(other.gameObject.CompareTag("Player")){
-    //         other.gameObject.transform.position = p.respawnPoint;
-    //        // Destroy(gameObject);
-    //     }
-    //     // Destroy(gameObject);
-    // }
+        if(other.gameObject.CompareTag("Maze")){
+            // other.gameObject.transform.position = p.respawnPoint;
+           Destroy(gameObject);
+        }
+        // Destroy(gameObject);
+    }
 }
