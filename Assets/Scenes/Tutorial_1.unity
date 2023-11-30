@@ -429,6 +429,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1416021991169189763, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: AGText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416021991169189763, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1782090709129529724, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -639,6 +647,7 @@ PrefabInstance:
     - {fileID: 6958339211885515909, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
     - {fileID: 1878174561557915208, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
     - {fileID: 3310835515642384866, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
+    - {fileID: 192770901486471508, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5077212188704324059, guid: 38c025d0ebb6543f1b3617d63a2acd37, type: 3}
       insertIndex: 0
