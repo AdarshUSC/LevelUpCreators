@@ -76,7 +76,7 @@ public class PairDoor1 : MonoBehaviour
             resetButton.interactable=true;
             GameObject colorPanel = GameObject.FindGameObjectWithTag("CommonCanvas").transform.Find("ColorPanel").gameObject;
             Debug.Log("color panel position before is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y+ ",,,,,,,"+(colorPanel.transform.position.y+90));
-            Vector3 newPos = player.transform.position - Vector3.up * 13 + Vector3.left * 23;
+            Vector3 newPos = player.transform.position - Vector3.up * 11 + Vector3.left * 25;
             // Debug.Log("new position is "+ newPos);
             Instantiate(floatingText, newPos,  Quaternion.identity);            
             // Debug.Log("color panel position after is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y+ ",,,,,,,"+(colorPanel.transform.position.y+90));

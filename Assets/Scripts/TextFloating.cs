@@ -16,7 +16,7 @@ public class TextFloating : MonoBehaviour
     void Update()
     {
         floatTimer += Time.deltaTime;
-        Vector3 newPos = player.transform.position - Vector3.up*13 + Vector3.left*23 + (Vector3.up* floatTimer * 1.5f) + Vector3.back * 10;
+        Vector3 newPos = player.transform.position - Vector3.up*11 + Vector3.left*25 + (Vector3.up* floatTimer * 1.5f) + Vector3.back * 10;
         transform.position = Vector3.Slerp(transform.position, newPos, 2f * Time.deltaTime);
         if (floatTimer > 2.0f)
         {
