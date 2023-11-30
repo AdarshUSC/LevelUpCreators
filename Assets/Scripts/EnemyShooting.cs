@@ -20,7 +20,7 @@ public class EnemyShooting : MonoBehaviour
         SpriteRenderer sr = icePrefab.GetComponent<SpriteRenderer>();
         Color playerColor = player.GetComponent<SpriteRenderer>().color;
         float distance = Vector2.Distance(transform.position, player.transform.position);
-        if(distance<6 && !sr.enabled && playerColor!=Color.green){
+        if(distance<7.5 && !sr.enabled && playerColor!=Color.green){
             timer+= Time.deltaTime;
             if(timer > .5){
                 timer = 0;  
