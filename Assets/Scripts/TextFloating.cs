@@ -5,20 +5,21 @@ using UnityEngine;
 public class TextFloating : MonoBehaviour
 {
     float floatTimer;
-    [SerializeReference] GameObject player;
+    [SerializeReference] GameObject mCamera;
     void Start()
     {
         floatTimer = 0.0f;
-        player = GameObject.FindGameObjectWithTag("Player");
+        mCamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     // Update is called once per frame
     void Update()
     {
         floatTimer += Time.deltaTime;
-        Vector3 newPos = player.transform.position - Vector3.up*12.5f + Vector3.left*25 + (Vector3.up* floatTimer * 1f) + Vector3.back * 10;
-        transform.position = Vector3.Slerp(transform.position, newPos, 2f * Time.deltaTime);
-        if (floatTimer > 2.0f)
+        Vector3 newPos = mCamera.transform.position - Vector3.up*12.5f + Vector3.left*25 + (Vector3.up* floatTimer * 1f) + Vector3.forward * 10f;
+        //transform.position = Vector3.Slerp(transform.position, newPos, 2f * Time.deltaTime);
+        transform.position = newPos;
+        if (floatTimer > 1.0f)
         {
             Destroy(gameObject);
         }

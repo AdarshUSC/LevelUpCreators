@@ -9,6 +9,7 @@ public class PairDoor1 : MonoBehaviour
     [SerializeReference] GameObject player;
     [SerializeReference] GameObject image;
     [SerializeReference] GameObject bg;
+    [SerializeReference] GameObject mCamera;
     private Button resetButton;
     private GameObject mixArea;
     public static bool byTheDoor = false;
@@ -22,6 +23,7 @@ public class PairDoor1 : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         resetButton = GameObject.FindGameObjectWithTag("ColorReset").GetComponent<Button>();
         mixArea = GameObject.FindGameObjectWithTag("mixArea");
+        mCamera = GameObject.FindGameObjectWithTag("MainCamera");
         byTheDoor = false;
 
         Color curColor = image.GetComponent<SpriteRenderer>().color;
@@ -76,7 +78,7 @@ public class PairDoor1 : MonoBehaviour
             resetButton.interactable=true;
             GameObject colorPanel = GameObject.FindGameObjectWithTag("CommonCanvas").transform.Find("ColorPanel").gameObject;
             Debug.Log("color panel position before is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y+ ",,,,,,,"+(colorPanel.transform.position.y+90));
-            Vector3 newPos = player.transform.position - Vector3.up * 12.5f + Vector3.left * 25;
+            Vector3 newPos = mCamera.transform.position - Vector3.up * 12.5f + Vector3.left * 25;
             // Debug.Log("new position is "+ newPos);
             Instantiate(floatingText, newPos,  Quaternion.identity);            
             // Debug.Log("color panel position after is "+ colorPanel.transform.position.x+",,,,, "+ colorPanel.transform.position.y+ ",,,,,,,"+(colorPanel.transform.position.y+90));
